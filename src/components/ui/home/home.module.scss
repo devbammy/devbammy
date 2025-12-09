@@ -274,6 +274,10 @@
       border-radius: 0.5rem;
       overflow: hidden;
 
+      @include sm {
+        height: max-content;
+      }
+
       .image {
         width: 100%;
         height: 75%;
@@ -306,6 +310,7 @@
             align-items: center;
             gap: 0.5rem;
             margin: 0.5rem 0;
+            flex-wrap: wrap;
           }
           span {
             background-color: var(--bg);
