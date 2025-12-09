@@ -1,4 +1,3 @@
-<!-- HEADER BANNER -->
 <p align="center">
   <img src="https://via.placeholder.com/1200x250?text=Bamidele+-+Frontend+Developer" alt="Portfolio Banner" />
 </p>
