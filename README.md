@@ -52,53 +52,72 @@ I enjoy creating clean UI, building scalable frontends, and bringing product ide
   <img src="https://img.shields.io/badge/GitHub-000?style=for-the-badge&logo=github&logoColor=white" />
   <img src="https://img.shields.io/badge/Postman-f76935?style=for-the-badge&logo=postman&logoColor=white" />
   <img src="https://img.shields.io/badge/Vite-646cff?style=for-the-badge&logo=vite&logoColor=white" />
-  <img src="https://img.shields.io/badge/Framer%20Motion-0055ff?style=for-the-badge&logo=framer&logoColor=white" />
+  <img src="https://img.shields.io/badge/chatgpt-0055ff?style=for-the-badge&logo=chatgpt&logoColor=white" />
+  <img src="https://img.shields.io/badge/github-copilot-0055ff?style=for-the-badge&logo=github-copilot&logoColor=white" />
+
 </p>
 
 ---
 
 ## 📌 Featured Projects
 
-Here are some of the key projects that highlight my skills:
-
-### 1️⃣ **BlogHive – A Full-Stack Blogging Platform**
-
-- Built with Next.js and MongoDB
-- Dynamic posts, likes, authentication, and more
-- **Tech:** Next.js, React, MongoDB, Node.js  
-  🔗 _Live Demo:_ _coming soon_
+Below are some of the projects I've built. Each one reflects my focus on performance, clean UI, and seamless user experience.
 
 ---
 
-### 2️⃣ **FindIt – Lost & Found Application**
+### 🛋 **Furniture eCommerce App**
 
-- Report missing items, manage claims, admin approval
-- Full MERN stack  
-  🔗 _Live Demo:_ _coming soon_
-
----
-
-### 3️⃣ **Careerman – Job Portal**
-
-- Manage listings, categories, companies
-- Frontend in React, backend in Node.js  
-  🔗 _Live Demo:_ _coming soon_
+A modern shopping experience for browsing and purchasing premium furniture.  
+**Tech:** Next.js, Redux Toolkit, SCSS  
+🔗 **Live:** https://furniture-beryl-seven.vercel.app/
 
 ---
 
-### 4️⃣ **JinfinityArt Website**
+### 🩺 **Carelynk**
 
-- Simple responsive website for a resin artist in the UK
-- HTML + CSS + JS  
-  🔗 _Live Demo:_ _coming soon_
+A doctors appointment booking platform.  
+**Tech:** Vite, Context API, MongoDB, ExpressJS, AI  
+🔗 **Live:** https://carelynk.vercel.app/
+
+---
+
+### 🚗 **Rydexo**
+
+A luxury car booking platform with a sleek UI.  
+**Tech:** Vite, Context API, MongoDB, ExpressJS, AI  
+🔗 **Live:** https://rydexo.vercel.app/
+
+---
+
+### 🛒 **SwapAm**
+
+A marketplace where users can offer and hire various tech services.  
+**Tech:** Vite, Context API, MongoDB, ExpressJS, AI  
+🔗 **Live:** https://swap-am-mauve.vercel.app/
+
+---
+
+### 💼 **CareerMan**
+
+A job-matching platform that helps users explore roles.  
+**Tech:** Vite, Context API, MongoDB, ExpressJS, AI  
+🔗 **Live:** https://careerman.vercel.app/
+
+---
+
+### 🎓 **CodeDistrictNG**
+
+An online learning hub for web development courses, community support, and student engagement.  
+**Tech:** Vite, EmailJS, SCSS  
+🔗 **Live:** https://codedistrictng.vercel.app/
 
 ---
 
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=devbammy&show_icons=true&theme=dracula" height="160" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=devbammy&layout=compact&theme=dracula" height="160" />
+  <img src="https://vercel.com/emmanuel-bammys-projects/github-readme-stats/9hFxyw5FzP7onFamKm1AEc7TJEt4/api?username=devbammy&show_icons=true&theme=dracula" height="160" />
+  <img src="https://vercel.com/emmanuel-bammys-projects/github-readme-stats/9hFxyw5FzP7onFamKm1AEc7TJEt4/api/top-langs/?username=devbammy&layout=compact&theme=dracula" height="160" />
 </p>
 
 ---
