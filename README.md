@@ -116,8 +116,8 @@ An online learning hub for web development courses, community support, and stude
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img src="https://vercel.com/emmanuel-bammys-projects/github-readme-stats/9hFxyw5FzP7onFamKm1AEc7TJEt4/api?username=devbammy&show_icons=true&theme=dracula" height="160" />
-  <img src="https://vercel.com/emmanuel-bammys-projects/github-readme-stats/9hFxyw5FzP7onFamKm1AEc7TJEt4/api/top-langs/?username=devbammy&layout=compact&theme=dracula" height="160" />
+  <img src="https://github-readme-stats-six-pied-31.vercel.app/api?username=devbammy" height="160" />
+  <img src="https://github-readme-stats-six-pied-31.vercel.app/api/top-langs/?username=devbammy&layout=compact&theme=dracula" height="160" />
 </p>
 
 ---
