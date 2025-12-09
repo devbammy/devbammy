@@ -11,7 +11,7 @@ import Reviews from './components/ui/home/Reviews';
 const App = () => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <main className={styles.mainContainer}>
         <Hero />
         <About />

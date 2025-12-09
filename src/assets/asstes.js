@@ -45,6 +45,7 @@ import xWhite from './xWhite.png';
 import vscode from './vscode.png';
 import vscodeAlt from './vscode-alt.png';
 import ai from './ai.png';
+import lines from './lines.jpg';
 
 export const assets = {
   ai,
@@ -94,6 +95,7 @@ export const assets = {
   xWhite,
   vscode,
   vscodeAlt,
+  lines,
 };
 
 export const aboutItems = [
