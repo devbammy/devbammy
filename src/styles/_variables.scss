@@ -1,0 +1,51 @@
+// =====================================
+//  RESPONSIVE & UTILITY MIXINS (WEB-FIRST)
+// =====================================
+
+$break-xl: 1440px;
+$break-lg: 1024px;
+$break-md: 768px;
+$break-sm: 480px;
+
+// Responsive mixins
+@mixin xl {
+  @media (max-width: #{$break-xl}) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (max-width: #{$break-lg}) {
+    @content;
+  }
+}
+@mixin md {
+  @media (min-width: #{$break-sm + 1}) and (max-width: #{$break-md}) {
+    @content;
+  }
+}
+@mixin sm {
+  @media (max-width: #{$break-sm}) {
+    @content;
+  }
+}
+
+// Utility respond()
+@mixin respond($size) {
+  @if $size == sm {
+    @media (max-width: #{$break-sm}) {
+      @content;
+    }
+  } @else if $size == md {
+    @media (max-width: #{$break-md}) {
+      @content;
+    }
+  } @else if $size == lg {
+    @media (max-width: #{$break-lg}) {
+      @content;
+    }
+  } @else if $size == xl {
+    @media (max-width: #{$break-xl}) {
+      @content;
+    }
+  }
+}

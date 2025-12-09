@@ -1,0 +1,145 @@
+const serviceListings = [
+  {
+    title: "Professional Website Build & Maintenance",
+    tags: ["HTML5", "CSS3", "JavaScript", "React"],
+    category: "Web Development",
+    price: 300000,
+    priceOption: "One-time",
+    paymentOption: ["Bank Transfer", "Credit Card"],
+    location: "Abuja, Nigeria",
+    imageUrl: "https://example.com/images/web-development-service.jpg",
+    description:
+      "We design, build and maintain high-performance websites using latest technologies (React, Node.js, etc.). Includes responsive design, SEO-friendly code, and 3 months free maintenance.",
+    summary: "Launch a modern website optimized for growth."
+  },
+  {
+    title: "Mobile App Development (iOS & Android)",
+    tags: ["React Native", "Expo", "Mobile UX"],
+    category: "Mobile Development",
+    price: 450000,
+    priceOption: "One-time",
+    paymentOption: ["Credit Card", "Bank Transfer"],
+    location: "Remote / Nigeria",
+    imageUrl: "https://example.com/images/mobile-app-development-service.jpg",
+    description:
+      "End-to-end mobile app development including UI/UX, backend API integration, testing and deployment to App Store & Google Play.",
+    summary: "Build your app idea into reality across iOS and Android."
+  },
+  {
+    title: "AI & Machine Learning Solution Design",
+    tags: ["Machine Learning", "Python", "TensorFlow", "AI"],
+    category: "Artificial Intelligence & Machine",
+    price: 600000,
+    priceOption: "One-time",
+    paymentOption: ["Bank Transfer", "PayPal"],
+    location: "Online",
+    imageUrl: "https://example.com/images/ai-ml-service.jpg",
+    description:
+      "We craft custom AI/ML models to solve business problems — from data gathering to model training, evaluation and integration into your existing system.",
+    summary: "Harness AI and ML to drive business insights."
+  },
+  {
+    title: "Cloud Infrastructure & Deployment Service",
+    tags: ["AWS", "Azure", "Cloud Architecture", "DevOps"],
+    category: "Cloud Computing",
+    price: 500000,
+    priceOption: "One-time",
+    paymentOption: ["Credit Card", "Bank Transfer"],
+    location: "Online",
+    imageUrl: "https://example.com/images/cloud-computing-service.jpg",
+    description:
+      "Setup, migration and management of cloud infrastructure (AWS/Azure). Includes CI/CD pipeline, auto-scaling, backup & disaster recovery setup.",
+    summary: "Deploy your services in the cloud securely and efficiently."
+  },
+  {
+    title: "Brand & Graphic Design Package",
+    tags: ["Branding", "Illustrator", "Photoshop", "Logo Design"],
+    category: "Graphic Design",
+    price: 200000,
+    priceOption: "One-time",
+    paymentOption: ["Bank Transfer", "Credit Card"],
+    location: "Nigeria",
+    imageUrl: "https://example.com/images/graphic-design-service.jpg",
+    description:
+      "Full graphic design service — logo, brand guidelines, marketing collateral (flyers, social posts) and up to 2 revisions included.",
+    summary: "Make your brand visually stand out."
+  },
+  {
+    title: "Cybersecurity Audit & Hardening Service",
+    tags: ["Penetration Testing", "Network Security", "Ethical Hacking"],
+    category: "Cybersecurity",
+    price: 550000,
+    priceOption: "One-time",
+    paymentOption: ["PayPal", "Bank Transfer"],
+    location: "Online",
+    imageUrl: "https://example.com/images/cybersecurity-service.jpg",
+    description:
+      "Comprehensive security audit of your systems, identifying vulnerabilities, implementing hardening, and delivering a full remediation report.",
+    summary: "Secure your systems before threats strike."
+  },
+  {
+    title: "Data Science & Analytics Consultancy",
+    tags: ["Data Analysis", "Pandas", "Visualization", "Big Data"],
+    category: "Data Science & Analytics",
+    price: 400000,
+    priceOption: "One-time",
+    paymentOption: ["Credit Card", "Bank Transfer"],
+    location: "Online",
+    imageUrl: "https://example.com/images/data-science-service.jpg",
+    description:
+      "Use advanced data analysis to uncover insights, build dashboards and predictive models. Ideal for businesses wanting data-driven decisions.",
+    summary: "Transform your data into actionable intelligence."
+  },
+  {
+    title: "Blockchain & Web3 Smart Contract Development",
+    tags: ["Solidity", "Ethereum", "DApps", "Web3"],
+    category: "Blockchain & Web3",
+    price: 650000,
+    priceOption: "One-time",
+    paymentOption: ["Crypto", "Bank Transfer"],
+    location: "Online",
+    imageUrl: "https://example.com/images/blockchain-web3-service.jpg",
+    description:
+      "Design and build decentralized applications, smart contracts on Ethereum/Polygon, token issuance and Web3 integrations for your project.",
+    summary: "Enter the future of decentralised applications."
+  },
+  {
+    title: "UI/UX & Product Design Service",
+    tags: ["Figma", "Prototyping", "User Research", "Product Design"],
+    category: "UI-UX Design & Product Design",
+    price: 250000,
+    priceOption: "One-time",
+    paymentOption: ["Credit Card", "Bank Transfer"],
+    location: "Nigeria / Remote",
+    imageUrl: "https://example.com/images/ui-ux-service.jpg",
+    description:
+      "User-centered product design: research, wireframes, high-fidelity mockups and usability testing for web and mobile interfaces.",
+    summary: "Design beautiful and intuitive digital products."
+  },
+  {
+    title: "DevOps & Continuous Delivery Setup",
+    tags: ["Docker", "Kubernetes", "CI/CD", "Infrastructure as Code"],
+    category: "DevOps",
+    price: 450000,
+    priceOption: "One-time",
+    paymentOption: ["PayPal", "Bank Transfer"],
+    location: "Online",
+    imageUrl: "https://example.com/images/devops-service.jpg",
+    description:
+      "Set up infrastructure automation, monitoring, logging, container orchestration and deployment pipelines for modern development teams.",
+    summary: "Streamline your development to production workflow."
+  },
+  {
+    title: "Digital Skills & Freelancing Bootcamp",
+    tags: ["Remote Work", "Freelancing", "Digital Marketing", "Online Business"],
+    category: "Others",
+    price: 150000,
+    priceOption: "One-time",
+    paymentOption: ["Credit Card", "Bank Transfer"],
+    location: "Online / Nigeria",
+    imageUrl: "https://example.com/images/others-service.jpg",
+    description:
+      "Learn how to leverage digital skills like web dev, design, marketing and freelancing platforms to build your online career or side-income.",
+    summary: "Empower your future in the digital economy."
+  }
+];
