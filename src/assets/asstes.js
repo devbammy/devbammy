@@ -46,6 +46,11 @@ import vscode from './vscode.png';
 import vscodeAlt from './vscode-alt.png';
 import ai from './ai.png';
 import lines from './lines.jpg';
+import coach from './coach.png';
+import emayo from './emayo.png';
+import eleventh from './eleventh.png';
+import emayoShop from './emayoShop.png';
+import { em } from 'framer-motion/client';
 
 export const assets = {
   ai,
@@ -96,6 +101,10 @@ export const assets = {
   vscode,
   vscodeAlt,
   lines,
+  coach,
+  emayo,
+  eleventh,
+  emayoShop,
 };
 
 export const aboutItems = [
@@ -113,9 +122,18 @@ export const projects = [
   {
     imgSrc: project1,
     title: 'Furniture eCommerce App',
-    desc: 'A modern shopping experience for browsing and purchasing premium furniture.',
+    desc: 'A modern eCommerce UI.',
     tags: ['Next.js', 'Redux-Toolkit', 'SCSS'],
     projectLink: 'https://furniture-beryl-seven.vercel.app/',
+    tab: 'Frontend',
+  },
+  {
+    imgSrc: eleventh,
+    title: 'Eleventh House Hotels',
+    desc: 'A multi-branch hotel booking website.',
+    tags: ['WordPress'],
+    projectLink: 'http://eleventhhousehotels.com/',
+    tab: 'WordPress',
   },
   {
     imgSrc: project2,
@@ -123,6 +141,7 @@ export const projects = [
     desc: 'A doctors appointments booking app.',
     tags: ['Vite', 'ContextAPI', 'MongoDB', 'ExpressJS', 'AI'],
     projectLink: 'https://carelynk.vercel.app/',
+    tab: 'Mern-Stack',
   },
   {
     imgSrc: project3,
@@ -130,27 +149,57 @@ export const projects = [
     desc: 'A luxury cars booking platform.',
     tags: ['Vite', 'ContextAPI', 'MongoDB', 'ExpressJS', 'AI'],
     projectLink: 'https://rydexo.vercel.app/',
+    tab: 'Mern-Stack',
   },
   {
-    imgSrc: project4,
-    title: 'SwapAm',
-    desc: 'A marketplace that enables users to offer tech services.',
-    tags: ['Vite', 'ContextAPI', 'MongoDB', 'ExpressJS', 'AI'],
-    projectLink: 'https://swap-am-mauve.vercel.app/',
+    imgSrc: emayoShop,
+    title: 'Emeyo Trend Wears',
+    desc: 'An eCommerce platform for trendy fashion.',
+    tags: ['WordPress'],
+    projectLink: 'https://emayotrendwears.com',
+    tab: 'WordPress',
   },
   {
     imgSrc: project5,
     title: 'CareerMan',
-    desc: 'A job-matching platform that helps users explore roles.',
+    desc: 'A job-matching listing platform.',
     tags: ['Vite', 'ContextAPI', 'MongoDB', 'ExpressJS', 'AI'],
     projectLink: 'https://careerman.vercel.app/',
+    tab: 'Frontend',
   },
   {
+    imgSrc: project4,
+    title: 'SwapAm',
+    desc: 'A marketplace for tech services.',
+    tags: ['Vite', 'ContextAPI', 'MongoDB', 'ExpressJS', 'AI'],
+    projectLink: 'https://swap-am-mauve.vercel.app/',
+    tab: 'Mern-Stack',
+  },
+  {
+    imgSrc: coach,
+    title: 'Coach Seyifunmi',
+    desc: 'A WordPress site for a personal development coach.',
+    tags: ['WordPress'],
+    projectLink: 'https://coachseyifunmi.com',
+    tab: 'WordPress',
+  },
+
+  {
+    imgSrc: emayo,
+    title: 'Emayo Portfolio Website',
+    desc: "A portfolio site showcasing Emayo's fashion projects and personal brand.",
+    tags: ['WordPress'],
+    projectLink: 'https://emayotrendwears.com',
+    tab: 'WordPress',
+  },
+
+  {
     imgSrc: project6,
-    title: 'CodeDistrictNG',
-    desc: 'An online learning hub for web development courses, community support, and student engagement.',
+    title: 'CodeDistrict NG',
+    desc: 'A landing page for an online learning hub for web development courses.',
     tags: ['Vite', 'EmailJS', 'SCSS'],
     projectLink: 'https://codedistrictng.vercel.app/',
+    tab: 'Frontend',
   },
 ];
 

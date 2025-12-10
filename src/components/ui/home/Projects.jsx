@@ -1,10 +1,21 @@
+import { useEffect, useState } from 'react';
 import { assets, projects } from '../../../assets/asstes';
 import { useTheme } from '../../../context/ThemeContext';
-import styles from './home.module.scss';
 import { motion } from 'framer-motion';
+import styles from './home.module.scss';
 
 const Projects = () => {
   const { theme } = useTheme();
+  const [tab, setTab] = useState('All');
+  const [filtered, setFiltered] = useState(projects);
+
+  useEffect(() => {
+    if (tab === 'All') {
+      setFiltered(projects);
+    } else {
+      setFiltered(projects.filter((p) => p.tab === tab));
+    }
+  }, [tab]);
 
   // Individual card animation
   const cardVariants = {
@@ -39,8 +50,35 @@ const Projects = () => {
         modern frontend technologies.
       </motion.p>
 
+      <div className={styles.projectTabs}>
+        <button
+          onClick={() => setTab('All')}
+          className={tab === 'All' ? styles.active : ''}
+        >
+          All
+        </button>
+        <button
+          onClick={() => setTab('Mern-Stack')}
+          className={tab === 'Mern-Stack' ? styles.active : ''}
+        >
+          MERN Stack
+        </button>
+        <button
+          onClick={() => setTab('Frontend')}
+          className={tab === 'Frontend' ? styles.active : ''}
+        >
+          Frontend
+        </button>
+        <button
+          onClick={() => setTab('WordPress')}
+          className={tab === 'WordPress' ? styles.active : ''}
+        >
+          WordPress
+        </button>
+      </div>
+
       <div className={styles.projects_box}>
-        {projects.map((project, i) => (
+        {filtered?.map((project, i) => (
           <motion.div
             className={styles.project}
             key={i}

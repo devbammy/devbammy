@@ -2,9 +2,9 @@ import { useTheme } from '../../../context/ThemeContext';
 import { assets, navItems } from '../../../assets/asstes';
 import AnimatedLink from '../../utils/AnimatedLink';
 import ThemeToggle from '../../utils/ThemeToggle';
-import styles from './header.module.scss';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import styles from './header.module.scss';
 
 const Header = () => {
   const { theme } = useTheme();
@@ -43,7 +43,11 @@ const Header = () => {
         {navItems.map((nav) => (
           <AnimatedLink key={nav.label} href={nav.link} text={nav.label} />
         ))}
-        <AnimatedLink href="#contact" text="Contact" />
+        {/* <AnimatedLink
+          href="#contact"
+          text="Contact"
+          className={styles.hideOnWeb}
+        /> */}
       </nav>
 
       <div className={styles.contact}>

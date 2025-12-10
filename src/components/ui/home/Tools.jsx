@@ -1,4 +1,4 @@
-import { assets, skillItem } from '../../../assets/asstes';
+import { skillItem } from '../../../assets/asstes';
 import styles from './home.module.scss';
 import { motion } from 'framer-motion';
 
