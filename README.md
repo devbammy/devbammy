@@ -1,6 +1,4 @@
-<p align="center">
-  <img src="https://via.placeholder.com/1200x250?text=Bamidele+-+Frontend+Developer" alt="Portfolio Banner" />
-</p>
+![Profile Header](githubHeader.gif)
 
 <h1 align="center">👋 Hi, I'm Bamidele</h1>
 
@@ -8,20 +6,22 @@
   Frontend Developer • React & React Native • UI Enthusiast  
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Frontend-Developer-blue?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/React.js-Expert-61dafb?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/React%20Native-Mobile%20Dev-000?style=for-the-badge" />
-</p>
+[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white&style=flat-square)](https://www.instagram.com/bamidele.dev/)
+[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white&style=flat-square)]([https://www.linkedin.com/in/victor-iwatannaye-891552197/](https://www.linkedin.com/in/emmanuel-olorunyomi))
+[![Twitter](https://img.shields.io/badge/-Twitter-1DA1F2?logo=twitter&logoColor=white&style=flat-square)](https://twitter.com/bamideledotdev)
+
 
 ---
 
 ## 🚀 About Me
 
-I build smooth, responsive, and intuitive digital products with a strong focus on user experience.  
-Skilled in **HTML, CSS, JavaScript, React.js, and React Native**, with experience across full-stack projects using the MERN ecosystem.
+I’m a software developer with strong expertise in modern frontend technologies, creating responsive, intuitive, and high-quality digital experiences. I build clean, efficient interfaces with HTML, CSS, JavaScript, React.js, and React Native, always aiming for smooth user interactions and reliable performance. I approach every project with precision and a commitment to excellence, consistently delivering solutions that elevate both product quality and user satisfaction.
 
-I enjoy creating clean UI, building scalable frontends, and bringing product ideas to life.
+- 🌱 I’m currently taking a deeper dive in **Systems Architecture**
+- 👯 I’m looking to collaborate on any open source projects
+- 📫 How to reach me **olorunyomiemmanuelb@gmail.com**
+- 📁 Check out my portfolio [https://devbammy.vercel.app/](#)
+- ⚡ Fun fact: **I too sabi this tech thing! 😎**
 
 ---
 
@@ -29,33 +29,28 @@ I enjoy creating clean UI, building scalable frontends, and bringing product ide
 
 ### **Frontend**
 
-<p>
-  <img src="https://img.shields.io/badge/HTML5-e34f26?style=for-the-badge&logo=html5&logoColor=white" />
-  <img src="https://img.shields.io/badge/CSS3-1572b6?style=for-the-badge&logo=css3&logoColor=white" />
-  <img src="https://img.shields.io/badge/JavaScript-es6+-f7df1e?style=for-the-badge&logo=javascript&logoColor=black" />
-  <img src="https://img.shields.io/badge/React-61dafb?style=for-the-badge&logo=react&logoColor=black" />
-  <img src="https://img.shields.io/badge/React%20Native-000?style=for-the-badge&logo=react&logoColor=61dafb" />
-</p>
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![JS](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![REACT](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![REACT NATIVE](https://img.shields.io/badge/Reactnative-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![REDUX](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
 
 ### **Backend & Database**
 
-<p>
-  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" />
-  <img src="https://img.shields.io/badge/Express.js-000?style=for-the-badge&logo=express&logoColor=white" />
-  <img src="https://img.shields.io/badge/MongoDB-47a248?style=for-the-badge&logo=mongodb&logoColor=white" />
-</p>
+![NODE](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+![EXPRESS](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
+![MONGODB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
 
 ### **Tools**
 
-<p>
-  <img src="https://img.shields.io/badge/Git-F05033?style=for-the-badge&logo=git&logoColor=white" />
-  <img src="https://img.shields.io/badge/GitHub-000?style=for-the-badge&logo=github&logoColor=white" />
-  <img src="https://img.shields.io/badge/Postman-f76935?style=for-the-badge&logo=postman&logoColor=white" />
-  <img src="https://img.shields.io/badge/Vite-646cff?style=for-the-badge&logo=vite&logoColor=white" />
-  <img src="https://img.shields.io/badge/chatgpt-0055ff?style=for-the-badge&logo=chatgpt&logoColor=white" />
-  <img src="https://img.shields.io/badge/github-copilot-0055ff?style=for-the-badge&logo=github-copilot&logoColor=white" />
+![Git](https://img.shields.io/badge/-Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
+![GitHub Copilot](https://img.shields.io/badge/-GitHub%20Copilot-000000?style=for-the-badge&logo=githubcopilot&logoColor=white)
+![VS Code](https://img.shields.io/badge/-VS%20Code-007ACC?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
+![Vercel](https://img.shields.io/badge/-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+![Render](https://img.shields.io/badge/-Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)
 
-</p>
 
 ---
 
