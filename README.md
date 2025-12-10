@@ -1,4 +1,4 @@
-![Profile Header](githubHeader.gif)
+![Header](./githubHeader.gif)
 
 <h1 align="center">👋 Hi, I'm Bamidele</h1>
 
@@ -7,9 +7,8 @@
 </p>
 
 [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white&style=flat-square)](https://www.instagram.com/bamidele.dev/)
-[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white&style=flat-square)]([https://www.linkedin.com/in/victor-iwatannaye-891552197/](https://www.linkedin.com/in/emmanuel-olorunyomi))
+[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white&style=flat-square)](<[https://www.linkedin.com/in/victor-iwatannaye-891552197/](https://www.linkedin.com/in/emmanuel-olorunyomi)>)
 [![Twitter](https://img.shields.io/badge/-Twitter-1DA1F2?logo=twitter&logoColor=white&style=flat-square)](https://twitter.com/bamideledotdev)
-
 
 ---
 
@@ -50,7 +49,6 @@ I’m a software developer with strong expertise in modern frontend technologies
 ![VS Code](https://img.shields.io/badge/-VS%20Code-007ACC?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
 ![Vercel](https://img.shields.io/badge/-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 ![Render](https://img.shields.io/badge/-Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)
-
 
 ---
 
