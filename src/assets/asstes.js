@@ -50,7 +50,6 @@ import coach from './coach.png';
 import emayo from './emayo.png';
 import eleventh from './eleventh.png';
 import emayoShop from './emayoShop.png';
-import { em } from 'framer-motion/client';
 
 export const assets = {
   ai,
@@ -189,7 +188,7 @@ export const projects = [
     title: 'Emayo Portfolio Website',
     desc: "A portfolio site showcasing Emayo's fashion projects and personal brand.",
     tags: ['WordPress'],
-    projectLink: 'https://emayotrendwears.com',
+    projectLink: 'https://emmanuel.emayotrendwears.com/',
     tab: 'WordPress',
   },
 
@@ -251,20 +250,20 @@ export const reviews = [
   {
     content:
       'Exceptional web development! Delivered a seamless, responsive site with clean code and great UX.',
-    name: 'Sophia Ramirez',
-    company: 'PixelForge',
+    name: 'Bamidele Loveson',
+    company: 'CEO. Xamarano ICT',
   },
   {
     content:
       'Impressive work! Fast loading times, intuitive design, and flawless backend integration. Highly recommend.',
-    name: 'Ethan Caldwell',
-    company: 'NexaWave',
+    name: 'Alade Temidayo Sunday',
+    company: 'CEO. StarTechOne Nig. Ltd.',
   },
   {
     content:
       'Outstanding developer! Built a robust site with perfect functionality. Efficient and detail-oriented.',
-    name: 'Liam Bennett',
-    company: 'CodeCraft',
+    name: 'Oluwaseyifunmi Adebisi',
+    company: 'Life Coach, USA.',
   },
 ];
 
