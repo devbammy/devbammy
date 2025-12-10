@@ -8,11 +8,10 @@
   Frontend Developer • React & React Native • UI Enthusiast  
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Frontend-Developer-blue?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/React.js-Expert-61dafb?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/React%20Native-Mobile%20Dev-000?style=for-the-badge" />
-</p>
+[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white&style=flat-square)](https://www.instagram.com/bamidele.dev/)
+[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white&style=flat-square)]([https://www.linkedin.com/in/victor-iwatannaye-891552197/](https://www.linkedin.com/in/emmanuel-olorunyomi))
+[![Twitter](https://img.shields.io/badge/-Twitter-1DA1F2?logo=twitter&logoColor=white&style=flat-square)](https://twitter.com/bamideledotdev)
+
 
 ---
 
