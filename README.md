@@ -1,6 +1,4 @@
-<p align="center">
-  <img src="https://via.placeholder.com/1200x250?text=Bamidele+-+Frontend+Developer" alt="Portfolio Banner" />
-</p>
+![Profile Header](githubHeader.gif)
 
 <h1 align="center">👋 Hi, I'm Bamidele</h1>
 
