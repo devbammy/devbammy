@@ -50,6 +50,7 @@ import coach from './coach.png';
 import emayo from './emayo.png';
 import eleventh from './eleventh.png';
 import emayoShop from './emayoShop.png';
+import rentxspace from './rentxspace.png';
 
 export const assets = {
   ai,
@@ -104,6 +105,7 @@ export const assets = {
   emayo,
   eleventh,
   emayoShop,
+  rentxspace,
 };
 
 export const aboutItems = [
@@ -182,7 +184,14 @@ export const projects = [
     projectLink: 'https://coachseyifunmi.com',
     tab: 'WordPress',
   },
-
+  {
+    imgSrc: rentxspace,
+    title: 'RentXSpace',
+    desc: 'A landing page for an online learning hub for web development courses.',
+    tags: ['Next.js', 'Dummy Data', 'React Leaflet', 'SCSS'],
+    projectLink: 'https://rentxspace.vercel.app/',
+    tab: 'Frontend',
+  },
   {
     imgSrc: emayo,
     title: 'Emayo Portfolio Website',
