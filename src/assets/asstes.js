@@ -187,7 +187,7 @@ export const projects = [
   {
     imgSrc: rentxspace,
     title: 'RentXSpace',
-    desc: 'A landing page for an online learning hub for web development courses.',
+    desc: 'A modern real estate marketplace web application',
     tags: ['Next.js', 'Dummy Data', 'React Leaflet', 'SCSS'],
     projectLink: 'https://rentxspace.vercel.app/',
     tab: 'Frontend',
