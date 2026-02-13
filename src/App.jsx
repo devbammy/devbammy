@@ -1,24 +1,17 @@
-import Footer from './components/ui/footer/Footer';
-import Hero from './components/ui/home/Hero';
-import About from './components/ui/home/About';
-import Tools from './components/ui/home/Tools';
-import Projects from './components/ui/home/Projects';
-import Contact from './components/ui/home/Contact';
-import Reviews from './components/ui/home/Reviews';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/home/Home';
+import Header from './ui/header/Header';
+import Projects from './pages/projects/Projects';
 
 const App = () => {
   return (
-    <>
-      <main>
-        <Hero />
-        <About />
-        <Tools />
-        <Projects />
-        <Reviews />
-        <Contact />
-      </main>
-      <Footer />
-    </>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="/projects" element={<Projects />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 

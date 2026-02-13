@@ -21,12 +21,6 @@ import menuLight from './menuLight.png';
 import menuDark from './menuDark.png';
 import mongodb from './mongodb.svg';
 import nodejs from './nodejs.svg';
-import people1 from './people-1.jpg';
-import people2 from './people-2.jpg';
-import people3 from './people-3.jpg';
-import people4 from './people-4.jpg';
-import people5 from './people-5.jpg';
-import people6 from './people-6.jpg';
 import project1 from './furniture.png';
 import project2 from './carelynk.png';
 import project3 from './rydexo.png';
@@ -51,6 +45,8 @@ import emayo from './emayo.png';
 import eleventh from './eleventh.png';
 import emayoShop from './emayoShop.png';
 import rentxspace from './rentxspace.png';
+import sun from './sun.png';
+import moon from './moon.png';
 
 export const assets = {
   ai,
@@ -77,12 +73,6 @@ export const assets = {
   menuDark,
   mongodb,
   nodejs,
-  people1,
-  people2,
-  people3,
-  people4,
-  people5,
-  people6,
   project1,
   project2,
   project3,
@@ -106,6 +96,8 @@ export const assets = {
   eleventh,
   emayoShop,
   rentxspace,
+  moon,
+  sun,
 };
 
 export const aboutItems = [
