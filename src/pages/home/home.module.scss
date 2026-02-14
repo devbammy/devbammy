@@ -1,86 +1,93 @@
 @use '../../styles/variables' as *;
 
-.main {
+.home {
   width: 100%;
   height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
 
-  .image {
-    -webkit-user-drag: none;
-    height: 150px;
-    aspect-ratio: auto 150 / 150;
-    width: 150px;
-    clip-path: circle();
-    border: 2px solid var(--text);
-    border-radius: 50%;
-    overflow: hidden;
-    transition: transform 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
-    cursor: pointer;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    &:hover {
-      transform: translateY(-12px) scale(1.05);
-      animation: bounce 0.9s infinite alternate
-        cubic-bezier(0.45, 0.05, 0.55, 0.95);
-    }
-  }
-
-  .text {
-    text-align: center;
-    margin-top: 20px;
-    h1 {
-      font-size: 2rem;
-      font-weight: 400;
-      span {
-        font-weight: 700;
-      }
-    }
-    p {
-      font-size: 1.2rem;
-      font-weight: 400;
-    }
-  }
-
-  .socials {
+  .main {
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-    margin: 20px 0;
+    flex-direction: column;
 
-    a {
+    .image {
+      -webkit-user-drag: none;
+      height: 150px;
+      aspect-ratio: auto 150 / 150;
+      width: 150px;
+      clip-path: circle();
+      border: 2px solid var(--text);
+      border-radius: 50%;
+      overflow: hidden;
+      transition: transform 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+      cursor: pointer;
+
       img {
-        width: 30px;
-        height: 30px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      &:hover {
+        transform: translateY(-12px) scale(1.05);
+        animation: bounce 0.9s infinite alternate
+          cubic-bezier(0.45, 0.05, 0.55, 0.95);
       }
     }
-  }
-  .actions {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
 
-  .footerNote {
-    position: absolute;
-    bottom: 5px;
-    font-size: 0.8rem;
-    color: var(--gray);
+    .text {
+      text-align: center;
+      margin-top: 20px;
+      h1 {
+        font-size: 2rem;
+        font-weight: 400;
+        span {
+          font-weight: 700;
+        }
+      }
+      p {
+        font-size: 1.2rem;
+        font-weight: 400;
+      }
+    }
 
-    a {
+    .socials {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin: 20px 0;
+
+      a {
+        img {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .footerNote {
+      position: absolute;
+      bottom: 5px;
+      font-size: 0.8rem;
       color: var(--gray);
-      &:hover {
-        color: var(--text);
+
+      a {
+        color: var(--gray);
+        &:hover {
+          color: var(--text);
+        }
       }
     }
   }

@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { projects } from '../../assets/asstes';
-import styles from './projects.module.scss';
 import { useTheme } from '../../context/ThemeContext';
+import Header from '../../ui/header/Header';
+import styles from './projects.module.scss';
 
 const ProjectRow = ({ item, index }) => {
   const { theme } = useTheme();
@@ -99,11 +100,15 @@ const ProjectRow = ({ item, index }) => {
 
 const Projects = () => {
   return (
-    <div className={styles.projectWrapper}>
-      {projects.map((item, index) => (
-        <ProjectRow key={index} item={item} index={index} />
-      ))}
-    </div>
+    <>
+      <Header />
+
+      <div className={styles.projectWrapper}>
+        {projects.map((item, index) => (
+          <ProjectRow key={index} item={item} index={index} />
+        ))}
+      </div>
+    </>
   );
 };
 

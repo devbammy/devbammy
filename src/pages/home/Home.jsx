@@ -3,6 +3,7 @@ import { assets } from '../../assets/asstes';
 import { useTheme } from '../../context/ThemeContext';
 import { AnimatedButton } from '../../ui/utils/AnimatedLink';
 import Contact from '../../ui/contact/Contact';
+import Header from '../../ui/header/Header';
 import styles from './home.module.scss';
 
 const Home = () => {
@@ -14,7 +15,8 @@ const Home = () => {
   };
 
   return (
-    <>
+    <div className={styles.home}>
+      <Header />
       <main className={styles.main}>
         <div className={styles.image}>
           <img src={assets.me} alt="my profile picture" />
@@ -70,7 +72,7 @@ const Home = () => {
 
         {showContact && <Contact setShowContact={setShowContact} />}
       </main>
-    </>
+    </div>
   );
 };
 
