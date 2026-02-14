@@ -1,8 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { projects } from '../../assets/asstes';
 import styles from './projects.module.scss';
+import { useTheme } from '../../context/ThemeContext';
 
 const ProjectRow = ({ item, index }) => {
+  const { theme } = useTheme();
+
   const [isVisible, setIsVisible] = useState(false);
   const rowRef = useRef(null);
   const isEven = index % 2 === 0;
@@ -29,7 +32,15 @@ const ProjectRow = ({ item, index }) => {
         ${isVisible ? styles.animateIn : ''}
       `}
     >
-      <span className={styles.bgNumber}>{projectNum}</span>
+      <span
+        className={
+          theme === 'dark'
+            ? styles.bgNumber
+            : `${styles.bgNumber} ${styles.light}`
+        }
+      >
+        {projectNum}
+      </span>
 
       <div className={styles.imageContainer}>
         <a href={item.projectLink} target="_blank" rel="noreferrer">

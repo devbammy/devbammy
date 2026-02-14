@@ -47,12 +47,14 @@ import emayoShop from './emayoShop.png';
 import rentxspace from './rentxspace.png';
 import sun from './sun.png';
 import moon from './moon.png';
+import dashboard from './dashboard.png';
 
 export const assets = {
   ai,
   arror,
   arrowDark,
   css,
+  dashboard,
   error,
   expo,
   express,
@@ -113,9 +115,17 @@ export const aboutItems = [
 
 export const projects = [
   {
+    imgSrc: dashboard,
+    title: 'Staffium',
+    desc: 'A robust full-stack Staff Management System designed to streamline employee administration, role management, attendance tracking, and performance monitoring through a secure and scalable web platform.',
+    tags: ['Vite', 'Context API', 'MongoDB', 'ExpressJS', 'AI'],
+    projectLink: 'https://stafflo.vercel.app/',
+    tab: 'Mern-Stack',
+  },
+  {
     imgSrc: project1,
     title: 'Furniture eCommerce App',
-    desc: 'A modern eCommerce UI.',
+    desc: 'A modern, responsive eCommerce UI built with a clean and intuitive design, powered by Redux Toolkit for efficient, scalable, and centralized state management across products, cart, and user interactions.',
     tags: ['Next.js', 'Redux-Toolkit', 'SCSS'],
     projectLink: 'https://furniture-beryl-seven.vercel.app/',
     tab: 'Frontend',
@@ -123,7 +133,7 @@ export const projects = [
   {
     imgSrc: eleventh,
     title: 'Eleventh House Hotels',
-    desc: 'A multi-branch hotel booking website.',
+    desc: 'A multi-branch hotel booking website built with WordPress, enabling seamless room reservations, branch-specific listings, availability management, and a user-friendly booking experience across multiple locations.',
     tags: ['WordPress'],
     projectLink: 'http://eleventhhousehotels.com/',
     tab: 'WordPress',
@@ -131,7 +141,7 @@ export const projects = [
   {
     imgSrc: project2,
     title: 'Carelynk',
-    desc: 'A doctors appointments booking app.',
+    desc: 'A full-stack doctor appointment booking application built with React, leveraging the Context API for efficient global state management. It enables patient registration, appointment scheduling, and streamlined coordination between users and healthcare providers through a secure and scalable system.',
     tags: ['Vite', 'ContextAPI', 'MongoDB', 'ExpressJS', 'AI'],
     projectLink: 'https://carelynk.vercel.app/',
     tab: 'Mern-Stack',
@@ -139,7 +149,7 @@ export const projects = [
   {
     imgSrc: project3,
     title: 'Rydexo',
-    desc: 'A luxury cars booking platform.',
+    desc: 'A full-stack luxury car booking platform designed for seamless reservations, fleet management, and secure transactions, delivering a premium user experience with real-time availability and streamlined booking workflows.',
     tags: ['Vite', 'ContextAPI', 'MongoDB', 'ExpressJS', 'AI'],
     projectLink: 'https://rydexo.vercel.app/',
     tab: 'Mern-Stack',
@@ -147,7 +157,7 @@ export const projects = [
   {
     imgSrc: emayoShop,
     title: 'Emeyo Trend Wears',
-    desc: 'An eCommerce platform for trendy fashion.',
+    desc: 'A WordPress-powered eCommerce platform for trendy fashion, featuring curated product collections, secure checkout, inventory management, and a visually engaging shopping experience optimized for performance and conversions.',
     tags: ['WordPress'],
     projectLink: 'https://emayotrendwears.com',
     tab: 'WordPress',
@@ -155,7 +165,7 @@ export const projects = [
   {
     imgSrc: project5,
     title: 'CareerMan',
-    desc: 'A job-matching listing platform.',
+    desc: 'A job-matching listing platform built with React, offering a user-friendly interface for job seekers and employers to connect, manage applications, and track job opportunities through a secure and scalable system.',
     tags: ['Vite', 'ContextAPI', 'MongoDB', 'ExpressJS', 'AI'],
     projectLink: 'https://careerman.vercel.app/',
     tab: 'Frontend',
@@ -163,7 +173,7 @@ export const projects = [
   {
     imgSrc: project4,
     title: 'SwapAm',
-    desc: 'A marketplace for tech services.',
+    desc: 'A marketplace for tech services built with React, offering a user-friendly interface for service providers and clients to connect, manage bookings, and track transactions through a secure and scalable system.',
     tags: ['Vite', 'ContextAPI', 'MongoDB', 'ExpressJS', 'AI'],
     projectLink: 'https://swap-am-mauve.vercel.app/',
     tab: 'Mern-Stack',
@@ -171,7 +181,7 @@ export const projects = [
   {
     imgSrc: coach,
     title: 'Coach Seyifunmi',
-    desc: 'A WordPress site for a personal development coach.',
+    desc: 'A WordPress site for a personal development coach built with WordPress, offering a visually engaging and user-friendly interface for coaching services, including testimonials, pricing, and contact information.',
     tags: ['WordPress'],
     projectLink: 'https://coachseyifunmi.com',
     tab: 'WordPress',
@@ -179,7 +189,7 @@ export const projects = [
   {
     imgSrc: rentxspace,
     title: 'RentXSpace',
-    desc: 'A modern real estate marketplace web application',
+    desc: 'A modern real estate marketplace web application built with Next.js, offering a user-friendly interface for property listings, search, and booking through a secure and scalable system.',
     tags: ['Next.js', 'Dummy Data', 'React Leaflet', 'SCSS'],
     projectLink: 'https://rentxspace.vercel.app/',
     tab: 'Frontend',
@@ -187,20 +197,20 @@ export const projects = [
   {
     imgSrc: emayo,
     title: 'Emayo Portfolio Website',
-    desc: "A portfolio site showcasing Emayo's fashion projects and personal brand.",
+    desc: "A portfolio site showcasing Emayo's fashion projects and personal brand built with WordPress, offering a visually engaging and user-friendly interface for showcasing fashion projects and personal brand.",
     tags: ['WordPress'],
     projectLink: 'https://emmanuel.emayotrendwears.com/',
     tab: 'WordPress',
   },
 
-  {
-    imgSrc: project6,
-    title: 'CodeDistrict NG',
-    desc: 'A landing page for an online learning hub for web development courses.',
-    tags: ['Vite', 'EmailJS', 'SCSS'],
-    projectLink: 'https://codedistrictng.vercel.app/',
-    tab: 'Frontend',
-  },
+  // {
+  //   imgSrc: project6,
+  //   title: 'CodeDistrict NG',
+  //   desc: 'A landing page for an online learning hub for web development courses.',
+  //   tags: ['Vite', 'EmailJS', 'SCSS'],
+  //   projectLink: 'https://codedistrictng.vercel.app/',
+  //   tab: 'Frontend',
+  // },
 ];
 
 export const skillItem = [

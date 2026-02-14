@@ -6,6 +6,7 @@
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
   background: var(--bg);
+  transition: var(--transition);
 
   &::-webkit-scrollbar {
     width: 4px;
@@ -70,13 +71,17 @@
   position: absolute;
   font-size: clamp(15rem, 30vw, 35rem);
   font-weight: 900;
-  color: rgba(255, 255, 255, 0.02);
+  color: rgba(151, 150, 150, 0.219);
   z-index: 0;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   pointer-events: none;
   line-height: 0.8;
+
+  &.light {
+    color: rgba(196, 194, 194, 0.274);
+  }
 }
 
 .imageContainer {
@@ -90,13 +95,13 @@
     height: 500px;
     width: 100%;
     max-width: 600px;
-    background: var(--gray);
+    background: var(--btn);
     border-radius: 16px 16px 0 0;
     padding-top: 30px;
     position: relative;
     box-shadow: 0 60px 100px -30px rgba(0, 0, 0, 0.7);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    transition: 0.5s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+    transition: 0.3s cubic-bezier(0.17, 0.67, 0.83, 0.67);
     overflow: hidden;
 
     .dots {
