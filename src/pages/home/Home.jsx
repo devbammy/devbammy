@@ -60,7 +60,11 @@ const Home = () => {
           </div>
 
           <div className={styles.actions}>
-            <AnimatedButton href="" text="Resume" />
+            <AnimatedButton
+              href="/EmmanuelO_CV.pdf"
+              target="_blank"
+              text="Resume"
+            />
             <AnimatedButton href="/projects" text="Projects" />
             <AnimatedButton text="Contact Me" onClick={handleShowContact} />
           </div>
