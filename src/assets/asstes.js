@@ -42,7 +42,7 @@ import ai from './ai.png';
 import lines from './lines.jpg';
 import coach from './coach.png';
 import emayo from './emayo.png';
-import eleventh from './eleventh.png';
+import qrCode from './eleventh.png';
 import emayoShop from './emayoShop.png';
 import rentxspace from './rentxspace.png';
 import sun from './sun.png';
@@ -95,7 +95,7 @@ export const assets = {
   lines,
   coach,
   emayo,
-  eleventh,
+  qrCode,
   emayoShop,
   rentxspace,
   moon,
@@ -123,6 +123,14 @@ export const projects = [
     tab: 'Mern-Stack',
   },
   {
+    imgSrc: qrCode,
+    title: 'Event QR Code Generator',
+    desc: 'A web-based application that generates personalized QR codes for event attendees, enabling each participant to receive a unique digital pass linked to their profile. The system also provides access to individual event schedules, allowing organizers to streamline check-ins, manage attendance efficiently, and deliver a more organized and seamless event experience.',
+    tags: ['JavaScript', 'HTML', 'CSS'],
+    projectLink: 'https://qr-code-generator-sandy-eight.vercel.app/',
+    tab: 'Frontend',
+  },
+  {
     imgSrc: project1,
     title: 'Furniture eCommerce App',
     desc: 'A modern, responsive eCommerce UI built with a clean and intuitive design, powered by Redux Toolkit for efficient, scalable, and centralized state management across products, cart, and user interactions.',
@@ -130,14 +138,7 @@ export const projects = [
     projectLink: 'https://furniture-beryl-seven.vercel.app/',
     tab: 'Frontend',
   },
-  {
-    imgSrc: eleventh,
-    title: 'Eleventh House Hotels',
-    desc: 'A multi-branch hotel booking website built with WordPress, enabling seamless room reservations, branch-specific listings, availability management, and a user-friendly booking experience across multiple locations.',
-    tags: ['WordPress'],
-    projectLink: 'http://eleventhhousehotels.com/',
-    tab: 'WordPress',
-  },
+
   {
     imgSrc: project2,
     title: 'Carelynk',
