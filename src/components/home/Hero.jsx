@@ -18,7 +18,9 @@ const Hero = () => {
       </div>
 
       <div className={styles.hero_text}>
-        <h1>From Idea to Intelligent Digital Product</h1>
+        <h1>
+          From Vision to <br /> Intelligent Digital Products
+        </h1>
         <p>
           I design and develop full stack web and mobile applications with a
           focus on performance, usability, and scale. I also integrate AI into

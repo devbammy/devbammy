@@ -1,0 +1,21 @@
+@use '../tokens' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0;
+  border: none;
+  transition: all 0.3s ease-in-out;
+  font-family: 'Figtree', sans-serif;
+  font-optical-sizing: auto;
+}
+
+::selection {
+  background-color: $color-accent-primary;
+  color: $color-white;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

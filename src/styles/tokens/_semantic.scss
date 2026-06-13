@@ -1,0 +1,17 @@
+@use './colors' as *;
+
+$brand-primary: $color-accent-primary;
+$brand-secondary: $color-accent-secondary;
+
+$text-primary: $color-text;
+$text-secondary: rgba($color-text, 0.75);
+$text-muted: rgba($color-text, 0.55);
+$text-inverse: $color-bg;
+
+$bg-body: $color-bg;
+$bg-surface: $color-light-gray;
+$accent-muted: rgba($color-accent-primary, 0.5);
+$bg-overlay: rgba($color-black, 0.8);
+
+$border-light: rgba($color-accent-primary, 0.2);
+$border-strong: rgba($color-accent-primary, 0.4);

@@ -1,7 +1,3 @@
-// =====================================
-//  RESPONSIVE & UTILITY MIXINS (WEB-FIRST)
-// =====================================
-
 $break-xl: 1440px;
 $break-lg: 1024px;
 $break-md: 768px;
@@ -19,7 +15,7 @@ $break-sm: 480px;
   }
 }
 @mixin md {
-  @media (min-width: #{$break-sm + 1}) and (max-width: #{$break-md}) {
+  @media (max-width: #{$break-md}) {
     @content;
   }
 }
@@ -48,4 +44,33 @@ $break-sm: 480px;
       @content;
     }
   }
+}
+
+// Fluid typography
+@mixin fluid-type($min, $max, $min-vw: 320px, $max-vw: 1440px) {
+  font-size: clamp(
+    $min,
+    calc(
+      #{$min} + (#{$max} - #{$min}) * ((100vw - #{$min-vw}) /
+            (#{$max-vw} - #{$min-vw}))
+    ),
+    $max
+  );
+}
+
+// Container
+@mixin container($max-width: 1200px, $padding: 0rem) {
+  width: 100%;
+  max-width: $max-width;
+  margin-inline: auto;
+  padding-inline: $padding;
+}
+
+// Flex center
+@mixin flex-center($direction: row, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+  gap: $gap;
 }

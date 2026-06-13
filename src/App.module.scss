@@ -1,8 +1,9 @@
-@use './styles/variables' as *;
+@use './styles/tokens/' as *;
+@use './styles/mixins/' as *;
 
 .container {
-  width: 80%;
-  max-width: 880px;
+  width: 90%;
+  max-width: 640px;
   min-height: 100vh;
   margin: 0 auto;
 
@@ -11,13 +12,13 @@
   background-color: var(--container);
 
   border: 1px solid var(--grayAlt);
-  border-radius: var(--radius);
+  border-radius: $radius-lg;
 
   overflow: hidden;
-  transition: var(--transition);
+  transition: $transition;
   position: relative;
 
-  @media (max-width: 768px) {
+  @include md {
     width: 96%;
     max-width: 100%;
     border-left: none;
@@ -28,7 +29,7 @@
 main {
   flex: 1;
   width: 100%;
-  padding: 3rem 2.5rem;
+  padding: $space-2;
 
   @media (max-width: 480px) {
     padding: 2rem 1.25rem;

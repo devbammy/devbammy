@@ -17,7 +17,8 @@ $ease-premium: cubic-bezier(
   justify-content: center;
   align-items: center;
   pointer-events: none; // Allows users to click things behind it right as it disappears
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Figtree', sans-serif;
+  font-optical-sizing: auto;
   overflow: hidden;
 
   // Total collapse of the main container right after panels clear out
