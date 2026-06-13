@@ -2,7 +2,12 @@
 $bg-color: #0a0a0a; // Richer modern dark mode black
 $accent-color: #ffffff;
 $animation-duration: 2.8s;
-$ease-premium: cubic-bezier(0.85, 0, 0.15, 1); // Smooth, aggressive deceleration
+$ease-premium: cubic-bezier(
+  0.85,
+  0,
+  0.15,
+  1
+); // Smooth, aggressive deceleration
 
 .loaderContainer {
   position: fixed;
@@ -14,7 +19,7 @@ $ease-premium: cubic-bezier(0.85, 0, 0.15, 1); // Smooth, aggressive deceleratio
   pointer-events: none; // Allows users to click things behind it right as it disappears
   font-family: 'Poppins', sans-serif;
   overflow: hidden;
-  
+
   // Total collapse of the main container right after panels clear out
   animation: fadeContainer 0.1s linear $animation-duration forwards;
 }
@@ -26,7 +31,7 @@ $ease-premium: cubic-bezier(0.85, 0, 0.15, 1); // Smooth, aggressive deceleratio
   width: 100%;
   height: 50vh;
   background: $bg-color;
-  
+
   &.topPanel {
     top: 0;
     transform-origin: top;
@@ -59,11 +64,10 @@ $ease-premium: cubic-bezier(0.85, 0, 0.15, 1); // Smooth, aggressive deceleratio
   font-weight: 700;
   color: $accent-color;
   letter-spacing: -0.03em;
-  text-transform: lowercase;
-  
+
   // Combines a dramatic entry with an elegant vanish
   transform: translateY(100%);
-  animation: 
+  animation:
     revealText 1.2s $ease-premium 0.3s forwards,
     fadeTextOut 0.6s ease-in-out ($animation-duration - 0.8s) forwards;
 }
@@ -98,7 +102,8 @@ $ease-premium: cubic-bezier(0.85, 0, 0.15, 1); // Smooth, aggressive deceleratio
 
 // 3. Top Half slides completely off-screen upwards
 @keyframes slideTopOut {
-  0%, 70% {
+  0%,
+  70% {
     transform: translateY(0);
   }
   100% {
@@ -108,7 +113,8 @@ $ease-premium: cubic-bezier(0.85, 0, 0.15, 1); // Smooth, aggressive deceleratio
 
 // 4. Bottom Half slides completely off-screen downwards
 @keyframes slideBottomOut {
-  0%, 70% {
+  0%,
+  70% {
     transform: translateY(0);
   }
   100% {

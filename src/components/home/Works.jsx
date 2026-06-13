@@ -20,7 +20,7 @@ const Works = () => {
   };
 
   return (
-    <section className={styles.marqueeSection}>
+    <div className={styles.marqueeSection}>
       {/* Top Row: Forward Scrolling */}
       <div className={styles.marqueeRow}>
         <div className={styles.marquee}>
@@ -36,7 +36,7 @@ const Works = () => {
           )}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -10,7 +10,7 @@ const Loader = () => {
       {/* Content Layer */}
       <div className={styles.content}>
         <div className={styles.textMask}>
-          <h1 className={styles.brand}>devBammy</h1>
+          <h1 className={styles.brand}>devBammy...</h1>
         </div>
       </div>
     </div>

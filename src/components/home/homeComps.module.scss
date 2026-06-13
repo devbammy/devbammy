@@ -95,8 +95,8 @@ $roll-transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  padding: 4rem 0;
+  gap: 0.8rem;
+  padding: 2rem 0;
 
   /* CRITICAL NORDEN FIX: 
     Forces the scrolling rows to expand past the 880px grid boundaries 
