@@ -11,7 +11,7 @@ $roll-transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
   text-decoration: none;
   overflow: hidden;
   border-radius: 0.2rem;
-  padding: 0.5rem 1rem;
+  padding: 0.7rem 1rem;
   font-weight: 600;
   cursor: pointer;
   z-index: 1;
@@ -53,7 +53,7 @@ $roll-transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
   .textBox {
     position: relative;
     overflow: hidden;
-    font-size: 0.95rem;
+    font-size: 0.75rem;
     line-height: 1.2;
     height: 1.2em;
   }
