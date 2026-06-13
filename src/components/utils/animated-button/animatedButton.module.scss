@@ -2,23 +2,20 @@
 
 $roll-transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
 
-// Base Structural Rules
 .animatedButton {
   display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  justify-content: center;
+  gap: 8px;
   position: relative;
   text-decoration: none;
   overflow: hidden;
-  border-radius: 0.5rem;
-  padding: 0rem 0.5rem;
+  border-radius: 0.2rem;
+  padding: 0.5rem 1rem;
   font-weight: 600;
   cursor: pointer;
   z-index: 1;
   box-shadow: var(--shadow);
-
-  // Transition everything smoothly on manual/system theme switches
   transition:
     background-color 0.3s ease,
     border-color 0.3s ease,
@@ -28,61 +25,31 @@ $roll-transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
     width: max-content;
   }
 
-  // Sliding Interaction Fill Layer
   &::before {
     content: '';
     position: absolute;
     inset: 0;
-
-    // Crucial Change: The background fill color is now completely theme-adaptive!
-    // It matches the opposing font color of the theme for a smooth inverse effect.
     background-color: var(--text);
-
     z-index: -1;
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
   }
 
-  /* ==========================================================================
-     VARIATION 1: Primary (Matches Theme Containers)
-     ========================================================================== */
   &.primary {
     background-color: color-mix(in srgb, var(--container) 50%, transparent);
     color: var(--text);
-
-    .arrowBox {
-      background-color: var(--grayAlt);
-      color: var(--text);
-      display: none;
-    }
   }
 
-  /* ==========================================================================
-     VARIATION 2: Secondary (Inverted Solid Accent Background)
-     ========================================================================== */
   &.secondary {
     background-color: var(--text);
     color: var(--container);
 
-    .arrowBox {
-      background-color: var(--bg);
-      color: var(--text);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 0rem;
-    }
-
-    // Invert the hover slide background direction for differentiation if desired
     &::before {
       background-color: var(--container);
     }
   }
 
-  /* ==========================================================================
-     Internal Element Positioning
-     ========================================================================== */
   .textBox {
     position: relative;
     overflow: hidden;
@@ -91,29 +58,31 @@ $roll-transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
     height: 1.2em;
   }
 
-  .text {
-    display: block;
-    transition: $roll-transition;
-
-    &.duplicate {
-      position: absolute;
-      left: 0;
-      top: 100%;
-    }
-  }
-
+  // FIXED: Cleared box structures so the wrapper takes on text bounds natively
   .arrowBox {
     position: relative;
-    width: 42px;
-    height: 38px;
     overflow: hidden;
-    border-radius: 6px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    transition:
-      background-color 0.3s ease,
-      color 0.3s ease;
+    font-size: 0.95rem;
+    line-height: 1.2;
+    height: 1.2em;
+    width: 1.2em;
+    background-color: transparent !important;
+    border-radius: 0;
+  }
+
+  .text,
+  .arrow {
+    display: block;
+    transition: $roll-transition;
+  }
+
+  .text.duplicate {
+    position: absolute;
+    left: 0;
+    top: 100%;
   }
 
   .arrow {
@@ -122,28 +91,23 @@ $roll-transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: $roll-transition;
     z-index: 2;
 
     svg,
     img {
-      width: 18px;
-      height: 18px;
+      width: 1em;
+      height: 1em;
+      object-fit: contain;
     }
 
     &.duplicateArrow {
-      transform: translateX(-100%);
+      transform: translateY(100%);
       z-index: 1;
     }
   }
 
-  /* ==========================================================================
-     Dynamic Interaction Handlers (Completely Monochromatic)
-     ========================================================================== */
   &.primary:hover {
-    color: var(
-      --container
-    ) !important; // Forces text color to seamlessly match inverted backdrop
+    color: var(--container) !important;
 
     &::before {
       transform: scaleX(1);
@@ -152,27 +116,18 @@ $roll-transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
 
     .text {
       transform: translateY(-100%);
-      color: var(--container) !important;
-    }
-
-    .arrowBox {
-      background-color: rgba(255, 255, 255, 0.15) !important;
-      color: var(--container) !important;
     }
 
     .arrow {
-      transform: translateX(100%);
-      color: var(--container) !important;
+      transform: translateY(-100%);
 
       &.duplicateArrow {
-        transform: translateX(0);
-        color: var(--container) !important;
+        transform: translateY(0);
       }
     }
   }
 
   &.secondary:hover {
-    border-color: var(--text);
     color: var(--text) !important;
 
     &::before {
@@ -182,21 +137,13 @@ $roll-transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
 
     .text {
       transform: translateY(-100%);
-      color: var(--text) !important;
-    }
-
-    .arrowBox {
-      background-color: var(--grayAlt) !important;
-      color: var(--text) !important;
     }
 
     .arrow {
-      transform: translateX(100%);
-      color: var(--text) !important;
+      transform: translateY(-100%);
 
       &.duplicateArrow {
-        transform: translateX(0);
-        color: var(--text) !important;
+        transform: translateY(0);
       }
     }
   }

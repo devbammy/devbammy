@@ -1,4 +1,4 @@
-import { Phone } from 'lucide-react';
+import { HiOutlinePhone } from 'react-icons/hi';
 import Me from '../../assets/me.jpg';
 import { AnimatedButton } from '../utils/animated-button/AnimatedButton';
 import styles from './homeComps.module.scss';
@@ -30,7 +30,7 @@ const Hero = () => {
             href="/contact"
             text="Book a Call"
             variant="secondary"
-            icon={<Phone />}
+            icon={<HiOutlinePhone />}
           />
           <AnimatedButton
             href="/contact"

@@ -6,17 +6,23 @@
     margin-bottom: 1rem;
 
     .profile_image {
-      width: 100px;
-      height: 100px;
+      width: 70px;
+      height: 70px;
       border-radius: 50%;
       overflow: hidden;
       aspect-ratio: 1/1;
     }
 
+    .hero_text {
+      h1 {
+        width: 50% !important;
+      }
+    }
+
     .profile_details {
       p {
         color: #f1f1f1;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
       }
     }
   }
