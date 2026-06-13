@@ -85,3 +85,105 @@
     }
   }
 }
+
+// Works Section Styling
+.marqueeSection {
+  // padding: 60px 0 120px;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  // Global hover slowdown for better accessibility & micro-interactions
+  &:hover {
+    .marquee {
+      animation-play-state: paused;
+    }
+  }
+}
+
+.marqueeRow {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.marquee {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  width: max-content;
+  will-change: transform; // Optimizes hardware acceleration for silky smooth 60fps renders
+  animation: scrollX 40s linear infinite;
+
+  &.reverse {
+    animation-direction: reverse;
+  }
+}
+
+@keyframes scrollX {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(
+      -50%,
+      0,
+      0
+    ); // Works perfectly because track arrays are evenly doubled
+  }
+}
+
+.mCard {
+  position: relative;
+  width: clamp(200px, 40vw, 200px); // Responsive sizing for mobile viewports
+  height: 140px;
+  border-radius: var(--radius, 16px);
+  overflow: hidden;
+  background: var(--card, #1e293b);
+  flex-shrink: 0;
+  display: block;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .viewTag {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: var(--ink, #0f172a);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 100px;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(8px);
+    transition:
+      opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  // Hover states
+  &:hover {
+    img {
+      transform: scale(1.04);
+    }
+
+    .viewTag {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
