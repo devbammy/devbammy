@@ -87,35 +87,79 @@
 }
 
 // Works Section Styling
+
+$roll-transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
+
+// Works Section Styling
 .marqueeSection {
-  // padding: 60px 0 120px;
-  overflow: hidden;
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  padding: 4rem 0;
 
-  // Global hover slowdown for better accessibility & micro-interactions
+  /* CRITICAL NORDEN FIX: 
+    Forces the scrolling rows to expand past the 880px grid boundaries 
+    all the way to the screen edges, without altering the master container flow!
+  */
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  overflow: hidden;
+
   &:hover {
     .marquee {
       animation-play-state: paused;
     }
+  }
+
+  // Gracefully bounds full-width layouts on ultra large displays
+  @media (min-width: 1800px) {
+    width: 100%;
+    left: 0;
+    transform: none;
   }
 }
 
 .marqueeRow {
   display: flex;
   width: 100%;
+  // Explicit containment ensures widths never spill over horizontally
   overflow: hidden;
+  position: relative;
+
+  // Creates soft, high-fidelity fading edges on the sides of your project tracks
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    z-index: 5;
+    pointer-events: none;
+  }
+  &::before {
+    left: 0;
+    background: linear-gradient(
+      to right,
+      var(--container) 0%,
+      transparent 100%
+    );
+  }
+  &::after {
+    right: 0;
+    background: linear-gradient(to left, var(--container) 0%, transparent 100%);
+  }
 }
 
 .marquee {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 24px;
   width: max-content;
-  will-change: transform; // Optimizes hardware acceleration for silky smooth 60fps renders
+  will-change: transform;
   animation: scrollX 40s linear infinite;
 
   &.reverse {
@@ -128,62 +172,83 @@
     transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translate3d(
-      -50%,
-      0,
-      0
-    ); // Works perfectly because track arrays are evenly doubled
+    // Exact half-step translation for duplicate array elements
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
 .mCard {
   position: relative;
-  width: clamp(200px, 40vw, 200px); // Responsive sizing for mobile viewports
-  height: 140px;
-  border-radius: var(--radius, 16px);
-  overflow: hidden;
+  // Clear, absolute size definitions prevent cross-browser card stretching
+  width: 280px;
+  height: 180px;
+  border-radius: var(
+    --radius
+  ); // Ties neatly into your global sharp-corner styling tokens
+  border: 1px solid var(--grayAlt);
   background: var(--card, #1e293b);
   flex-shrink: 0;
   display: block;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+  overflow: hidden !important;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: rgba(
+      0,
+      0,
+      0,
+      0.4
+    ); // Darkened slightly for clearer textual contrast
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: top;
+    object-position: center;
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .viewTag {
     position: absolute;
-    top: 16px;
-    left: 16px;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    color: var(--ink, #0f172a);
-    font-size: 0.8rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.95);
+    background: var(--container);
+    color: var(--text);
+    font-size: 0.75rem;
     font-weight: 600;
-    padding: 8px 16px;
-    border-radius: 100px;
+    letter-spacing: 0.02em;
+    padding: 10px 18px;
+    border-radius: 4px;
+    border: 1px solid var(--grayAlt);
+    width: max-content;
     z-index: 2;
     opacity: 0;
-    transform: translateY(8px);
     transition:
-      opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-      transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      opacity 0.3s ease,
+      transform 0.3s ease;
+    pointer-events: none;
   }
 
-  // Hover states
   &:hover {
+    &::after {
+      opacity: 1;
+    }
+
     img {
       transform: scale(1.04);
     }
 
     .viewTag {
       opacity: 1;
-      transform: translateY(0);
+      transform: translate(-50%, -50%) scale(1);
     }
   }
 }

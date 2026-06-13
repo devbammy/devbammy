@@ -1,0 +1,377 @@
+@use '../../styles/variables' as *;
+
+// ============================================
+//  PROJECT DETAIL PAGE
+// ============================================
+
+.projectDetail {
+  width: 100%;
+  min-height: 100vh;
+}
+
+// ── Hero Section ──
+.hero {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+  background: var(--card);
+
+  @include sm {
+    height: 260px;
+  }
+
+  .heroImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+  }
+
+  // Gradient overlay for text readability
+  .heroOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      transparent 30%,
+      rgba(0, 0, 0, 0.75) 100%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem 2.5rem;
+
+    @include sm {
+      padding: 1.25rem;
+    }
+  }
+
+  .heroTitle {
+    color: #fff;
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.75rem;
+    width: 100%;
+  }
+
+  .heroCta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 0.6rem 1.25rem;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    width: max-content;
+    transition:
+      background 0.3s ease,
+      transform 0.3s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-1px);
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover svg {
+      transform: translateX(3px);
+    }
+  }
+}
+
+// ── Content Sections ──
+.contentSection {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 2rem 2.5rem;
+  margin-bottom: 0.5rem;
+
+  @include sm {
+    padding: 1.5rem 1.25rem;
+  }
+
+  h2 {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+  }
+
+  p {
+    font-size: 0.97rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// ── Gallery Section ──
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.25rem;
+
+  @include sm {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.galleryItem {
+  border-radius: calc(var(--radius) - 4px);
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  background: var(--grayAlt);
+  border: 1px solid var(--grayAlt);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    transition: transform 0.4s ease;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+}
+
+// ── Tech Stack Section ──
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.25rem;
+}
+
+.techBadge {
+  background: var(--grayAlt);
+  color: var(--text);
+  padding: 0.5rem 1rem;
+  border-radius: 100px;
+  font-size: 0.825rem;
+  font-weight: 500;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+
+  &:hover {
+    background: color-mix(in srgb, var(--grayAlt) 85%, var(--text) 15%);
+    transform: translateY(-1px);
+  }
+}
+
+// ── Next Project Card ──
+.nextProjectCard {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 1.5rem 2rem;
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+  color: var(--text);
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    border-color 0.3s ease;
+  border: 1px solid transparent;
+
+  &:hover {
+    background: color-mix(in srgb, var(--card) 95%, var(--text) 5%);
+    transform: translateY(-2px);
+    border-color: var(--grayAlt);
+
+    .nextProjectArrow svg {
+      transform: translateX(3px);
+    }
+  }
+
+  @include sm {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    padding: 1.25rem;
+  }
+}
+
+.nextProjectImage {
+  width: 110px;
+  height: 72px;
+  border-radius: 6px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 1px solid var(--grayAlt);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  @include sm {
+    width: 100%;
+    height: 150px;
+  }
+}
+
+.nextProjectMeta {
+  flex: 1;
+
+  .nextLabel {
+    font-size: 0.725rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.5;
+    margin-bottom: 0.25rem;
+    display: block;
+  }
+
+  .nextTitle {
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text);
+  }
+}
+
+.nextProjectArrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--grayAlt);
+  flex-shrink: 0;
+
+  svg {
+    width: 18px;
+    height: 18px;
+    color: var(--text);
+    transition: transform 0.3s ease;
+  }
+
+  @include sm {
+    align-self: flex-end;
+  }
+}
+
+// ── Social Links ──
+.socialSection {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 2rem 2.5rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+
+  @include sm {
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+.socialLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.5;
+}
+
+.socialLinks {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--grayAlt);
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+  overflow: hidden;
+
+  img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover {
+    background: color-mix(in srgb, var(--grayAlt) 60%, var(--text) 40%);
+    transform: translateY(-2px);
+
+    img {
+      opacity: 1;
+    }
+  }
+}
+
+// ── Back Link ──
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text);
+  text-decoration: none;
+  opacity: 0.6;
+  margin-bottom: 1.25rem;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+
+  svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    opacity: 1;
+
+    svg {
+      transform: translateX(-3px);
+    }
+  }
+}
