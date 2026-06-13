@@ -1,4 +1,5 @@
 import { HiOutlinePhone } from 'react-icons/hi';
+import { HiArrowRight } from 'react-icons/hi2'; // Added a nice accent icon for the primary CTA
 import Me from '../../assets/me.jpg';
 import { AnimatedButton } from '../utils/animated-button/AnimatedButton';
 import styles from './homeComps.module.scss';
@@ -8,7 +9,7 @@ const Hero = () => {
     <section className={styles.hero}>
       <div className={styles.profile}>
         <div className={styles.profile_image}>
-          <img src={Me} alt="my profile picture" />
+          <img src={Me} alt="Emmanuel Bamidele profile picture" />
         </div>
         <div className={styles.profile_details}>
           <h3>Emmanuel Bamidele</h3>
@@ -27,15 +28,16 @@ const Hero = () => {
 
         <div className={styles.hero_ctas}>
           <AnimatedButton
+            href="/projects"
+            text="View My Works"
+            variant="primary"
+            icon={<HiArrowRight />}
+          />
+          <AnimatedButton
             href="/contact"
             text="Book a Call"
             variant="secondary"
             icon={<HiOutlinePhone />}
-          />
-          <AnimatedButton
-            href="/contact"
-            text="View My Works"
-            variant="primary"
           />
         </div>
       </div>

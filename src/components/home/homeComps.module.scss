@@ -1,35 +1,87 @@
 .hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: max-content;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+
   .profile {
     display: flex;
     align-items: center;
-    gap: 2rem;
-    margin-bottom: 1rem;
+    gap: 1rem;
+    margin-bottom: 2rem;
 
     .profile_image {
-      width: 70px;
-      height: 70px;
+      width: 64px;
+      height: 64px;
       border-radius: 50%;
       overflow: hidden;
-      aspect-ratio: 1/1;
-    }
-
-    .hero_text {
-      h1 {
-        width: 50% !important;
-      }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--border-color, #e2e8f0);
     }
 
     .profile_details {
-      p {
-        color: #f1f1f1;
-        font-size: 0.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+
+      h3 {
+        font-weight: 600;
+        margin: 0;
+        line-height: 1.2;
       }
+
+      p {
+        margin: 0;
+        opacity: 0.75;
+        font-size: 0.875rem;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .hero_text {
+    h1 {
+      font-size: clamp(2rem, 5vw, 2.5rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+      max-width: 90%;
+    }
+
+    p {
+      font-size: clamp(1rem, 2vw, 1.125rem);
+      line-height: 1.6;
+      opacity: 0.8;
+      max-width: 680px;
+      margin-bottom: 2.5rem;
     }
   }
 
   .hero_ctas {
     display: flex;
+    flex-wrap: wrap; // Prevents CTA clipping on small/narrow screens
     gap: 1rem;
-    margin-top: 2rem;
+  }
+}
+
+// Mobile Responsiveness Tweaks
+@media (max-width: 480px) {
+  .hero {
+    padding: 1rem;
+
+    .hero_ctas {
+      // flex-direction: column;
+      width: 100%;
+
+      :global(.animated-button) {
+        width: 100%; // If your button utility supports it, stretches them full width
+      }
+    }
   }
 }
