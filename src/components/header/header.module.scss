@@ -1,0 +1,161 @@
+@use '../../styles/variables' as *;
+
+.header {
+  width: 100%;
+  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--grayAlt);
+  background-color: var(--container);
+  transition: var(--transition);
+  position: relative;
+  z-index: 90;
+  padding: 0 1.5rem;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  flex: 1;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 100%;
+    text-decoration: none;
+
+    img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+}
+
+// Vertical arrangement layout block
+.identityStack {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  line-height: 1.1;
+
+  .brandName {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--text);
+  }
+}
+
+/* Redesigned micro-sized badge for nested inline usage */
+.availableBadge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  .badgeText {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text);
+    opacity: 0.5;
+  }
+
+  .statusDot {
+    position: relative;
+    width: 5px;
+    height: 5px;
+    background-color: var(--yellow);
+    border-radius: 50%;
+
+    .pulseRing {
+      position: absolute;
+      inset: -3px;
+      border: 2px solid var(--text);
+      border-radius: 50%;
+      opacity: 0;
+      animation: statusRadar 2s cubic-bezier(0.25, 0, 0, 1) infinite;
+    }
+  }
+}
+
+.toggleWrapper {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 1.5rem;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.menuOverlay {
+  position: absolute;
+  top: 74px;
+  left: -1px;
+  right: -1px;
+  background-color: var(--container);
+  border-bottom: 1px solid var(--grayAlt);
+  padding: 2rem 1.5rem;
+  z-index: -1;
+  border-left: 1px solid var(--grayAlt);
+  border-right: 1px solid var(--grayAlt);
+  border-radius: var(--radius);
+}
+
+.overlayNav {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  width: 100%;
+
+  > div {
+    width: 100%;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 54px;
+
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text);
+    text-transform: capitalize;
+    text-decoration: none;
+
+    border-radius: 6px;
+    border: 1px solid var(--grayAlt);
+    background-color: var(--card);
+    transition:
+      background-color 0.2s ease,
+      border-color 0.2s ease;
+
+    &:hover {
+      background-color: var(--grayAlt);
+      opacity: 1;
+    }
+  }
+}
+
+@keyframes statusRadar {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.8;
+  }
+  70%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}

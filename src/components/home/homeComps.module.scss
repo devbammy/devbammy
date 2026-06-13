@@ -1,0 +1,29 @@
+.hero {
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+
+    .profile_image {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      aspect-ratio: 1/1;
+    }
+
+    .profile_details {
+      p {
+        color: #f1f1f1;
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .hero_ctas {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+}

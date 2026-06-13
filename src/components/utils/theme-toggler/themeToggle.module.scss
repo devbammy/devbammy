@@ -1,0 +1,53 @@
+.toggleBtn {
+  position: relative;
+  width: 34px;
+  height: 18px;
+  border-radius: 30px;
+  border: 1px solid var(--grayAlt);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 4px; // Acts as the bounds margin for the thumb
+  transition:
+    background-color 0.4s ease,
+    box-shadow 0.3s ease;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+
+  // Track Colors based on theme state
+  &.lightMode {
+    background-color: var(--card);
+    justify-content: flex-start;
+  }
+
+  &.darkMode {
+    background-color: var(--card);
+    justify-content: flex-end;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--yellow);
+    outline-offset: 2px;
+  }
+}
+
+.thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 3px 8px rgba(0, 0, 0, 0.15),
+    0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  user-select: none;
+}
