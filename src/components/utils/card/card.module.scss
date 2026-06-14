@@ -25,6 +25,10 @@
       position: absolute;
       top: 10%;
       left: 5%;
+
+      @include sm {
+        font-size: 3rem;
+      }
     }
 
     h3 {

@@ -9,14 +9,6 @@ const Home = () => {
   return (
     <>
       <Hero />
-      <ScrollVelocity
-        texts={['Full Stack Web/Mobile Developer']}
-        velocity={25}
-        className="custom-scroll-text"
-        numCopies={12}
-        damping={80}
-        stiffness={400}
-      />
       <Works />
       <Services services={services} />
     </>
