@@ -1,0 +1,136 @@
+@use '../../styles/tokens' as *;
+
+.footer {
+  width: 98%;
+  padding: $space-6;
+  background-color: var(--card);
+  margin: 1rem auto;
+  border-top: 1px solid var(--grayAlt);
+  display: flex;
+  flex-direction: column;
+  border-radius: $radius-md;
+  gap: 3rem;
+  transition: var(--transition);
+
+  @media (max-width: 480px) {
+    padding: 3rem 1.25rem 2rem;
+    gap: 2.5rem;
+  }
+}
+
+.topSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap; // Gracefully wraps content keys on narrow viewports
+}
+
+.brandSide {
+  .brandText {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    h4 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0;
+    }
+
+    p {
+      font-size: 0.875rem;
+      color: var(--gray);
+      margin: 0;
+    }
+  }
+}
+
+.socialDock {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px; // Matches the height of your previous high-fidelity buttons
+  background-color: var(--card);
+  border: 1px solid var(--grayAlt);
+  padding: 0 8px;
+  border-radius: 8px;
+  transition: var(--transition);
+
+  @media (max-width: 480px) {
+    width: 100%;
+    justify-content: center;
+    height: 52px; // Slightly taller for better touch targets on mobile
+  }
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: var(--text);
+  border-radius: 6px;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+  opacity: 0.8;
+
+  &:hover {
+    opacity: 1;
+    background-color: var(--grayAlt);
+    transform: translateY(-2px); // Subtle lift interaction
+  }
+
+  svg {
+    stroke-width: 2px;
+  }
+}
+
+.divider {
+  border: none;
+  height: 1px;
+  background-color: var(--grayAlt);
+  width: 100%;
+  margin: 0;
+}
+
+.bottomSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap-reverse; // Pushes copyright below links elegantly on mobile break
+
+  .copyright {
+    font-size: 0.8rem;
+    color: var(--gray);
+    margin: 0;
+  }
+}
+
+.footerNav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+
+  a {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    gap: 1.25rem;
+  }
+}
