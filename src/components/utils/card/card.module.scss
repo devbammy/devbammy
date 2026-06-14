@@ -41,6 +41,10 @@
       top: 0;
       right: 0;
       border-bottom-left-radius: $space-2;
+
+      @include sm {
+        font-size: $font-size-xl;
+      }
     }
   }
 }

@@ -251,5 +251,9 @@ $roll-transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
     align-items: flex-start;
     justify-content: center;
     grid-gap: $space-2;
+
+    @include sm {
+      grid-template-columns: 1fr;
+    }
   }
 }
