@@ -1,4 +1,5 @@
 @use '../../styles/tokens' as *;
+@use '../../styles/mixins' as *;
 
 .footer {
   width: 98%;
@@ -12,9 +13,9 @@
   gap: 3rem;
   transition: var(--transition);
 
-  @media (max-width: 480px) {
-    padding: 3rem 1.25rem 2rem;
+  @include sm {
     gap: 2.5rem;
+    width: 90%;
   }
 }
 
@@ -51,17 +52,17 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  height: 44px; // Matches the height of your previous high-fidelity buttons
+  //   height: 64px;
   background-color: var(--card);
   border: 1px solid var(--grayAlt);
   padding: 0 8px;
   border-radius: 8px;
   transition: var(--transition);
 
-  @media (max-width: 480px) {
+  @include sm {
     width: 100%;
     justify-content: center;
-    height: 52px; // Slightly taller for better touch targets on mobile
+    height: 52px;
   }
 }
 
@@ -69,14 +70,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 52px;
+  height: 52px;
   color: var(--text);
   border-radius: 6px;
   transition:
     background-color 0.2s ease,
     transform 0.2s ease;
   opacity: 0.8;
+  font-size: 32px;
+
+  &:last-child {
+    font-size: 40px;
+  }
 
   &:hover {
     opacity: 1;

@@ -15,9 +15,9 @@ const Footer = () => {
       url: 'https://linkedin.com',
       label: 'LinkedIn',
     },
-    { icon: <FaSquareXTwitter size={18} />, url: 'https://x.com', label: 'X' },
+    { icon: <FaSquareXTwitter />, url: 'https://x.com', label: 'X' },
     {
-      icon: <AiFillInstagram size={18} />,
+      icon: <AiFillInstagram />,
       url: 'https://instagram.com',
       label: 'Instagram',
     },
