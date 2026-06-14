@@ -12,7 +12,7 @@
   transition: var(--transition);
   position: relative;
   z-index: 90;
-  padding: $space-2;
+  padding: $space-2 $space-4;
 
   @include sm {
     width: 96%;

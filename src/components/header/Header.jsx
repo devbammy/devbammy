@@ -64,7 +64,7 @@ const Header = () => {
 
           {/* Stacked Identity Column */}
           <div className={styles.identityStack}>
-            <span className={styles.brandName}>bamidele.dev</span>
+            <span className={styles.brandName}>devBammy</span>
 
             {/* Repositioned Status Badge */}
             <div className={styles.availableBadge}>

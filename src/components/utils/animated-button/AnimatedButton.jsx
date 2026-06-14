@@ -13,10 +13,9 @@ export const AnimatedButton = ({
   text,
   active,
   onClick,
-  icon = '→', // Can be text "→", an image path, or a React component icon
+  icon = '→',
   variant = 'primary', // 'primary' or 'secondary'
 }) => {
-  // Combine native structural classes with our variation modifier
   const className = `${style.animatedButton} ${style[variant]} ${active ? style.active : ''}`;
 
   const renderContent = () => (

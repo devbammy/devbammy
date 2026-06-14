@@ -12,7 +12,7 @@ const Hero = () => {
           <img src={Me} alt="Emmanuel Bamidele profile picture" />
         </div>
         <div className={styles.profile_details}>
-          <h3>Emmanuel Bamidele</h3>
+          <h4>Emmanuel Bamidele</h4>
           <p>Full Stack Web/Mobile Engr.</p>
         </div>
       </div>
