@@ -1,0 +1,42 @@
+@use '../../../styles/tokens' as *;
+@use '../../../styles/mixins' as *;
+
+.card {
+  width: 100%;
+  height: max-content;
+  min-height: 170px;
+  padding: $space-4;
+  background-color: var(--card);
+  border-radius: $radius-md;
+  position: relative;
+  overflow: hidden;
+
+  .title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+
+    .tag {
+      font-size: $font-size-4xl;
+      opacity: 0.07;
+      font-weight: bolder;
+      position: absolute;
+      top: 10%;
+      left: 5%;
+    }
+
+    h3 {
+      align-items: end;
+      text-align: end;
+      font-size: $font-size-md;
+      background-color: var(--container);
+      padding: $space-2;
+      position: absolute;
+      top: 0;
+      right: 0;
+      border-bottom-left-radius: $space-2;
+    }
+  }
+}
