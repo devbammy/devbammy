@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import style from './animatedButton.module.scss';
 
 const RollingText = ({ text }) => (
@@ -45,15 +46,15 @@ export const AnimatedButton = ({
 
   if (href) {
     return (
-      <a
-        href={href}
+      <Link
+        to={href}
         target={target}
         onClick={onClick}
         className={className}
         rel={target === '_blank' ? 'noopener noreferrer' : undefined}
       >
         {renderContent()}
-      </a>
+      </Link>
     );
   }
 

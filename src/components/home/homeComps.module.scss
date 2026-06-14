@@ -48,9 +48,9 @@
   }
 
   .hero_ctas {
+    width: 100%;
     display: flex;
-    flex-wrap: wrap; // Prevents CTA clipping on small/narrow screens
-    gap: 1rem;
+    gap: $space-3;
   }
 }
 
