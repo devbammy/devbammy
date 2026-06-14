@@ -148,4 +148,9 @@ $roll-transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
       }
     }
   }
+  &.fullWidth {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
 }

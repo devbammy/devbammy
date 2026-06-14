@@ -14,9 +14,10 @@ export const AnimatedButton = ({
   active,
   onClick,
   icon = '→',
-  variant = 'primary', // 'primary' or 'secondary'
+  variant = 'primary',
+  isFull = true,
 }) => {
-  const className = `${style.animatedButton} ${style[variant]} ${active ? style.active : ''}`;
+  const className = `${style.animatedButton} ${style[variant]} ${isFull && style.fullWidth}  ${active ? style.active : ''}`;
 
   const renderContent = () => (
     <>

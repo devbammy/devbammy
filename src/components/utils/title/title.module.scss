@@ -1,5 +1,8 @@
+@use '../../../styles/tokens' as *;
+
 .title {
   text-align: center;
   font-size: 20px;
   font-weight: bold;
+  border-radius: $radius-md;
 }
