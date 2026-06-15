@@ -7,8 +7,16 @@ import styles from './home.module.scss';
 import FAQs from '../../components/home/FAQs';
 import { AnimatedLink } from '../../components/utils/animated-link/AnimatedLink';
 import { AnimatedButton } from '../../components/utils/animated-button/AnimatedButton';
+import { useEffect } from 'react';
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+  }, []);
   return (
     <>
       <Hero />
