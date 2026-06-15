@@ -4,6 +4,7 @@ import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { FaSquareXTwitter } from 'react-icons/fa6';
 import { AiFillInstagram } from 'react-icons/ai';
 import styles from './footer.module.scss';
+import { AnimatedButton } from '../utils/animated-button/AnimatedButton';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -33,22 +34,17 @@ const Footer = () => {
           <h4>Let's collaborate</h4>
           <p>Ready to bring your application ideas to life.</p>
         </div>
+      </div>
 
-        {/* Social Dock: Same shape/size profile as the previous button */}
-        <div className={styles.socialDock}>
-          {socialLinks.map((link, index) => (
-            <a
-              key={index}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.socialLink}
-              aria-label={link.label}
-            >
-              {link.icon}
-            </a>
-          ))}
-        </div>
+      <div className={styles.socialDock}>
+        {socialLinks.map((link, index) => (
+          <AnimatedButton
+            href=""
+            target="_blank"
+            icon={link.icon}
+            text={link.label}
+          />
+        ))}
       </div>
 
       <hr className={styles.divider} />

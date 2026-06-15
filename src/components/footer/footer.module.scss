@@ -49,50 +49,12 @@
 }
 
 .socialDock {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   align-items: center;
-  gap: 8px;
-  //   height: 64px;
-  background-color: var(--card);
-  border: 1px solid var(--grayAlt);
+  justify-content: space-between;
+  grid-gap: 1rem;
   padding: 0 8px;
-  border-radius: 8px;
-  transition: var(--transition);
-
-  @include sm {
-    width: 100%;
-    justify-content: center;
-    height: 52px;
-  }
-}
-
-.socialLink {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 52px;
-  height: 52px;
-  color: var(--text);
-  border-radius: 6px;
-  transition:
-    background-color 0.2s ease,
-    transform 0.2s ease;
-  opacity: 0.8;
-  font-size: 32px;
-
-  &:last-child {
-    font-size: 40px;
-  }
-
-  &:hover {
-    opacity: 1;
-    background-color: var(--grayAlt);
-    transform: translateY(-2px); // Subtle lift interaction
-  }
-
-  svg {
-    stroke-width: 2px;
-  }
 }
 
 .divider {
