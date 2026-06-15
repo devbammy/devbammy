@@ -26,17 +26,15 @@
   }
 }
 
-// Mobile Responsiveness Tweaks
-@media (max-width: 480px) {
+@include sm {
   .hero {
     padding: 1rem;
 
     .hero_ctas {
-      // flex-direction: column;
       width: 100%;
 
       :global(.animated-button) {
-        width: 100%; // If your button utility supports it, stretches them full width
+        width: 100%;
       }
     }
   }
@@ -53,11 +51,6 @@ $roll-transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
   flex-direction: column;
   gap: 0.8rem;
   padding: 2rem 0;
-
-  /* CRITICAL NORDEN FIX: 
-    Forces the scrolling rows to expand past the 880px grid boundaries 
-    all the way to the screen edges, without altering the master container flow!
-  */
   position: relative;
   left: 50%;
   transform: translateX(-50%);
@@ -70,22 +63,23 @@ $roll-transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
     }
   }
 
-  // Gracefully bounds full-width layouts on ultra large displays
   @media (min-width: 1800px) {
     width: 100%;
     left: 0;
     transform: none;
+  }
+
+  @include sm {
+    width: 90vw;
   }
 }
 
 .marqueeRow {
   display: flex;
   width: 100%;
-  // Explicit containment ensures widths never spill over horizontally
   overflow: hidden;
   position: relative;
 
-  // Creates soft, high-fidelity fading edges on the sides of your project tracks
   &::before,
   &::after {
     content: '';
@@ -128,19 +122,15 @@ $roll-transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
     transform: translate3d(0, 0, 0);
   }
   100% {
-    // Exact half-step translation for duplicate array elements
     transform: translate3d(-50%, 0, 0);
   }
 }
 
 .mCard {
   position: relative;
-  // Clear, absolute size definitions prevent cross-browser card stretching
   width: 280px;
   height: 180px;
-  border-radius: var(
-    --radius
-  ); // Ties neatly into your global sharp-corner styling tokens
+  border-radius: var(--radius);
   border: 1px solid var(--grayAlt);
   background: var(--card, #1e293b);
   flex-shrink: 0;
@@ -152,12 +142,7 @@ $roll-transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
     position: absolute;
     inset: 0;
     z-index: 1;
-    background: rgba(
-      0,
-      0,
-      0,
-      0.4
-    ); // Darkened slightly for clearer textual contrast
+    background: rgba(0, 0, 0, 0.4);
     opacity: 0;
     transition: opacity 0.4s ease;
     pointer-events: none;
@@ -250,7 +235,6 @@ $roll-transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
   &:hover {
     border-color: color-mix(in srgb, var(--gray) 40%, transparent);
 
-    // Direct look-forward to hover effect on child element
     .faqIconBox {
       color: var(--text);
     }
@@ -301,9 +285,9 @@ $roll-transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
 }
 
 .faqAnswerInner {
-  padding: 0.5rem 1.5rem 1.5rem 1.5rem; // Top: 8px, Sides/Bottom: 24px
+  padding: 0.5rem 1.5rem 1.5rem 1.5rem;
   color: var(--text-secondary);
   opacity: 0.8;
-  font-size: 0.9375rem; // 15px
+  font-size: 0.9375rem;
   line-height: 1.6;
 }
