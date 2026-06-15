@@ -102,9 +102,9 @@ const Header = () => {
           >
             <nav className={styles.overlayNav}>
               {[
-                { to: '/', label: 'Home' },
                 { to: '/projects', label: 'Projects' },
                 { to: '/about', label: 'About' },
+                { to: '/resume', label: 'Resume' },
                 { to: '/contact', label: 'Contact' },
               ].map((item) => (
                 <motion.div key={item.to} variants={linkVariants}>
