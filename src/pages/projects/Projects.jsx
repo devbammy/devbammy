@@ -1,8 +1,17 @@
 import { Link } from 'react-router-dom';
 import { allProjects } from '../../assets/data/projects';
 import styles from './projects.module.scss';
+import { useEffect } from 'react';
 
 const Projects = () => {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+  }, []);
+
   return (
     <>
       <section className={styles.projectHeader}>

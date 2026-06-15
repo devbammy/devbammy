@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styles from './contact.module.scss';
+import { useEffect } from 'react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -19,6 +20,14 @@ const Contact = () => {
       setFormData({ name: '', email: '', message: '' });
     }, 1500);
   };
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+  }, []);
 
   return (
     <>

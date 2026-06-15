@@ -1,9 +1,18 @@
+import { useEffect } from 'react';
 import { certifications } from '../../assets/data/certifications';
 import { experiences } from '../../assets/data/experiences';
 import { skillGroups } from '../../assets/data/skillGroup';
 import styles from './resume.module.scss';
 
 const Resume = () => {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+  }, []);
+
   return (
     <>
       <section className={styles.resumeHeader}>
