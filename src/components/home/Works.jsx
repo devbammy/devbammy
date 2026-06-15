@@ -11,7 +11,7 @@ const Works = () => {
       <Link
         key={`${keyPrefix}-${work.id}-${index}`}
         className={styles.mCard}
-        to={`/work/${work.slug}`}
+        to={`/project/${work.slug}`}
       >
         <span className={styles.viewTag}>View Project</span>
         <img src={work.img} alt={work.name} loading="lazy" />

@@ -139,25 +139,14 @@ export const allProjects = [
   },
 ];
 
-// ============================================
-//  MARQUEE DATA (backwards-compatible exports)
-// ============================================
-
 export const topRowWorks = allProjects.filter((p) =>
-  ['t1', 't2', 't3', 't4', 't5', 't6'].includes(p.id)
+  ['t1', 't2', 't3', 't4', 't5', 't6'].includes(p.id),
 );
 
 export const bottomRowWorks = [
-  ...allProjects.filter((p) =>
-    ['b1', 'b2', 'b3', 'b4', 'b5'].includes(p.id)
-  ),
-  // Map RentXSpace (t5) as b6 to prevent a layout gap
-  { ...allProjects.find((p) => p.slug === 'rentxspace'), id: 'b6' }
+  ...allProjects.filter((p) => ['b1', 'b2', 'b3', 'b4', 'b5'].includes(p.id)),
+  { ...allProjects.find((p) => p.slug === 'rentxspace'), id: 'b6' },
 ];
-
-// ============================================
-//  HELPERS
-// ============================================
 
 export const getProjectBySlug = (slug) =>
   allProjects.find((p) => p.slug === slug);
