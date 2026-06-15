@@ -15,7 +15,7 @@ import { useTheme } from './context/ThemeContext';
 
 const App = () => {
   const { theme } = useTheme();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
