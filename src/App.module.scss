@@ -3,7 +3,6 @@
 
 .appStage {
   width: 100%;
-  min-width: 500px;
   min-height: 100vh;
   position: relative;
   display: flex;
@@ -12,16 +11,15 @@
 }
 
 .backgroundCanvas {
-  position: fixed; // Locks the particle field to the window viewport on scroll
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
 
-  // Sends the canvas to the back, underneath all headers, layout pages, and buttons
   z-index: 1;
-  pointer-events: none; // Allows clicks to pass right through the canvas to your text/buttons
-  opacity: 0.7; // Softens the animation overlay
+  pointer-events: none;
+  opacity: 0.7;
 }
 
 .container {
