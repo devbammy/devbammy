@@ -53,8 +53,8 @@ body {
   font-family: 'Figtree', sans-serif;
   font-optical-sizing: auto;
 
-  @media (max-width: 580px) {
-    padding: 0rem;
+  @include sm {
+    padding: $space-2;
   }
 }
 
