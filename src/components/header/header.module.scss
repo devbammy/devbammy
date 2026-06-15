@@ -84,7 +84,7 @@
       border: 2px solid var(--text);
       border-radius: 50%;
       opacity: 0;
-      animation: statusRadar 2s cubic-bezier(0.25, 0, 0, 1) infinite;
+      // animation: statusRadar 2s cubic-bezier(0.25, 0, 0, 1) infinite;
     }
   }
 }
@@ -154,14 +154,14 @@
   }
 }
 
-@keyframes statusRadar {
-  0% {
-    transform: scale(0.5);
-    opacity: 0.8;
-  }
-  70%,
-  100% {
-    transform: scale(2);
-    opacity: 0;
-  }
-}
+// @keyframes statusRadar {
+//   0% {
+//     transform: scale(0.5);
+//     opacity: 0.8;
+//   }
+//   70%,
+//   100% {
+//     transform: scale(2);
+//     opacity: 0;
+//   }
+// }
