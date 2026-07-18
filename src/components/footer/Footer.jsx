@@ -10,16 +10,20 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: <FaGithub />, url: 'https://github.com', label: 'GitHub' },
+    { icon: <FaGithub />, url: 'https://github.com/devbammy', label: 'GitHub' },
     {
       icon: <FaLinkedin />,
-      url: 'https://linkedin.com',
+      url: 'https://www.linkedin.com/in/emmanuel-olorunyomi',
       label: 'LinkedIn',
     },
-    { icon: <FaSquareXTwitter />, url: 'https://x.com', label: 'X' },
+    {
+      icon: <FaSquareXTwitter />,
+      url: 'https://x.com/bamideledotdev',
+      label: 'X',
+    },
     {
       icon: <AiFillInstagram />,
-      url: 'https://instagram.com',
+      url: 'https://www.instagram.com/bamidele.dev',
       label: 'Instagram',
     },
   ];
@@ -39,7 +43,7 @@ const Footer = () => {
       <div className={styles.socialDock}>
         {socialLinks.map((link, index) => (
           <AnimatedButton
-            href=""
+            href={link.url}
             target="_blank"
             icon={link.icon}
             text={link.label}
