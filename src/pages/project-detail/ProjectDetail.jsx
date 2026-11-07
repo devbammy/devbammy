@@ -1,7 +1,9 @@
 import { Link, useParams } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { HiArrowLeft, HiArrowRight, HiArrowUpRight } from 'react-icons/hi2';
 import { getNextProject, getProjectBySlug } from '../../assets/data/projects';
 import NotFound from '../not-found/NotFound';
+import Reveal from '../../components/utils/reveal/Reveal';
 import styles from './projectDetail.module.scss';
 
 const ProjectDetail = () => {
@@ -47,12 +49,17 @@ const ProjectDetail = () => {
       </header>
 
       <div className="wrap">
-        <div className={styles.cover}>
+        <motion.div
+          className={styles.cover}
+          initial={{ opacity: 0, scale: 0.97 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.9, delay: 0.1, ease: [0.2, 0.7, 0.2, 1] }}
+        >
           <img src={project.cover} alt={`${project.name} screens`} />
-        </div>
+        </motion.div>
       </div>
 
-      <section className={`wrap ${styles.body}`}>
+      <Reveal as="section" className={`wrap ${styles.body}`}>
         <aside className={styles.facts}>
           {facts.length > 0 && (
             <dl>
@@ -82,7 +89,7 @@ const ProjectDetail = () => {
             <p key={para.slice(0, 24)}>{para}</p>
           ))}
         </div>
-      </section>
+      </Reveal>
 
       {gallery.length > 0 && (
         <section className={`wrap ${styles.gallery}`} aria-label={`${project.name} screenshots`}>
@@ -95,7 +102,7 @@ const ProjectDetail = () => {
       )}
 
       {next && next.slug !== project.slug && (
-        <div className="wrap">
+        <Reveal className="wrap">
           <Link to={`/project/${next.slug}`} className={styles.next}>
             <div className={styles.nextThumb}>
               <img src={next.cover} alt="" loading="lazy" />
@@ -106,7 +113,7 @@ const ProjectDetail = () => {
             </div>
             <HiArrowRight className={styles.nextArrow} aria-hidden="true" />
           </Link>
-        </div>
+        </Reveal>
       )}
     </article>
   );

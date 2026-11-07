@@ -62,7 +62,6 @@
   line-height: 0.8;
   letter-spacing: -0.065em;
   font-variation-settings: 'opsz' 96;
-  margin-left: -0.04em;
   white-space: nowrap;
   user-select: none;
   color: var(--ink);
@@ -93,4 +92,16 @@
   flex-wrap: wrap;
   gap: 8px 24px;
   font-size: var(--t-small);
+}
+
+.letterMask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding-bottom: 0.06em;
+  margin-bottom: -0.06em;
+}
+
+.letter {
+  display: inline-block;
 }

@@ -1,0 +1,255 @@
+@use '../../styles/mixins' as *;
+
+.hero {
+  min-height: 100svh;
+  padding-top: calc(var(--nav) + 56px);
+  padding-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 56px;
+
+  @include md {
+    min-height: 0;
+    padding-top: calc(var(--nav) + 32px);
+    gap: 40px;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: 64px;
+  align-items: center;
+
+  @include md {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 28px;
+}
+
+.title {
+  font-size: clamp(2.75rem, 1.5rem + 4.4vw, 5.75rem);
+  line-height: 0.98;
+  letter-spacing: -0.048em;
+  font-variation-settings: 'opsz' 96;
+}
+
+.lineMask {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+
+.line {
+  display: block;
+  white-space: nowrap;
+
+  @media (max-width: 400px) {
+    white-space: normal;
+  }
+}
+
+.lead {
+  font-size: var(--t-lead);
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 46ch;
+}
+
+.actions {
+  margin-top: 4px;
+
+  @include sm {
+    width: 100%;
+  }
+}
+
+/* ---------- Portrait ---------- */
+.visual {
+  position: relative;
+  justify-self: end;
+  width: 100%;
+  max-width: 440px;
+
+  @include md {
+    justify-self: start;
+    max-width: 380px;
+    margin-inline: auto;
+  }
+}
+
+.portrait {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 28px;
+  overflow: hidden;
+  background: var(--signal);
+
+  &:hover .colour {
+    opacity: 1;
+  }
+}
+
+.portraitInner {
+  position: absolute;
+  inset: -6% 0 -6% 0;
+
+  img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 18%;
+  }
+}
+
+/* Black and yellow duotone in the logo's colours; full colour on hover. */
+.duo {
+  filter: url(#duotone-ink-signal);
+}
+
+.filters {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.colour {
+  opacity: 0;
+  transition: opacity 0.6s var(--ease);
+}
+
+.badge {
+  position: absolute;
+  top: -28px;
+  left: -40px;
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--paper);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 0 0 6px var(--paper);
+  transition: transform 0.3s var(--ease);
+
+  &:hover {
+    transform: scale(1.06);
+  }
+
+  @include md {
+    width: 104px;
+    height: 104px;
+    left: auto;
+    right: 12px;
+    top: -20px;
+  }
+}
+
+.badgeText {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  animation: spin 16s linear infinite;
+
+  text {
+    font-family: var(--font-text);
+    font-size: 9.6px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    fill: currentColor;
+  }
+}
+
+.badgeLogo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.clock {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 40px;
+  padding-inline: 14px;
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--ink);
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* ---------- Facts strip ---------- */
+.facts {
+  display: grid;
+  grid-template-columns: auto auto minmax(0, 1fr);
+  gap: 24px 56px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+
+  dt {
+    font-size: var(--t-small);
+    color: var(--muted);
+  }
+
+  dd {
+    margin-top: 6px;
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 1.6rem + 1.4vw, 3rem);
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+
+  @include md {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.toolsFact {
+  min-width: 0;
+
+  dd {
+    margin-top: 10px;
+    font-size: inherit;
+    letter-spacing: 0;
+  }
+
+  ul {
+    flex-wrap: nowrap;
+  }
+
+  @include md {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .badgeText {
+    animation: none;
+  }
+}

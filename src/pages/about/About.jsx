@@ -4,6 +4,7 @@ import Me from '../../assets/me.jpg';
 import { site } from '../../assets/data/site';
 import { experiences } from '../../assets/data/experiences';
 import ToolIcons from '../../components/utils/tool-icons/ToolIcons';
+import Reveal from '../../components/utils/reveal/Reveal';
 import styles from './about.module.scss';
 
 const stack = [
@@ -48,8 +49,8 @@ const About = () => (
       <div className={`wrap ${styles.split}`}>
         <h2>Experience</h2>
         <ol className={styles.timeline}>
-          {experiences.map((job) => (
-            <li key={job.company + job.period}>
+          {experiences.map((job, i) => (
+            <Reveal as="li" key={job.company + job.period} delay={i * 0.08}>
               <p className={styles.period}>{job.period}</p>
               <div>
                 <h3>{job.company}</h3>
@@ -58,7 +59,7 @@ const About = () => (
                 </p>
                 <p className={styles.summary}>{job.points[0]}</p>
               </div>
-            </li>
+            </Reveal>
           ))}
         </ol>
       </div>
@@ -67,7 +68,7 @@ const About = () => (
     <section className={`section ${styles.toolsSection}`}>
       <div className={`wrap ${styles.split}`}>
         <h2>Tools I use</h2>
-        <div className={styles.tools}>
+        <Reveal className={styles.tools}>
           <ToolIcons names={['React', 'Next.js', 'Expo', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'Firebase', 'Figma', 'Vercel']} />
           <div className={styles.stack}>
             {stack.map((s) => (
@@ -77,7 +78,7 @@ const About = () => (
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   </>

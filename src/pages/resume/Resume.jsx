@@ -3,6 +3,7 @@ import { site } from '../../assets/data/site';
 import { certifications } from '../../assets/data/certifications';
 import { experiences } from '../../assets/data/experiences';
 import { skillGroups } from '../../assets/data/skillGroup';
+import Reveal from '../../components/utils/reveal/Reveal';
 import styles from './resume.module.scss';
 
 const Resume = () => (
@@ -24,7 +25,7 @@ const Resume = () => (
     </header>
 
     <div className={`wrap ${styles.sheet}`}>
-      <section className={styles.block}>
+      <Reveal as="section" className={styles.block}>
         <h2>Experience</h2>
         <ol className={styles.list}>
           {experiences.map((job) => (
@@ -48,9 +49,9 @@ const Resume = () => (
             </li>
           ))}
         </ol>
-      </section>
+      </Reveal>
 
-      <section className={styles.block}>
+      <Reveal as="section" className={styles.block}>
         <h2>Skills</h2>
         <dl className={styles.skills}>
           {skillGroups.map((g) => (
@@ -60,9 +61,9 @@ const Resume = () => (
             </div>
           ))}
         </dl>
-      </section>
+      </Reveal>
 
-      <section className={styles.block}>
+      <Reveal as="section" className={styles.block}>
         <h2>Education</h2>
         <div className={styles.itemHead}>
           <div>
@@ -71,16 +72,16 @@ const Resume = () => (
           </div>
           <p className={styles.meta}>Graduated August 2018</p>
         </div>
-      </section>
+      </Reveal>
 
-      <section className={styles.block}>
+      <Reveal as="section" className={styles.block}>
         <h2>Certifications</h2>
         <ul className={styles.certs}>
           {certifications.map((c) => (
             <li key={c}>{c}</li>
           ))}
         </ul>
-      </section>
+      </Reveal>
     </div>
   </>
 );

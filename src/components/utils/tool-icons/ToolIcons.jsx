@@ -1,4 +1,5 @@
 import {
+  SiClaude,
   SiExpo,
   SiExpress,
   SiFigma,
@@ -27,6 +28,7 @@ const registry = {
   PostgreSQL: [SiPostgresql, '#4169E1'],
   Firebase: [SiFirebase, '#FFCA28'],
   Stripe: [SiStripe, '#635BFF'],
+  'Claude Code': [SiClaude, '#D97757'],
   OpenAI: [SiOpenai, null],
   Figma: [SiFigma, '#F24E1E'],
   Vercel: [SiVercel, null],

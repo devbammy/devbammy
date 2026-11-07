@@ -1,27 +1,33 @@
 export const services = [
   {
     title: 'Web apps',
-    description: 'Dashboards, marketplaces and portals built with React and Next.js.',
+    description:
+      'Dashboards, marketplaces and portals built with React and Next.js.',
   },
   {
     title: 'Mobile apps',
-    description: 'Cross-platform apps for Android and iOS from one React Native and Expo codebase.',
+    description:
+      'Cross-platform apps for Android and iOS from one React Native and Expo codebase.',
   },
   {
     title: 'Back ends and APIs',
-    description: 'Node.js and Express APIs, databases, authentication and payments with Stripe or Paystack.',
+    description:
+      'Node.js and Express APIs, databases, authentication and payments with Stripe or Paystack.',
   },
   {
     title: 'AI features',
-    description: 'Assistants, content generation and workflow automation added to the product you already have.',
+    description:
+      'Assistants, content generation and workflow automation added to the product you already have.',
   },
   {
     title: 'Design to code',
-    description: 'Figma designs turned into accessible, responsive interfaces that match the file.',
+    description:
+      'Figma designs turned into accessible, responsive interfaces that match the file.',
   },
   {
     title: 'Speed and SEO fixes',
-    description: 'Audits and fixes for slow pages, large bundles and search visibility.',
+    description:
+      'Audits and fixes for slow pages, large bundles and search visibility.',
   },
 ];
 
@@ -37,6 +43,7 @@ export const tools = [
   'PostgreSQL',
   'Firebase',
   'Stripe',
+  'Claude Code',
   'OpenAI',
   'Figma',
   'Vercel',

@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import { projects } from '../../assets/data/projects';
 import ProjectCard from '../../components/utils/project-card/ProjectCard';
+import Reveal from '../../components/utils/reveal/Reveal';
 import styles from './projects.module.scss';
 
 const Projects = () => {
@@ -40,7 +41,9 @@ const Projects = () => {
           )}
           <div className={styles.grid}>
             {shown.map((p, i) => (
-              <ProjectCard key={p.slug} project={p} eager={i < 2} />
+              <Reveal key={active + p.slug} delay={(i % 3) * 0.08}>
+                <ProjectCard project={p} eager={i < 3} />
+              </Reveal>
             ))}
           </div>
         </div>
