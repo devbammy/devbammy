@@ -1,45 +1,43 @@
 export const services = [
   {
-    id: 1,
-    title: 'Web App Development',
-    description:
-      'Building fast, scalable, and responsive web applications using modern technologies with a focus on performance, usability, and maintainability.',
+    title: 'Web apps',
+    description: 'Dashboards, marketplaces and portals built with React and Next.js.',
   },
   {
-    id: 2,
-    title: 'Mobile App Development',
-    description:
-      'Creating cross-platform mobile applications that deliver seamless user experiences across Android and iOS devices.',
+    title: 'Mobile apps',
+    description: 'Cross-platform apps for Android and iOS from one React Native and Expo codebase.',
   },
   {
-    id: 3,
-    title: 'Full-Stack Development',
-    description:
-      'Developing complete digital products from frontend interfaces to backend systems, databases, APIs, and cloud infrastructure.',
+    title: 'Back ends and APIs',
+    description: 'Node.js and Express APIs, databases, authentication and payments with Stripe or Paystack.',
   },
   {
-    id: 4,
-    title: 'AI-Powered Solutions',
-    description:
-      'Integrating AI capabilities into products, including intelligent assistants, workflow automation, content generation, and data-driven features.',
+    title: 'AI features',
+    description: 'Assistants, content generation and workflow automation added to the product you already have.',
   },
+  {
+    title: 'Design to code',
+    description: 'Figma designs turned into accessible, responsive interfaces that match the file.',
+  },
+  {
+    title: 'Speed and SEO fixes',
+    description: 'Audits and fixes for slow pages, large bundles and search visibility.',
+  },
+];
 
-  {
-    id: 5,
-    title: 'UI Implementation',
-    description:
-      'Transforming design concepts into pixel-perfect, accessible, and interactive user interfaces with a strong focus on user experience.',
-  },
-  {
-    id: 6,
-    title: 'SaaS Product Development',
-    description:
-      'Helping businesses turn ideas into subscription-based digital products with robust architectures built for growth and scalability.',
-  },
-  {
-    id: 7,
-    title: 'Performance & Optimization',
-    description:
-      'Improving application speed, reliability, SEO, and overall user experience through performance tuning and best development practices.',
-  },
+// Tools shown with their real logos (see components/utils/tool-icons for the list of supported names).
+export const tools = [
+  'React',
+  'Next.js',
+  'Expo',
+  'TypeScript',
+  'Node.js',
+  'Express',
+  'MongoDB',
+  'PostgreSQL',
+  'Firebase',
+  'Stripe',
+  'OpenAI',
+  'Figma',
+  'Vercel',
 ];

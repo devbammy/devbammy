@@ -1,104 +1,96 @@
-@use '../../styles/tokens' as *;
 @use '../../styles/mixins' as *;
 
 .footer {
-  width: 98%;
-  padding: $space-6;
-  background-color: var(--card);
-  margin: 1rem auto;
-  border-top: 1px solid var(--grayAlt);
+  padding-top: var(--padt);
+  padding-bottom: 32px;
+  border-top: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.close {
   display: flex;
-  flex-direction: column;
-  border-radius: $radius-md;
-  gap: 3rem;
-  transition: var(--transition);
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
+
+  h2 {
+    font-size: var(--t-h2);
+  }
+
+  p {
+    margin-top: 16px;
+    max-width: 40ch;
+    font-size: var(--t-lead);
+    line-height: 1.5;
+    color: var(--muted);
+  }
+
+  @include md {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.closeActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 
   @include sm {
-    gap: 2.5rem;
-    width: 90%;
-  }
-}
-
-.topSection {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap; // Gracefully wraps content keys on narrow viewports
-}
-
-.brandSide {
-  .brandText {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-
-    h4 {
-      font-size: 1.125rem;
-      font-weight: 600;
-      color: var(--text);
-      margin: 0;
-    }
-
-    p {
-      font-size: 0.875rem;
-      color: var(--gray);
-      margin: 0;
-    }
-  }
-}
-
-.socialDock {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;
-  justify-content: space-between;
-  grid-gap: 1rem;
-  padding: 0 8px;
-}
-
-.divider {
-  border: none;
-  height: 1px;
-  background-color: var(--grayAlt);
-  width: 100%;
-  margin: 0;
-}
-
-.bottomSection {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-  flex-wrap: wrap-reverse; // Pushes copyright below links elegantly on mobile break
-
-  .copyright {
-    font-size: 0.8rem;
-    color: var(--gray);
-    margin: 0;
-  }
-}
-
-.footerNav {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-
-  a {
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--text);
-    text-decoration: none;
-    opacity: 0.7;
-    transition: opacity 0.2s ease;
-
-    &:hover {
-      opacity: 1;
-    }
-  }
-
-  @media (max-width: 480px) {
     width: 100%;
-    gap: 1.25rem;
+    flex-direction: column;
+    > * {
+      width: 100%;
+    }
   }
+}
+
+.compact {
+  padding-top: 48px;
+}
+
+.nameOnly {
+  margin-top: 0 !important;
+}
+
+/* The one loud moment: the name set across the full column. */
+.name {
+  margin-top: 96px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: min(calc((100vw - var(--gut) * 2) * 0.288), 23rem);
+  line-height: 0.8;
+  letter-spacing: -0.065em;
+  font-variation-settings: 'opsz' 96;
+  margin-left: -0.04em;
+  white-space: nowrap;
+  user-select: none;
+  color: var(--ink);
+
+  @include sm {
+    margin-top: 64px;
+  }
+}
+
+.bottom {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px 32px;
+  flex-wrap: wrap;
+}
+
+.legal {
+  font-size: var(--t-small);
+  color: var(--muted);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  font-size: var(--t-small);
 }

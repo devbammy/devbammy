@@ -1,102 +1,86 @@
-import Avatar from '../../components/utils/avatar/Avatar';
-import Dp from '../../assets/me.jpg';
-import Picture from '../../components/utils/picture/Picture';
+import { Link } from 'react-router-dom';
+import { HiArrowRight } from 'react-icons/hi2';
+import Me from '../../assets/me.jpg';
+import { site } from '../../assets/data/site';
+import { experiences } from '../../assets/data/experiences';
+import ToolIcons from '../../components/utils/tool-icons/ToolIcons';
 import styles from './about.module.scss';
-import { useEffect } from 'react';
 
-const About = () => {
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth',
-    });
-  }, []);
+const stack = [
+  { group: 'Front end', items: ['React', 'Next.js', 'React Native', 'Expo', 'NativeWind', 'Tailwind CSS', 'SCSS'] },
+  { group: 'Back end and data', items: ['Node.js', 'Express', 'Firebase', 'MongoDB', 'REST APIs', 'GraphQL'] },
+  { group: 'Design and delivery', items: ['Figma', 'UI and UX design', 'Git and GitHub', 'Vercel', 'Render'] },
+];
 
-  const coreStack = [
-    {
-      category: 'Frontend',
-      tools: ['React', 'React Native', 'Expo', 'NativeWind', 'Next.js'],
-    },
-    {
-      category: 'Backend & DB',
-      tools: ['Node.js', 'Express', 'Firebase', 'MongoDB'],
-    },
-    {
-      category: 'Architecture',
-      tools: [
-        'REST APIs',
-        'GraphQL',
-        'UI/UX Design',
-        'Git',
-        'SaaS Systems',
-        'Tailwind',
-        'Native Wind',
-      ],
-    },
-  ];
-
-  return (
-    <div className={styles.aboutWrapper}>
-      {/* Header Profile Section */}
-      <section className={styles.introHeader}>
-        <Avatar />
-        <div className={styles.introText}>
-          <h1>Bamidele &mdash; Software Engineer & UI Designer</h1>
-          <p className={styles.leadParagraph}>
-            Building high-fidelity mobile workflows and responsive web platforms
-            with a strong focus on minimalist enterprise aesthetics and
-            integrated AI systems.
-          </p>
+const About = () => (
+  <>
+    <section className={`wrap ${styles.intro}`}>
+      <div className={styles.introText}>
+        <h1>About me</h1>
+        <p className={styles.lead}>
+          I’m {site.name}, a software engineer and UI designer in {site.location}. I build mobile
+          apps and web platforms, and connect them to AI tools like Google Gemini and OpenAI.
+        </p>
+        <p>
+          Good software sits where clean code and deliberate design meet. Most of my work is
+          cross-platform apps with React Native and Expo, and web products with React and
+          Next.js, built so they stay quick and easy to change as they grow.
+        </p>
+        <p>
+          I have worked as a product manager, a frontend developer and a tutor, so I am as
+          comfortable planning a release with founders as I am writing the code or teaching it.
+        </p>
+        <div className="btn-row">
+          <Link to="/contact" className="btn btn--primary">
+            Book a call <HiArrowRight aria-hidden="true" />
+          </Link>
+          <Link to="/resume" className="btn">
+            Read my resume
+          </Link>
         </div>
-      </section>
-
-      {/* High-Fidelity Feature Image Row */}
-      <div className={styles.imageFrame}>
-        <Picture img={Dp} alt="Bamidele profile presentation" name="devBammy" />
       </div>
+      <div className={styles.photo}>
+        <img src={Me} alt={`Portrait of ${site.name}`} width="742" height="990" />
+      </div>
+    </section>
 
-      {/* Structural Biography Grid */}
-      <section className={styles.philosophy}>
-        <h3>The Philosophy</h3>
-        <p>
-          I believe that great software is the perfect intersection of clean
-          code and intentional design. Specializing in cross-platform systems
-          using Expo and React Native, I focus on building high-performance
-          applications optimized for dark mode systems and polished fluid
-          interactions.
-        </p>
-      </section>
-
-      <section className={styles.approach}>
-        <h3>The Approach</h3>
-        <p>
-          From automating full travel planning lifecycles to structuring
-          scalable multi-role employee metrics, I prioritize clean, predictable
-          architectures. By utilizing Google Gemini and modern vector branding
-          assets, I build software designed to scale effortlessly.
-        </p>
-      </section>
-
-      <section className={styles.stackSection}>
-        <h2 className={styles.sectionTitle}>Capabilities & Tooling</h2>
-        <div className={styles.stackGrid}>
-          {coreStack.map((group, index) => (
-            <div key={index} className={styles.stackGroup}>
-              <h4>{group.category}</h4>
-              <div className={styles.tagCloud}>
-                {group.tools.map((tool, tIdx) => (
-                  <span key={tIdx} className={styles.techTag}>
-                    {tool}
-                  </span>
-                ))}
+    <section className="section">
+      <div className={`wrap ${styles.split}`}>
+        <h2>Experience</h2>
+        <ol className={styles.timeline}>
+          {experiences.map((job) => (
+            <li key={job.company + job.period}>
+              <p className={styles.period}>{job.period}</p>
+              <div>
+                <h3>{job.company}</h3>
+                <p className={styles.role}>
+                  {job.role}, {job.location}
+                </p>
+                <p className={styles.summary}>{job.points[0]}</p>
               </div>
-            </div>
+            </li>
           ))}
+        </ol>
+      </div>
+    </section>
+
+    <section className={`section ${styles.toolsSection}`}>
+      <div className={`wrap ${styles.split}`}>
+        <h2>Tools I use</h2>
+        <div className={styles.tools}>
+          <ToolIcons names={['React', 'Next.js', 'Expo', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'Firebase', 'Figma', 'Vercel']} />
+          <div className={styles.stack}>
+            {stack.map((s) => (
+              <div key={s.group}>
+                <h3>{s.group}</h3>
+                <p>{s.items.join(', ')}</p>
+              </div>
+            ))}
+          </div>
         </div>
-      </section>
-    </div>
-  );
-};
+      </div>
+    </section>
+  </>
+);
 
 export default About;

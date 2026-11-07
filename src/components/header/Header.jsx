@@ -1,118 +1,89 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import DP from '../../assets/dp.png';
-import { AnimatedLink } from '../utils/animated-link/AnimatedLink';
+import { useEffect, useState } from 'react';
+import { Link, NavLink, useLocation } from 'react-router-dom';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
+import Logo from '../../assets/logo.png';
+import { site } from '../../assets/data/site';
 import ThemeToggle from '../utils/theme-toggler/ThemeToggle';
 import styles from './header.module.scss';
 
+const links = [
+  { to: '/projects', label: 'Work' },
+  { to: '/about', label: 'About' },
+  { to: '/resume', label: 'Resume' },
+  { to: '/contact', label: 'Contact' },
+];
+
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { pathname } = useLocation();
+  // The menu remembers which page it was opened on, so navigating closes it.
+  const [openOn, setOpenOn] = useState(null);
+  const open = openOn === pathname;
+  const setOpen = (value) => setOpenOn(value ? pathname : null);
+  const reduce = useReducedMotion();
 
-  const handleMenuToggle = (e) => {
-    e.preventDefault();
-    setIsMenuOpen((prev) => !prev);
-  };
-
-  const menuVariants = {
-    hidden: {
-      opacity: 0,
-      y: -12,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.35,
-        ease: [0.76, 0, 0.24, 1],
-        staggerChildren: 0.05, // Cascades the link entry animations
-      },
-    },
-    exit: {
-      opacity: 0,
-      y: -8,
-      transition: {
-        duration: 0.2,
-        ease: [0.76, 0, 0.24, 1],
-        staggerChildren: 0.03,
-        staggerDirection: -1, // Reverses cascade order on close
-      },
-    },
-  };
-
-  // 2. Define standard subtle reveal parameters for each individual link element
-  const linkVariants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.3, ease: 'easeOut' },
-    },
-    exit: { opacity: 0, y: 5, transition: { duration: 0.15 } },
-  };
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : '';
+    const onKey = (e) => e.key === 'Escape' && setOpenOn(null);
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [open]);
 
   return (
     <header className={styles.header}>
-      {/* Left side actions and branding */}
-      <div className={styles.left}>
-        <Link
-          to="/"
-          className={styles.logo}
-          onClick={() => setIsMenuOpen(false)}
-        >
-          <img src={DP} alt="Bamidele profile" />
-
-          {/* Stacked Identity Column */}
-          <div className={styles.identityStack}>
-            <span className={styles.brandName}>devBammy</span>
-
-            {/* Repositioned Status Badge */}
-            <div className={styles.availableBadge}>
-              <span className={styles.statusDot}>
-                <span className={styles.pulseRing}></span>
-              </span>
-              <span className={styles.badgeText}>Available for work</span>
-            </div>
-          </div>
+      <div className={`wrap ${styles.bar}`}>
+        <Link to="/" className={styles.brand} aria-label={`${site.brand}, home`}>
+          <img src={Logo} alt="" width="32" height="32" />
+          <span>{site.brand}</span>
         </Link>
 
-        <div className={styles.toggleWrapper}>
+        <nav className={styles.nav} aria-label="Main">
+          {links.map((l) => (
+            <NavLink
+              key={l.to}
+              to={l.to}
+              className={({ isActive }) => `${styles.navLink} ${isActive ? styles.active : ''}`}
+            >
+              {l.label}
+            </NavLink>
+          ))}
+        </nav>
+
+        <div className={styles.actions}>
           <ThemeToggle />
+          <Link to="/contact" className={`btn btn--primary btn--sm ${styles.cta}`}>
+            Book a call
+          </Link>
+          <button
+            className={styles.menuBtn}
+            onClick={() => setOpen(!open)}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            aria-label={open ? 'Close menu' : 'Open menu'}
+          >
+            <span className={open ? styles.barsOpen : styles.bars} />
+          </button>
         </div>
       </div>
 
-      {/* Right side navigation trigger */}
-      <div className={styles.right}>
-        <AnimatedLink
-          href="#menu"
-          onClick={handleMenuToggle}
-          isOpen={isMenuOpen}
-        />
-      </div>
-
-      {/* Overlay Dropdown */}
       <AnimatePresence>
-        {isMenuOpen && (
+        {open && (
           <motion.div
-            variants={menuVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            className={styles.menuOverlay}
+            id="mobile-menu"
+            className={styles.sheet}
+            initial={reduce ? { opacity: 0 } : { opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.22, ease: [0.2, 0.7, 0.2, 1] }}
           >
-            <nav className={styles.overlayNav}>
-              {[
-                { to: '/projects', label: 'Projects' },
-                { to: '/about', label: 'About' },
-                { to: '/resume', label: 'Resume' },
-                { to: '/contact', label: 'Contact' },
-              ].map((item) => (
-                <motion.div key={item.to} variants={linkVariants}>
-                  <Link to={item.to} onClick={() => setIsMenuOpen(false)}>
-                    {item.label}
-                  </Link>
-                </motion.div>
+            <nav className="wrap" aria-label="Mobile">
+              {[{ to: '/', label: 'Home' }, ...links].map((l) => (
+                <NavLink key={l.to} to={l.to} end className={styles.sheetLink}>
+                  {l.label}
+                </NavLink>
               ))}
+              <Link to="/contact" className={`btn btn--primary ${styles.sheetCta}`}>
+                Book a call
+              </Link>
             </nav>
           </motion.div>
         )}

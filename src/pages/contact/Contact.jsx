@@ -1,132 +1,104 @@
 import { useState } from 'react';
+import { HiArrowRight } from 'react-icons/hi2';
+import { site } from '../../assets/data/site';
+import CopyEmail from '../../components/utils/copy-email/CopyEmail';
 import styles from './contact.module.scss';
-import { useEffect } from 'react';
+
+const types = ['Web app', 'Mobile app', 'Website or landing page', 'AI feature', 'Something else'];
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-  const [status, setStatus] = useState('');
+  const [form, setForm] = useState({ name: '', email: '', type: types[0], message: '' });
+  const [opened, setOpened] = useState(false);
 
-  const handleSubmit = (e) => {
+  const update = (key) => (e) => setForm((f) => ({ ...f, [key]: e.target.value }));
+
+  // No backend: the form writes the email for the visitor and opens their mail app.
+  const submit = (e) => {
     e.preventDefault();
-    setStatus('sending');
-
-    // Simulate API form submission tracking
-    setTimeout(() => {
-      setStatus('success');
-      setFormData({ name: '', email: '', message: '' });
-    }, 1500);
+    const subject = `${form.type} enquiry from ${form.name}`;
+    const body = `${form.message}\n\n${form.name}\n${form.email}`;
+    window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setOpened(true);
   };
 
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth',
-    });
-  }, []);
-
   return (
-    <>
-      <section className={styles.contactHeader}>
-        <h1>Let's start a project</h1>
-        <p>
-          Have an idea or an upcoming product blueprint? Drop a message below
-          and let's build something exceptional together.
+    <div className={`wrap ${styles.page}`}>
+      <div className={styles.info}>
+        <h1>Start a project</h1>
+        <p className={styles.lead}>
+          Tell me what you are building, who it is for and when you need it. I reply within two
+          working days.
         </p>
-      </section>
 
-      <section>
-        <div className={styles.infoSidebar}>
-          <div className={styles.infoBlock}>
-            <h4>Availability</h4>
-            <p>
-              Currently accepting selective freelance contracts, full-time
-              engineering roles, and UI architecture design consultations.
-            </p>
+        <dl className={styles.facts}>
+          <div>
+            <dt>Open to</dt>
+            <dd>Freelance projects, full-time engineering roles and UI consultations</dd>
           </div>
+          <div>
+            <dt>Based in</dt>
+            <dd>{site.location}, working with clients remotely</dd>
+          </div>
+        </dl>
 
-          <div className={styles.infoBlock}>
-            <h4>Response Time</h4>
-            <p>
-              I generally read and respond to inquiries within 24–48 business
-              hours.
-            </p>
-          </div>
-
-          <div className={styles.infoBlock}>
-            <h4>Direct Communication</h4>
-            <a href="mailto:devbammy@gmail.com" className={styles.emailLink}>
-              devbammy@gmail.com
-            </a>
-          </div>
+        <div className={styles.email}>
+          <p>Prefer email?</p>
+          <a className="link" href={`mailto:${site.email}`}>
+            {site.email}
+          </a>
+          <CopyEmail className="btn--sm" />
         </div>
-      </section>
+      </div>
 
-      <section>
-        <form onSubmit={handleSubmit} className={styles.contactForm}>
-          <div className={styles.inputGroup}>
-            <label htmlFor="name">Your Name</label>
+      <form className={styles.form} onSubmit={submit}>
+        <div className={styles.row}>
+          <label className={styles.field}>
+            <span>Your name</span>
+            <input required autoComplete="name" value={form.name} onChange={update('name')} />
+          </label>
+          <label className={styles.field}>
+            <span>Email address</span>
             <input
-              type="text"
-              id="name"
               required
-              placeholder="Elias Norden"
-              value={formData.name}
-              onChange={(e) =>
-                setFormData({ ...formData, name: e.target.value })
-              }
-            />
-          </div>
-
-          <div className={styles.inputGroup}>
-            <label htmlFor="email">Email Address</label>
-            <input
               type="email"
-              id="email"
-              required
-              placeholder="elias@norden.design"
-              value={formData.email}
-              onChange={(e) =>
-                setFormData({ ...formData, email: e.target.value })
-              }
+              autoComplete="email"
+              value={form.email}
+              onChange={update('email')}
             />
-          </div>
+          </label>
+        </div>
 
-          <div className={styles.inputGroup}>
-            <label htmlFor="message">Project Description</label>
-            <textarea
-              id="message"
-              rows="6"
-              required
-              placeholder="Tell me about your mobile application workflow, timeline, or design goals..."
-              value={formData.message}
-              onChange={(e) =>
-                setFormData({ ...formData, message: e.target.value })
-              }
-            />
-          </div>
+        <label className={styles.field}>
+          <span>What do you need?</span>
+          <select value={form.type} onChange={update('type')}>
+            {types.map((t) => (
+              <option key={t}>{t}</option>
+            ))}
+          </select>
+        </label>
 
-          <button
-            type="submit"
-            className={styles.submitBtn}
-            disabled={status === 'sending'}
-          >
-            {status === 'sending' ? 'Sending...' : 'Send Message'}
-            <span className={styles.arrow}>&rarr;</span>
-          </button>
+        <label className={styles.field}>
+          <span>About the project</span>
+          <textarea
+            required
+            rows={6}
+            value={form.message}
+            onChange={update('message')}
+            placeholder="What it does, who uses it, your timeline and budget"
+          />
+        </label>
 
-          {status === 'success' && (
-            <p className={styles.successMsg}>
-              Message received! I'll get back to you shortly.
-            </p>
-          )}
-        </form>
-      </section>
-    </>
+        <button type="submit" className={`btn btn--primary ${styles.submit}`}>
+          Send message <HiArrowRight aria-hidden="true" />
+        </button>
+
+        <p className={styles.note} role="status">
+          {opened
+            ? 'Your email app should now be open with the message written. Press send there to finish.'
+            : 'Sending opens your email app with the message ready to send.'}
+        </p>
+      </form>
+    </div>
   );
 };
 

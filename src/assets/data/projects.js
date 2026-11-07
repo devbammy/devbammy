@@ -1,158 +1,199 @@
-import Dashboard from '../../assets/dashboard.png';
-import Furniture from '../../assets/furniture.png';
-import Carelynk from '../../assets/carelynk.png';
-import Rydexo from '../../assets/rydexo.png';
-import RentXSpace from '../../assets/rentxspace.png';
-import SwapAm from '../../assets/swapam.png';
+/* ============================================================
+   PROJECTS
+   ------------------------------------------------------------
+   To add a project:
+   1. Put its cover image in src/assets/projects/ (any size; a
+      16:10 or 4:3 landscape screenshot at 1600px+ wide looks best).
+   2. Import it below and add an object to `projects`.
+   3. Order matters: the list renders top to bottom. Set
+      `featured: true` on the ones you want on the home page
+      (4 or 6 keeps the grid even).
 
-import CareerMan from '../../assets/career.png';
-import QrGenerator from '../../assets/eleventh.png';
-import EmeyoShop from '../../assets/emayoShop.png';
-import CoachSeyifunmi from '../../assets/coach.png';
-import EmayoPortfolio from '../../assets/emayo.png';
+   Fields (only slug, name, summary and cover are required):
+     slug        url part: /project/<slug>
+     name        project name
+     summary     one sentence shown on cards (keep under ~110 chars)
+     category    e.g. 'Web app', 'Mobile app', 'Website', 'E-commerce'
+     year        e.g. '2025'
+     role        e.g. 'Design and full-stack build'
+     cover       imported image
+     liveUrl     link to the live product
+     repoUrl     link to the source code
+     stack       ['React', 'Node.js', ...]
+     description array of paragraphs for the detail page
+     gallery     extra screenshots (imported images) for the detail page
+     featured    true to show on the home page
+   ============================================================ */
 
-// ============================================
-//  FULL PROJECT DATA (used by detail pages)
-// ============================================
+import Dashboard from '../dashboard.png';
+import Furniture from '../furniture.png';
+import Carelynk from '../carelynk.png';
+import Rydexo from '../rydexo.png';
+import RentXSpace from '../rentxspace.png';
+import SwapAm from '../swapam.png';
+import CareerMan from '../career.png';
+import QrGenerator from '../eleventh.png';
+import EmeyoShop from '../emayoShop.png';
+import CoachSeyifunmi from '../coach.png';
+import EmayoPortfolio from '../emayo.png';
 
-export const allProjects = [
+export const projects = [
   {
-    id: 't1',
     slug: 'staffium',
     name: 'Staffium',
-    img: Dashboard,
+    summary: 'HR dashboard for staff records, attendance, tasks and payroll summaries.',
+    category: 'Web app',
+    cover: Dashboard,
     liveUrl: 'https://stafflo.vercel.app/',
-    description:
-      'Staffium is a modern HR dashboard built to streamline employee management workflows. It features real-time analytics, team performance tracking, and an intuitive interface designed for fast decision-making.\n\nThe platform provides comprehensive tools for managing staff records, attendance, payroll summaries, and departmental overviews — all within a clean, responsive dashboard experience.',
-    techStack: ['React', 'Node.js', 'Express', 'MongoDB', 'Chart.js'],
-    screenshots: [Dashboard, Dashboard, Dashboard, Dashboard],
+    stack: ['React', 'Node.js', 'Express', 'MongoDB', 'Chart.js'],
+    description: [
+      'Staffium is an HR dashboard built to streamline employee management. It brings real-time analytics, team performance tracking and staff records into one interface designed for fast decisions.',
+      'Admins manage attendance, payroll summaries, tasks and departments from a single responsive dashboard, while staff get their own portal.',
+    ],
+    featured: true,
   },
   {
-    id: 't2',
-    slug: 'furniture',
-    name: 'Furniture eCommerce',
-    img: Furniture,
-    liveUrl: 'https://furniture-beryl-seven.vercel.app/',
-    description:
-      'A premium furniture eCommerce platform designed with a focus on elegant product presentation and seamless shopping experiences. The interface uses warm tones and generous whitespace to let each furniture piece shine.\n\nBuilt with a headless architecture, the store features advanced filtering, wishlist functionality, cart management, and a streamlined checkout process optimized for conversions.',
-    techStack: ['React', 'SCSS', 'Firebase', 'Stripe'],
-    screenshots: [Furniture, Furniture, Furniture],
-  },
-  {
-    id: 't3',
     slug: 'carelynk',
     name: 'Carelynk',
-    img: Carelynk,
+    summary: 'Healthcare platform for booking appointments and messaging doctors.',
+    category: 'Web app',
+    cover: Carelynk,
     liveUrl: 'https://carelynk.vercel.app/',
-    description:
-      'Carelynk is a healthcare connectivity platform that bridges the gap between patients and healthcare providers. It offers appointment scheduling, medical records access, and real-time communication tools.\n\nDesigned with accessibility and trust at its core, the interface uses calming colors and clear information hierarchy to reduce friction in healthcare interactions.',
-    techStack: ['React', 'Node.js', 'PostgreSQL', 'Socket.io'],
-    screenshots: [Carelynk, Carelynk, Carelynk],
+    stack: ['React', 'Node.js', 'PostgreSQL', 'Socket.io'],
+    description: [
+      'Carelynk connects patients with healthcare providers. It offers appointment scheduling, access to medical records and real-time messaging.',
+      'The interface uses calm colours and a clear information hierarchy to reduce friction in healthcare interactions, with accessibility treated as a requirement.',
+    ],
+    featured: true,
   },
   {
-    id: 't4',
     slug: 'rydexo',
     name: 'Rydexo',
-    img: Rydexo,
+    summary: 'Car rental and ride booking with pricing, specs and live availability.',
+    category: 'Mobile app',
+    cover: Rydexo,
     liveUrl: 'https://rydexo.vercel.app/',
-    description:
-      'Rydexo is a ride-sharing and logistics platform that connects riders with drivers efficiently. The app features real-time tracking, fare estimation, route optimization, and a driver rating system.\n\nThe clean, map-centric UI ensures users can book rides quickly while having full visibility into their journey details and driver information.',
-    techStack: ['React Native', 'Node.js', 'Google Maps API', 'MongoDB'],
-    screenshots: [Rydexo, Rydexo, Rydexo],
+    stack: ['React Native', 'Node.js', 'Google Maps API', 'MongoDB'],
+    description: [
+      'Rydexo connects riders with drivers and rental cars. It features real-time tracking, fare estimates, route optimisation and driver ratings.',
+      'The map-centred interface lets people book quickly while keeping every trip and vehicle detail in view.',
+    ],
+    featured: true,
   },
   {
-    id: 't5',
+    slug: 'furniture',
+    name: 'Furniture store',
+    summary: 'Online furniture shop with filters, wishlist, cart and Stripe checkout.',
+    category: 'E-commerce',
+    cover: Furniture,
+    liveUrl: 'https://furniture-beryl-seven.vercel.app/',
+    stack: ['React', 'SCSS', 'Firebase', 'Stripe'],
+    description: [
+      'A furniture store focused on clear product presentation and a short path to checkout. Generous whitespace lets each piece stand out.',
+      'Shoppers filter by category, material, price and stock, save items to a wishlist and pay through a streamlined Stripe checkout.',
+    ],
+    featured: true,
+  },
+  {
     slug: 'rentxspace',
     name: 'RentXSpace',
-    img: RentXSpace,
+    summary: 'Rental marketplace where hosts list spaces and tenants book and pay.',
+    category: 'Web app',
+    cover: RentXSpace,
     liveUrl: 'https://rentxspace.vercel.app/',
-    description:
-      'RentXSpace is a property rental marketplace that simplifies the process of finding and renting spaces. It provides listings search, virtual tours, booking management, and secure payment processing.\n\nThe user-centric dashboard allows hosts to list their spaces effortlessly and track bookings, while tenants enjoy a smooth search-to-payment journey.',
-    techStack: ['Next.js', 'Sass', 'MongoDB', 'Clerk', 'Stripe'],
-    screenshots: [RentXSpace, RentXSpace, RentXSpace],
+    stack: ['Next.js', 'Sass', 'MongoDB', 'Clerk', 'Stripe'],
+    description: [
+      'RentXSpace simplifies finding and renting spaces, with listing search, booking management and secure payments.',
+      'Hosts list spaces and track bookings from their dashboard, while tenants move from search to payment in a few steps.',
+    ],
+    featured: true,
   },
   {
-    id: 't6',
     slug: 'swapam',
     name: 'SwapAm',
-    img: SwapAm,
+    summary: 'Peer-to-peer marketplace for swapping items with people nearby.',
+    category: 'Web app',
+    cover: SwapAm,
     liveUrl: 'https://swap-am-mauve.vercel.app/',
-    description:
-      'SwapAm is a peer-to-peer item swapping marketplace that encourages sustainable consumer habits. Users can list items they no longer need and request swaps with others in their local area.\n\nFeatures include chat messaging, user ratings, matching algorithms, and item condition verification to ensure secure and trustworthy trades.',
-    techStack: ['React', 'Express.js', 'MongoDB', 'WebSockets'],
-    screenshots: [SwapAm, SwapAm, SwapAm],
+    stack: ['React', 'Express.js', 'MongoDB', 'WebSockets'],
+    description: [
+      'SwapAm lets people list items they no longer need and swap them with others in their area.',
+      'It includes chat, user ratings, matching and item condition checks so trades stay safe and trustworthy.',
+    ],
+    featured: true,
   },
   {
-    id: 'b1',
     slug: 'careerman',
     name: 'CareerMan',
-    img: CareerMan,
+    summary: 'Job application tracker with resume versions and AI mock interviews.',
+    category: 'Web app',
+    cover: CareerMan,
     liveUrl: 'https://careerman.vercel.app/',
-    description:
-      'CareerMan is a job application tracker and career management tool for professionals. It helps users manage their job search pipeline, store resume versions, track interviews, and prepare with AI-powered mock interviews.\n\nIts visual board layout makes tracking dozens of applications simple, keeping applicants organized and confident throughout their job search journey.',
-    techStack: ['React', 'Firebase', 'Tailwind CSS', 'OpenAI API'],
-    screenshots: [CareerMan, CareerMan, CareerMan],
+    stack: ['React', 'Firebase', 'Tailwind CSS', 'OpenAI API'],
+    description: [
+      'CareerMan helps job seekers manage their pipeline: applications, resume versions, interviews and AI-powered mock interview practice.',
+      'A board layout keeps dozens of applications easy to follow from first send to offer.',
+    ],
   },
   {
-    id: 'b2',
     slug: 'qr-generator',
-    name: 'Event QR Code Generator',
-    img: QrGenerator,
+    name: 'Event QR generator',
+    summary: 'Generates and validates QR entry tickets for events, in bulk.',
+    category: 'Web app',
+    cover: QrGenerator,
     liveUrl: 'https://qr-code-generator-sandy-eight.vercel.app/',
-    description:
-      'Event QR Code Generator is a utility tool that allows event organizers to generate and distribute unique QR codes for entry tickets. It features bulk generation, email delivery, and checking validation via mobile scanner.\n\nThe simple interface is designed for speed and reliability, supporting large-scale ticket generation and instant verification on event day.',
-    techStack: ['React', 'Canvas API', 'Node.js', 'QRCode.js'],
-    screenshots: [QrGenerator, QrGenerator, QrGenerator],
+    stack: ['React', 'Canvas API', 'Node.js', 'QRCode.js'],
+    description: [
+      'A tool for event organisers to generate unique QR codes for entry tickets, in bulk, and send them by email.',
+      'On the day, codes are checked with a phone scanner, so large events can verify entry in seconds.',
+    ],
   },
   {
-    id: 'b3',
     slug: 'emeyo-shop',
     name: 'Emeyo Trend Wears',
-    img: EmeyoShop,
+    summary: 'Fashion store with lookbook galleries and Paystack checkout.',
+    category: 'E-commerce',
+    cover: EmeyoShop,
     liveUrl: 'https://emayotrendwears.com/',
-    description:
-      'Emeyo Trend Wears is a fashion eCommerce store featuring the latest trends in clothing and accessories. The shop delivers a visually rich browsing experience with lookbook-style product galleries.\n\nBuilt with performance in mind, the store features lazy-loaded images, smooth page transitions, and a mobile-first checkout flow designed to maximize conversions.',
-    techStack: ['React', 'SCSS', 'Paystack', 'Cloudinary'],
-    screenshots: [EmeyoShop, EmeyoShop, EmeyoShop],
+    stack: ['React', 'SCSS', 'Paystack', 'Cloudinary'],
+    description: [
+      'Emeyo Trend Wears is a fashion store with lookbook-style product galleries for the latest clothing and accessories.',
+      'Images load lazily and checkout is built mobile first, so the store stays fast on any connection.',
+    ],
   },
   {
-    id: 'b4',
     slug: 'coach-seyifunmi',
     name: 'Coach Seyifunmi',
-    img: CoachSeyifunmi,
+    summary: 'Personal brand site for a coach, with services and session booking.',
+    category: 'Website',
+    cover: CoachSeyifunmi,
     liveUrl: 'https://coachseyifunmi.com/',
-    description:
-      'A personal branding website for Coach Seyifunmi, designed to showcase coaching services, client testimonials, and booking capabilities. The site emphasizes trust and professionalism through a clean, editorial layout.\n\nThe responsive design ensures potential clients can easily navigate services, read success stories, and schedule sessions from any device.',
-    techStack: ['React', 'SCSS', 'Framer Motion', 'Calendly API'],
-    screenshots: [CoachSeyifunmi, CoachSeyifunmi, CoachSeyifunmi],
+    stack: ['React', 'SCSS', 'Framer Motion', 'Calendly API'],
+    description: [
+      'A personal brand website for Coach Seyifunmi that presents coaching services and client stories in a clean editorial layout.',
+      'Visitors can read about each service and schedule a session from any device.',
+    ],
   },
   {
-    id: 'b5',
     slug: 'emayo-portfolio',
-    name: 'Emayo Portfolio',
-    img: EmayoPortfolio,
+    name: 'Emayo portfolio',
+    summary: 'Gallery-led portfolio for a designer, with case study pages.',
+    category: 'Website',
+    cover: EmayoPortfolio,
     liveUrl: 'https://emmanuel.emayotrendwears.com/',
-    description:
-      'A creative portfolio website designed for Emayo, showcasing design work and creative projects through an immersive, gallery-driven experience.\n\nThe portfolio features smooth scroll-driven animations, a curated project grid, and case study pages that tell the story behind each project with rich visuals and thoughtful typography.',
-    techStack: ['React', 'SCSS', 'Framer Motion', 'GSAP'],
-    screenshots: [EmayoPortfolio, EmayoPortfolio, EmayoPortfolio],
+    stack: ['React', 'SCSS', 'Framer Motion', 'GSAP'],
+    description: [
+      'A portfolio for Emayo that presents design work through a curated project grid and case study pages.',
+      'Scroll-driven animation and careful typography tell the story behind each project.',
+    ],
   },
 ];
 
-export const topRowWorks = allProjects.filter((p) =>
-  ['t1', 't2', 't3', 't4', 't5', 't6'].includes(p.id),
-);
+export const featuredProjects = projects.filter((p) => p.featured);
 
-export const bottomRowWorks = [
-  ...allProjects.filter((p) => ['b1', 'b2', 'b3', 'b4', 'b5'].includes(p.id)),
-  { ...allProjects.find((p) => p.slug === 'rentxspace'), id: 'b6' },
-];
-
-export const getProjectBySlug = (slug) =>
-  allProjects.find((p) => p.slug === slug);
+export const getProjectBySlug = (slug) => projects.find((p) => p.slug === slug);
 
 export const getNextProject = (slug) => {
-  const index = allProjects.findIndex((p) => p.slug === slug);
-  if (index === -1) return allProjects[0];
-  return allProjects[(index + 1) % allProjects.length];
+  const i = projects.findIndex((p) => p.slug === slug);
+  return projects[(i + 1) % projects.length];
 };

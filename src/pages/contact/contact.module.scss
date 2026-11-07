@@ -1,162 +1,162 @@
-@use '../../styles/tokens' as *;
+@use '../../styles/mixins' as *;
 
-.contactHeader {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0.75rem;
-  min-height: 200px;
+.page {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 64px;
+  padding-top: calc(var(--nav) + 96px);
+  padding-bottom: var(--padb);
+
+  @include lg {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  @include sm {
+    padding-top: calc(var(--nav) + 56px);
+  }
 }
 
-.contactForm {
+.info {
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
+  gap: 32px;
+  align-items: flex-start;
+
+  h1 {
+    font-size: var(--t-h1);
+    max-width: 10ch;
+  }
 }
 
-.inputGroup {
+.lead {
+  font-size: var(--t-lead);
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: 40ch;
+  margin-top: -8px;
+}
+
+.facts {
+  width: 100%;
+  border-top: 1px solid var(--line);
+
+  > div {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  dt {
+    font-size: var(--t-small);
+    color: var(--muted);
+  }
+
+  dd {
+    margin-top: 2px;
+    font-weight: 500;
+  }
+}
+
+.email {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+
+  p {
+    width: 100%;
+    color: var(--muted);
+    font-size: var(--t-small);
+  }
+
+  a {
+    font-family: var(--font-display);
+    font-size: 1.375rem;
+    letter-spacing: -0.02em;
+  }
+}
+
+.form {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 20px;
+  padding: 40px;
+  border-radius: var(--r-lg);
+  background: var(--card);
+  border: 1px solid var(--line);
+  align-self: start;
 
-  label {
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-    color: var(--text);
-    opacity: 0.6;
+  @include sm {
+    padding: 24px 20px;
+  }
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+
+  @include sm {
+    grid-template-columns: 1fr;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  span {
+    font-size: var(--t-label);
+    font-weight: 500;
   }
 
   input,
+  select,
   textarea {
     width: 100%;
-    padding: 0.9rem 1.2rem;
-    background-color: var(--card);
-    border: 1px solid var(--grayAlt);
-    color: var(--text);
-    border-radius: 8px;
-    font-family: inherit;
-    font-size: 0.95rem;
-    outline: none;
+    min-height: 48px;
+    padding: 12px 14px;
+    font-size: 1rem;
+    border-radius: var(--r-md);
+    border: 1px solid var(--line);
+    background: var(--paper);
     transition:
       border-color 0.2s ease,
-      background-color 0.2s ease;
+      box-shadow 0.2s ease;
 
     &::placeholder {
-      color: var(--gray);
-      opacity: 0.5;
+      color: var(--muted);
+      opacity: 0.8;
+    }
+
+    &:hover {
+      border-color: color-mix(in srgb, var(--ink) 30%, transparent);
     }
 
     &:focus {
-      border-color: var(--text);
-      background-color: var(
-        --container
-      ); // Subtle inverse depth shifts on focus
+      outline: none;
+      border-color: var(--ink);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--signal) 70%, transparent);
     }
   }
 
   textarea {
     resize: vertical;
+    line-height: 1.5;
   }
 }
 
-.submitBtn {
-  width: 100%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+.submit {
   align-self: flex-start;
-  padding: 0.9rem 2rem;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--container);
-  background-color: var(--text);
-  border: 1px solid var(--text);
-  border-radius: 8px;
-  cursor: pointer;
-  transition:
-    opacity 0.2s ease,
-    transform 0.2s ease;
+  margin-top: 4px;
 
-  .arrow {
-    transition: transform 0.2s ease;
-  }
-
-  &:hover:not(:disabled) {
-    opacity: 0.9;
-    transform: translateY(-2px);
-
-    .arrow {
-      transform: translateX(4px);
-    }
-  }
-
-  &:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
-
-  @media (max-width: 480px) {
-    width: 100%; // Stretches to full browser bounds on smartphones
+  @include sm {
+    width: 100%;
   }
 }
 
-.successMsg {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: #10b981;
-  margin: 0;
-}
-
-.infoSidebar {
-  display: flex;
-  flex-direction: column;
-  gap: 2.25rem;
-  padding: 2rem;
-  background-color: var(--card);
-  border: 1px solid var(--grayAlt);
-  border-radius: 12px;
-
-  @media (max-width: 480px) {
-    padding: 1.5rem;
-  }
-}
-
-.infoBlock {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-
-  h4 {
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--text);
-    opacity: 0.4;
-    margin: 0;
-  }
-
-  p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: var(--gray);
-    margin: 0;
-  }
-
-  .emailLink {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text);
-    text-decoration: none;
-    width: max-content;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.2s ease;
-
-    &:hover {
-      border-color: var(--text);
-    }
-  }
+.note {
+  font-size: var(--t-small);
+  color: var(--muted);
 }

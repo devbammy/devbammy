@@ -1,24 +1,22 @@
-import { motion } from 'framer-motion';
+import { HiOutlineMoon, HiOutlineSun } from 'react-icons/hi2';
 import { useTheme } from '../../../context/ThemeContext';
-import style from './themeToggle.module.scss';
+import styles from './themeToggle.module.scss';
 
 export default function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
-  const isLight = theme === 'light';
+  const isDark = theme === 'dark';
 
   return (
     <button
+      type="button"
       onClick={toggleTheme}
-      className={`${style.toggleBtn} ${isLight ? style.lightMode : style.darkMode}`}
-      aria-label={`Switch to ${isLight ? 'dark' : 'light'} theme`}
+      className={styles.toggle}
+      aria-label={`Switch to ${isDark ? 'light' : 'dark'} theme`}
+      title={`Switch to ${isDark ? 'light' : 'dark'} theme`}
     >
-      <motion.span 
-        layout 
-        transition={{ type: 'spring', stiffness: 200, damping: 30 }}
-        className={style.thumb}
-      >
-      
-      </motion.span>
+      <span className={styles.icon} key={theme}>
+        {isDark ? <HiOutlineSun /> : <HiOutlineMoon />}
+      </span>
     </button>
   );
 }

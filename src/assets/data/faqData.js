@@ -1,32 +1,27 @@
 export const faqData = [
   {
-    id: 1,
-    question: 'What is included in the Landing Page package?',
+    question: 'How long does a project take?',
     answer:
-      'Our package includes custom UI/UX design, full responsive development, SEO optimization, interactive animations, and domain integration.',
+      'A landing page usually takes one to two weeks from first call to launch. Web and mobile apps are planned in milestones, and you get a timeline before any work starts.',
   },
   {
-    id: 2,
-    question: 'How long does it take to complete a project?',
+    question: 'What is included in a landing page?',
     answer:
-      'Typically, a standard landing page takes 1-2 weeks from discovery to deployment, depending on content availability and revisions.',
+      'Custom design, responsive build, basic SEO, interactions and connecting your domain.',
   },
   {
-    id: 3,
-    question: 'Do you provide website maintenance after delivery?',
+    question: 'Can I ask for changes during design?',
     answer:
-      'Yes, we offer ongoing maintenance packages including content updates, security monitoring, and regular backups.',
+      'Yes. Three full rounds of revisions are included before the build starts.',
   },
   {
-    id: 4,
-    question: 'Can I request revisions during the design process?',
+    question: 'Will it work on phones?',
     answer:
-      'Absolutely. We include 3 rounds of comprehensive revisions during the design phase before moving into development.',
+      'Every project is built mobile first and tested from small phones up to wide desktop screens.',
   },
   {
-    id: 5,
-    question: 'Will my website be mobile-friendly?',
+    question: 'Do you maintain sites after launch?',
     answer:
-      'Yes, every site we design is fully optimized and fluidly responsive across all devices, from smartphones to ultra-wide desktops.',
+      'Yes. Maintenance covers content updates, security monitoring and regular backups.',
   },
 ];

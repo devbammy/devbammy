@@ -1,69 +1,52 @@
-import { Link } from 'react-router-dom';
-import Avatar from '../utils/avatar/Avatar';
-import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
-import { FaSquareXTwitter } from 'react-icons/fa6';
-import { AiFillInstagram } from 'react-icons/ai';
+import { Link, useLocation } from 'react-router-dom';
+import { HiArrowRight } from 'react-icons/hi2';
+import { site } from '../../assets/data/site';
+import CopyEmail from '../utils/copy-email/CopyEmail';
 import styles from './footer.module.scss';
-import { AnimatedButton } from '../utils/animated-button/AnimatedButton';
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
-  const socialLinks = [
-    { icon: <FaGithub />, url: 'https://github.com/devbammy', label: 'GitHub' },
-    {
-      icon: <FaLinkedin />,
-      url: 'https://www.linkedin.com/in/emmanuel-olorunyomi',
-      label: 'LinkedIn',
-    },
-    {
-      icon: <FaSquareXTwitter />,
-      url: 'https://x.com/bamideledotdev',
-      label: 'X',
-    },
-    {
-      icon: <AiFillInstagram />,
-      url: 'https://www.instagram.com/bamidele.dev',
-      label: 'Instagram',
-    },
-  ];
+  const { pathname } = useLocation();
+  const year = new Date().getFullYear();
+  const onContact = pathname === '/contact';
 
   return (
-    <footer className={styles.footer}>
-      <div className={styles.topSection}>
-        <div className={styles.brandSide}>
-          <Avatar />
-        </div>
-        <div className={styles.brandText}>
-          <h4>Let's collaborate</h4>
-          <p>Ready to bring your application ideas to life.</p>
-        </div>
-      </div>
+    <footer className={`${styles.footer} ${onContact ? styles.compact : ""}`}>
+      <div className="wrap">
+        {!onContact && (
+          <div className={styles.close}>
+            <div>
+              <h2>Start a project</h2>
+              <p>
+                Tell me what you are building and when you need it. I reply within two working days.
+              </p>
+            </div>
+            <div className={styles.closeActions}>
+              <Link to="/contact" className="btn btn--primary">
+                Book a call <HiArrowRight aria-hidden="true" />
+              </Link>
+              <CopyEmail />
+            </div>
+          </div>
+        )}
 
-      <div className={styles.socialDock}>
-        {socialLinks.map((link, index) => (
-          <AnimatedButton
-            href={link.url}
-            target="_blank"
-            icon={link.icon}
-            text={link.label}
-          />
-        ))}
-      </div>
-
-      <hr className={styles.divider} />
-
-      <div className={styles.bottomSection}>
-        <p className={styles.copyright}>
-          &copy; {currentYear} bamidele.dev. All rights reserved.
+        <p className={`${styles.name} ${onContact ? styles.nameOnly : ""}`} aria-hidden="true">
+          {site.shortName}
         </p>
 
-        <nav className={styles.footerNav}>
-          <Link to="/">Home</Link>
-          <Link to="/projects">Projects</Link>
-          <Link to="/about">About</Link>
-          <Link to="/resume">Resume</Link>
-        </nav>
+        <div className={styles.bottom}>
+          <p className={styles.legal}>
+            © {year} {site.name}. {site.location}.
+          </p>
+          <ul className={styles.links}>
+            {site.socials.map((s) => (
+              <li key={s.label}>
+                <a className="link" href={s.url} target="_blank" rel="noreferrer">
+                  {s.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </footer>
   );

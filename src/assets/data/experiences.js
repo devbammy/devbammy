@@ -1,7 +1,7 @@
 export const experiences = [
   {
     company: 'Star TechOne Nigeria Limited',
-    role: 'PRODUCT MANAGER / FRONTEND DEVELOPER / FRONTEND TUTOR',
+    role: 'Product manager, frontend developer and tutor',
     location: 'Lokoja, Nigeria',
     period: 'Nov 2022 - Dec 2025',
     points: [
@@ -12,8 +12,8 @@ export const experiences = [
     ],
   },
   {
-    company: 'Jaed Global Resourses Limited',
-    role: 'ICT MANAGER',
+    company: 'Jaed Global Resources Limited',
+    role: 'ICT manager',
     location: 'Lokoja, Nigeria',
     period: 'Jul 2020 - Oct 2022',
     points: [
@@ -25,7 +25,7 @@ export const experiences = [
   },
   {
     company: 'Kenneth Price Nig Ltd',
-    role: 'ICT MANAGER',
+    role: 'ICT manager',
     location: 'FCT-Abuja, Nigeria',
     period: 'Nov 2019 - Jun 2020',
     points: [
