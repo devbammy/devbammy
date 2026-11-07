@@ -24,7 +24,10 @@ const fadeUp = (i) => ({
 
 const Hero = () => {
   const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start start', 'end start'],
+  });
   const photoY = useTransform(scrollYProgress, [0, 1], ['0%', '12%']);
   const years = new Date().getFullYear() - site.since;
 
@@ -33,8 +36,13 @@ const Hero = () => {
       <div className={`wrap ${styles.grid}`}>
         <div className={styles.text}>
           {site.available && (
-            <motion.p className="pill" {...fadeUp(0)} transition={{ duration: 0.6, ease }}>
-              <span className="dot" aria-hidden="true" /> Available for new projects
+            <motion.p
+              className="pill"
+              {...fadeUp(0)}
+              transition={{ duration: 0.6, ease }}
+            >
+              <span className="dot" aria-hidden="true" /> Available for new
+              projects
             </motion.p>
           )}
 
@@ -45,7 +53,11 @@ const Hero = () => {
                   className={styles.line}
                   initial={{ y: '105%' }}
                   animate={{ y: '0%' }}
-                  transition={{ duration: 0.9, delay: 0.08 + i * 0.09, ease: [0.16, 1, 0.3, 1] }}
+                  transition={{
+                    duration: 0.9,
+                    delay: 0.08 + i * 0.09,
+                    ease: [0.16, 1, 0.3, 1],
+                  }}
                 >
                   {line}
                 </motion.span>
@@ -54,8 +66,8 @@ const Hero = () => {
           </h1>
 
           <motion.p className={styles.lead} {...fadeUp(1)}>
-            I’m {site.name}. I design and build web apps, mobile apps and the back ends behind
-            them, and add AI where it saves your team time.
+            I’m {site.name}. I design and build web apps, mobile apps and the
+            back ends behind them, and add AI where it saves your team time.
           </motion.p>
 
           <motion.div className={`btn-row ${styles.actions}`} {...fadeUp(2)}>
@@ -87,23 +99,58 @@ const Hero = () => {
                 <feFuncB type="table" tableValues="0.110 0" />
               </feComponentTransfer>
               <feComponentTransfer>
-                <feFuncR type="gamma" exponent="1.25" amplitude="1" offset="0" />
-                <feFuncG type="gamma" exponent="1.25" amplitude="1" offset="0" />
-                <feFuncB type="gamma" exponent="1.25" amplitude="1" offset="0" />
+                <feFuncR
+                  type="gamma"
+                  exponent="1.25"
+                  amplitude="1"
+                  offset="0"
+                />
+                <feFuncG
+                  type="gamma"
+                  exponent="1.25"
+                  amplitude="1"
+                  offset="0"
+                />
+                <feFuncB
+                  type="gamma"
+                  exponent="1.25"
+                  amplitude="1"
+                  offset="0"
+                />
               </feComponentTransfer>
             </filter>
           </svg>
           <div className={styles.portrait}>
             <motion.div className={styles.portraitInner} style={{ y: photoY }}>
-              <img className={styles.duo} src={Me} alt={`Portrait of ${site.name}`} width="742" height="990" />
-              <img className={styles.colour} src={Me} alt="" aria-hidden="true" width="742" height="990" />
+              <img
+                className={styles.duo}
+                src={Me}
+                alt={`Portrait of ${site.name}`}
+                width="742"
+                height="990"
+              />
+              <img
+                className={styles.colour}
+                src={Me}
+                alt=""
+                aria-hidden="true"
+                width="742"
+                height="990"
+              />
             </motion.div>
           </div>
 
           <Link to="/contact" className={styles.badge} aria-label="Book a call">
-            <svg viewBox="0 0 100 100" className={styles.badgeText} aria-hidden="true">
+            <svg
+              viewBox="0 0 100 100"
+              className={styles.badgeText}
+              aria-hidden="true"
+            >
               <defs>
-                <path id="badge-circle" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0" />
+                <path
+                  id="badge-circle"
+                  d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0"
+                />
               </defs>
               <text>
                 <textPath href="#badge-circle" textLength="230">
@@ -117,7 +164,8 @@ const Hero = () => {
           <div className={styles.clock}>
             <span className="dot" aria-hidden="true" />
             <span>
-              <LocalTime timeZone={site.timeZone} /> in {site.location.split(',')[0]}
+              <LocalTime timeZone={site.timeZone} /> in{' '}
+              {site.location.split(',')[0]}
             </span>
           </div>
         </motion.div>
