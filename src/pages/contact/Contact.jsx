@@ -6,7 +6,13 @@ import CopyEmail from '../../components/utils/copy-email/CopyEmail';
 import Reveal from '../../components/utils/reveal/Reveal';
 import styles from './contact.module.scss';
 
-const types = ['Web app', 'Mobile app', 'Website or landing page', 'AI feature', 'Something else'];
+const types = [
+  'Web app',
+  'Mobile app',
+  'Website or landing page',
+  'AI feature',
+  'Something else',
+];
 const empty = { name: '', email: '', type: types[0], message: '', _honey: '' };
 
 const Contact = () => {
@@ -14,7 +20,8 @@ const Contact = () => {
   const [status, setStatus] = useState('idle'); // idle | sending | sent | error
   const [error, setError] = useState('');
 
-  const update = (key) => (e) => setForm((f) => ({ ...f, [key]: e.target.value }));
+  const update = (key) => (e) =>
+    setForm((f) => ({ ...f, [key]: e.target.value }));
 
   const submit = async (e) => {
     e.preventDefault();
@@ -24,7 +31,10 @@ const Contact = () => {
     try {
       const res = await fetch(site.formEndpoint, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
         body: JSON.stringify({
           name: form.name,
           email: form.email,
@@ -42,6 +52,7 @@ const Contact = () => {
       setStatus('sent');
       setForm(empty);
     } catch (err) {
+      console.log(err);
       setError(err.message);
       setStatus('error');
     }
@@ -52,14 +63,17 @@ const Contact = () => {
       <Reveal className={styles.info}>
         <h1>Start a project</h1>
         <p className={styles.lead}>
-          Tell me what you are building, who it is for and when you need it. I reply within two
-          working days.
+          Tell me what you are building, who it is for and when you need it. I
+          reply within two working days.
         </p>
 
         <dl className={styles.facts}>
           <div>
             <dt>Open to</dt>
-            <dd>Freelance projects, full-time engineering roles and UI consultations</dd>
+            <dd>
+              Freelance projects, full-time engineering roles and UI
+              consultations
+            </dd>
           </div>
           <div>
             <dt>Based in</dt>
@@ -87,10 +101,20 @@ const Contact = () => {
               exit={{ opacity: 0 }}
               role="status"
             >
-              <HiOutlineCheckCircle className={styles.sentIcon} aria-hidden="true" />
+              <HiOutlineCheckCircle
+                className={styles.sentIcon}
+                aria-hidden="true"
+              />
               <h2>Message sent</h2>
-              <p>Thanks for reaching out. I’ll reply to your email within two working days.</p>
-              <button type="button" className="btn" onClick={() => setStatus('idle')}>
+              <p>
+                Thanks for reaching out. I’ll reply to your email within two
+                working days.
+              </p>
+              <button
+                type="button"
+                className="btn"
+                onClick={() => setStatus('idle')}
+              >
                 Send another message
               </button>
             </motion.div>
@@ -106,7 +130,12 @@ const Contact = () => {
               <div className={styles.row}>
                 <label className={styles.field}>
                   <span>Your name</span>
-                  <input required autoComplete="name" value={form.name} onChange={update('name')} />
+                  <input
+                    required
+                    autoComplete="name"
+                    value={form.name}
+                    onChange={update('name')}
+                  />
                 </label>
                 <label className={styles.field}>
                   <span>Email address</span>

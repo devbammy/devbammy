@@ -35,7 +35,7 @@ const Hero = () => {
     <section ref={ref} className={styles.hero}>
       <div className={`wrap ${styles.grid}`}>
         <div className={styles.text}>
-          {site.available && (
+          {/* {site.available && (
             <motion.p
               className="pill"
               {...fadeUp(0)}
@@ -44,7 +44,7 @@ const Hero = () => {
               <span className="dot" aria-hidden="true" /> Available for new
               projects
             </motion.p>
-          )}
+          )} */}
 
           <h1 className={styles.title} aria-label={lines.join(' ')}>
             {lines.map((line, i) => (
@@ -89,10 +89,10 @@ const Hero = () => {
           {/* Duotone in the logo's colours: shadows become ink #16181C, highlights brand yellow #FDE500. */}
           <svg className={styles.filters} aria-hidden="true" focusable="false">
             <filter id="duotone-ink-signal" colorInterpolationFilters="sRGB">
-              <feColorMatrix
+              {/* <feColorMatrix
                 type="matrix"
                 values="0.33 0.33 0.33 0 0  0.33 0.33 0.33 0 0  0.33 0.33 0.33 0 0  0 0 0 1 0"
-              />
+              /> */}
               <feComponentTransfer>
                 <feFuncR type="table" tableValues="0.086 0.992" />
                 <feFuncG type="table" tableValues="0.094 0.898" />
