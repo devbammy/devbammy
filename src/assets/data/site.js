@@ -5,7 +5,7 @@ export const site = {
   brand: 'devBammy',
   // The live address, without a trailing slash. Used for canonical links, previews and the sitemap.
   // If you move to a custom domain, change it here and in index.html.
-  url: 'https://devbammy.vercel.app',
+  url: 'https://www.devbammy.site/',
   role: 'Full-stack web and mobile developer',
   location: 'Abuja, Nigeria',
   since: 2019,
@@ -20,7 +20,10 @@ export const site = {
   available: true,
   socials: [
     { label: 'GitHub', url: 'https://github.com/devbammy' },
-    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/emmanuel-olorunyomi' },
+    {
+      label: 'LinkedIn',
+      url: 'https://www.linkedin.com/in/emmanuel-olorunyomi',
+    },
     { label: 'X', url: 'https://x.com/bamideledotdev' },
     { label: 'Instagram', url: 'https://www.instagram.com/bamidele.dev' },
   ],
