@@ -8,7 +8,10 @@ import { fileURLToPath } from 'node:url';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const read = (file) => readFileSync(resolve(root, file), 'utf8');
 
-const siteUrl = read('src/assets/data/site.js').match(/url:\s*'([^']+)'/)?.[1];
+// Accepts the address with or without a trailing slash.
+const siteUrl = read('src/assets/data/site.js')
+  .match(/url:\s*'([^']+)'/)?.[1]
+  ?.replace(/\/+$/, '');
 if (!siteUrl) throw new Error('site.url is missing from src/assets/data/site.js');
 
 const slugs = [...read('src/assets/data/projects.js').matchAll(/^\s*slug:\s*'([^']+)'/gm)].map(

@@ -20,7 +20,8 @@ const setMeta = (selector, value) => {
 export const useSeo = ({ title, description, path, image, noindex = false } = {}) => {
   useEffect(() => {
     const fullTitle = title ? `${title} | ${site.name}` : null;
-    const url = path ? `${site.url}${path}` : null;
+    const base = site.url.replace(/\/+$/, ''); // with or without a trailing slash
+    const url = path ? `${base}${path}` : null;
     const imageUrl = image ? new URL(image, site.url).href : null;
 
     const previousTitle = document.title;
