@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { HiArrowDownTray } from 'react-icons/hi2';
+import { HiArrowUpRight } from 'react-icons/hi2';
 import { site } from '../../assets/data/site';
 import { projects } from '../../assets/data/projects';
 import { experiences } from '../../assets/data/experiences';
@@ -10,7 +10,7 @@ import Marquee from '../utils/marquee/Marquee';
 import ToolIcons from '../utils/tool-icons/ToolIcons';
 import styles from './aboutScreen.module.scss';
 
-const statement = `I’m a software engineer and UI designer in ${site.location}. I build mobile apps and web platforms with React, React Native and Node.js, and connect them to AI tools like Google Gemini and OpenAI.`;
+const statement = `I’m a full-stack software engineer building modern web and mobile experiences with React, React Native, and Node.js. I leverage AI tools like OpenAI, Claude Code, and Gemini  to build smarter digital solutions.`;
 
 const AboutScreen = () => {
   const ref = useRef(null);
@@ -26,7 +26,12 @@ const AboutScreen = () => {
           opacity: 1,
           ease: 'none',
           stagger: 0.06,
-          scrollTrigger: { trigger: '[data-statement]', start: 'top 82%', end: 'bottom 48%', scrub: true },
+          scrollTrigger: {
+            trigger: '[data-statement]',
+            start: 'top 82%',
+            end: 'bottom 48%',
+            scrub: true,
+          },
         },
       );
 
@@ -63,7 +68,12 @@ const AboutScreen = () => {
         {
           yPercent: -14,
           ease: 'none',
-          scrollTrigger: { trigger: '[data-details]', start: 'top bottom', end: 'bottom top', scrub: true },
+          scrollTrigger: {
+            trigger: '[data-details]',
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true,
+          },
         },
       );
     });
@@ -101,11 +111,12 @@ const AboutScreen = () => {
               </div>
             </dl>
             <p className={styles.note} data-rise>
-              I have worked as a product manager, a frontend developer and a tutor, so I am as
-              comfortable planning a release with founders as I am writing the code.
+              I have worked as a product manager, a frontend developer and a
+              tutor, so I am as comfortable planning a release with founders as
+              I am writing the code.
             </p>
-            <a href={site.cv} download className="btn" data-rise>
-              Download resume <HiArrowDownTray aria-hidden="true" />
+            <a href={site.cv} target="_blank" rel="noopener noreferrer" className="btn" data-rise>
+              View resume <HiArrowUpRight aria-hidden="true" />
             </a>
           </div>
 
