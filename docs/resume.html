@@ -1,215 +1,661 @@
 ﻿<!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8" />
-<title>Emmanuel Olorunyomi - Full-Stack Web and Mobile Developer</title>
-<style>
-  @page { size: A4; margin: 14mm 15mm 13mm; }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { font-size: 9.6pt; }
-  body {
-    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-    color: #16181c;
-    line-height: 1.42;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
-  a { color: inherit; text-decoration: none; }
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Emmanuel Olorunyomi - Full-Stack Web and Mobile Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #111318;
+        --ink-secondary: #374151;
+        --ink-muted: #5b6472;
+        --border: #e2e8f0;
+        --border-strong: #111318;
+        --accent: #fde500;
+        --surface-subtle: #f8fafc;
+        --tag-bg: #f1f5f9;
+      }
 
-  header { padding-bottom: 10pt; border-bottom: 1.6pt solid #16181c; }
-  h1 { font-size: 25pt; font-weight: 700; letter-spacing: -0.6pt; line-height: 1.05; }
-  h1 span { font-weight: 300; }
-  .title { margin-top: 3pt; font-size: 11.5pt; font-weight: 600; }
-  .title i { display: inline-block; width: 7pt; height: 7pt; border-radius: 50%; background: #fde500; border: 0.6pt solid #16181c; margin-right: 5pt; vertical-align: 0.5pt; }
-  .contact { margin-top: 7pt; display: flex; flex-wrap: wrap; gap: 2pt 14pt; font-size: 9pt; color: #3d424a; }
-  .contact b { color: #16181c; font-weight: 600; }
+      @page {
+        size: A4;
+        margin: 12mm 14mm;
+      }
 
-  section { margin-top: 11pt; }
-  h2 {
-    font-size: 9pt; font-weight: 700; letter-spacing: 1.1pt; text-transform: uppercase;
-    padding-bottom: 3pt; margin-bottom: 6pt; border-bottom: 0.6pt solid #b9bec6;
-  }
-  .summary { font-size: 9.8pt; }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-  .skills { display: grid; grid-template-columns: 92pt 1fr; gap: 2.5pt 10pt; }
-  .skills dt { font-weight: 600; }
-  .skills dd { color: #2b2f36; }
+      html {
+        font-size: 9.4pt;
+        background-color: #eef1f5;
+      }
 
-  .item { margin-bottom: 7.5pt; break-inside: avoid; }
-  .item:last-child { margin-bottom: 0; }
-  .row { display: flex; justify-content: space-between; align-items: baseline; gap: 12pt; }
-  h3 { font-size: 10.6pt; font-weight: 700; }
-  h3 small { font-size: 9.4pt; font-weight: 400; color: #3d424a; }
-  .meta { font-size: 8.8pt; color: #4b515a; white-space: nowrap; }
-  .role { font-weight: 600; font-size: 9.4pt; }
-  .stack { font-size: 8.7pt; color: #4b515a; margin-top: 1pt; }
-  ul { margin-top: 2.5pt; padding-left: 11pt; }
-  li { margin-bottom: 1.2pt; padding-left: 1pt; }
-  li::marker { color: #8a9099; }
+      body {
+        font-family:
+          'Inter',
+          -apple-system,
+          BlinkMacSystemFont,
+          'Segoe UI',
+          Roboto,
+          sans-serif;
+        color: var(--ink);
+        line-height: 1.45;
+        -webkit-font-smoothing: antialiased;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        background: #ffffff;
+        max-width: 210mm;
+        min-height: 297mm;
+        margin: 24px auto;
+        padding: 14mm 15mm;
+        box-shadow:
+          0 12px 36px rgba(15, 23, 42, 0.08),
+          0 1px 3px rgba(15, 23, 42, 0.05);
+        border-radius: 3px;
+      }
 
-  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 0 22pt; }
-  .plain { list-style: none; padding-left: 0; margin-top: 0; }
-  .plain li { padding-left: 0; }
-</style>
-</head>
-<body>
+      @media print {
+        html {
+          background: #ffffff;
+        }
+        body {
+          margin: 0;
+          padding: 0;
+          box-shadow: none;
+          border-radius: 0;
+          max-width: none;
+          min-height: auto;
+        }
+      }
 
-<header>
-  <h1><span>Emmanuel</span> Olorunyomi</h1>
-  <p class="title"><i></i>Full-Stack Web and Mobile Developer</p>
-  <p class="contact">
-    <span><b>Email</b> olorunyomiemmanuelb@gmail.com</span>
-    <span><b>Phone</b> +234 811 100 6160</span>
-    <span><b>Location</b> Abuja, Nigeria</span>
-    <span><b>Portfolio</b> <a href="https://devbammy.vercel.app">devbammy.vercel.app</a></span>
-    <span><b>GitHub</b> <a href="https://github.com/devbammy">github.com/devbammy</a></span>
-    <span><b>LinkedIn</b> <a href="https://www.linkedin.com/in/emmanuel-olorunyomi">linkedin.com/in/emmanuel-olorunyomi</a></span>
-  </p>
-</header>
+      @media (max-width: 640px) {
+        body {
+          margin: 0;
+          padding: 20px 18px;
+          border-radius: 0;
+        }
+        .two,
+        .skills {
+          grid-template-columns: 1fr !important;
+        }
+      }
 
-<section>
-  <h2>Profile</h2>
-  <p class="summary">
-    Full-stack developer who designs, builds and ships complete products: React and Next.js front ends,
-    React Native mobile apps, and Node.js APIs on MongoDB and PostgreSQL. Recent work includes a
-    client-side encrypted vault, a school management portal with online fee payments, and an operations
-    system for a serviced apartment business. Comfortable owning a product from requirements and data
-    model through testing and deployment.
-  </p>
-</section>
+      a {
+        color: inherit;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.15s ease;
+      }
 
-<section>
-  <h2>Technical skills</h2>
-  <dl class="skills">
-    <dt>Languages</dt>
-    <dd>JavaScript (ES6+), TypeScript, HTML, CSS/SCSS</dd>
-    <dt>Front end</dt>
-    <dd>React 19, Next.js (App Router), React Router, TanStack Query, Redux Toolkit, Zustand, React Hook Form, Zod, Tailwind CSS, Radix UI, PWA</dd>
-    <dt>Mobile</dt>
-    <dd>React Native, Expo, Expo Router, NativeWind</dd>
-    <dt>Back end</dt>
-    <dd>Node.js, Express 5, REST APIs, JWT and session authentication, passkeys (WebAuthn), background jobs</dd>
-    <dt>Databases</dt>
-    <dd>MongoDB with Mongoose, PostgreSQL with Prisma</dd>
-    <dt>Testing</dt>
-    <dd>Vitest, Jest, Playwright, Supertest, React Testing Library</dd>
-    <dt>Tools and services</dt>
-    <dd>Git and GitHub, Vercel, Render, Cloudinary, Paystack, Flutterwave, Twilio, Figma</dd>
-  </dl>
-</section>
+      a:hover {
+        border-bottom-color: var(--ink);
+      }
 
-<section>
-  <h2>Selected projects</h2>
+      /* Header */
+      header {
+        padding-bottom: 11pt;
+        border-bottom: 1.5pt solid var(--border-strong);
+        position: relative;
+      }
 
-  <div class="item">
-    <div class="row"><h3>Anivad <small>- encrypted vault for .env files and personal documents</small></h3><span class="meta">2026</span></div>
-    <p class="stack">React 19, TypeScript, Vite PWA, Express 5, MongoDB, Web Crypto, Playwright</p>
-    <ul>
-      <li>Built an installable web vault that encrypts every file in the browser with AES-256-GCM before upload, so the server and object storage only ever hold ciphertext.</li>
-      <li>Separated sign-in from unlock: passkey or password plus authenticator sign-in, then a passphrase-derived key (Argon2id in a Web Worker) the server never sees, with an offline recovery key.</li>
-      <li>Wrote a lossless .env editor that preserves comments, order and quoting, and covered the production bundle with Playwright tests on Chromium, Firefox and WebKit.</li>
-    </ul>
-  </div>
+      .header-top {
+        display: flex;
+        flex-direction: column;
+      }
 
-  <div class="item">
-    <div class="row"><h3>SchoolFlo <small>- school management portal for Nigerian secondary schools</small></h3><span class="meta">2026</span></div>
-    <p class="stack">React, Vite, Zustand, SCSS, Node.js, Express, MongoDB, Paystack, Flutterwave, Cloudinary</p>
-    <ul>
-      <li>Built a portal for four roles (admin, teacher, student, parent) covering results, attendance, fees, assignments, library and timetables.</li>
-      <li>Implemented grading with five score components, weighted GPA, class ranking and cumulative reporting across terms, with printable PDF report output.</li>
-      <li>Integrated online fee payment through Paystack and Flutterwave, email notifications, SMS announcements, and CSV bulk import of student and teacher accounts.</li>
-    </ul>
-  </div>
+      h1 {
+        font-size: 25pt;
+        font-weight: 700;
+        letter-spacing: -0.7pt;
+        line-height: 1.08;
+        color: var(--ink);
+      }
 
-  <div class="item">
-    <div class="row"><h3>Inventra <small>- operations system for a serviced apartment business</small></h3><span class="meta">2026</span></div>
-    <p class="stack">React 19, TypeScript, Tailwind CSS, Express 5, Prisma, PostgreSQL, Vitest, Playwright</p>
-    <ul>
-      <li>Built staff-only software for reservations, availability, guests, check-in and check-out, payments, expenses, reporting and audit.</li>
-      <li>Made double bookings impossible at the database level with a PostgreSQL exclusion constraint, instead of relying on application code.</li>
-      <li>Shared types, permissions and money and date helpers between API and web in a TypeScript monorepo, with integration and end-to-end tests on the business rules.</li>
-    </ul>
-  </div>
+      h1 span {
+        font-weight: 300;
+        color: var(--ink-secondary);
+      }
 
-  <div class="item">
-    <div class="row"><h3>Linafri <small>- service-apartment marketplace for Lagos and Abuja</small></h3><span class="meta">2026</span></div>
-    <p class="stack">Next.js 16 (App Router), TypeScript, Tailwind CSS 4, Prisma, PostgreSQL, Better Auth, Leaflet</p>
-    <ul>
-      <li>Building a marketplace with guest, host and admin roles, email-verified accounts and a host application review flow.</li>
-      <li>Set up strict TypeScript, Zod validation, map-based listings with Leaflet, and unit and integration tests with Vitest.</li>
-    </ul>
-  </div>
+      .title {
+        margin-top: 4pt;
+        font-size: 11pt;
+        font-weight: 600;
+        color: var(--ink);
+        display: inline-flex;
+        align-items: center;
+      }
 
-  <div class="item">
-    <div class="row"><h3>StarTech Staff <small>- staff management app for StarTech One</small></h3><span class="meta">2026</span></div>
-    <p class="stack">React 19, TanStack Query, Tailwind CSS, Radix UI, Express 5, MongoDB, JWT</p>
-    <ul>
-      <li>Built the company's internal staff portal: role-based access for admins and staff, departments, clock-in and clock-out, task assignment, and profile and salary records.</li>
-      <li>Added scheduled jobs, Excel exports and Cloudinary uploads; the portal is being extended into a full HR system.</li>
-    </ul>
-  </div>
+      .title i {
+        display: inline-block;
+        width: 7.5pt;
+        height: 7.5pt;
+        border-radius: 50%;
+        background: var(--accent);
+        border: 1pt solid var(--ink);
+        margin-right: 6pt;
+        flex-shrink: 0;
+      }
 
-  <div class="item">
-    <div class="row"><h3>Momenta <small>- one-photo-a-day mobile app</small></h3><span class="meta">2026</span></div>
-    <p class="stack">React Native, Expo, Expo Router, NativeWind, AsyncStorage</p>
-    <ul>
-      <li>Built a local-first mobile app with no account or back end: one photo a day, grouped into weekly, monthly and yearly moments, with daily reminders and Jest unit tests.</li>
-    </ul>
-  </div>
-</section>
+      .contact {
+        margin-top: 8.5pt;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3pt 12pt;
+        font-size: 8.6pt;
+        color: var(--ink-secondary);
+      }
 
-<section>
-  <h2>Work experience</h2>
+      .contact span {
+        display: inline-flex;
+        align-items: center;
+        gap: 3.5pt;
+      }
 
-  <div class="item">
-    <div class="row"><h3>StarTechOne Nigeria Limited</h3><span class="meta">Nov 2022 - Dec 2025 | Lokoja, Nigeria</span></div>
-    <p class="role">Product Manager, Frontend Developer and Frontend Tutor</p>
-    <ul>
-      <li>Implemented pixel-accurate, responsive interfaces from Figma designs.</li>
-      <li>Refactored data fetching with React Query, removing redundant API calls and improving client-side caching.</li>
-      <li>Reduced the initial bundle size with code splitting and dynamic imports, improving site speed.</li>
-      <li>Ran tutoring sessions on frontend technologies and mentored junior developers and students.</li>
-    </ul>
-  </div>
+      .contact b {
+        color: var(--ink-muted);
+        font-weight: 500;
+        font-size: 8.2pt;
+        text-transform: uppercase;
+        letter-spacing: 0.3pt;
+      }
 
-  <div class="item">
-    <div class="row"><h3>Jaed Global Resources Limited</h3><span class="meta">Jul 2020 - Oct 2022 | Lokoja, Nigeria</span></div>
-    <p class="role">ICT Manager</p>
-    <ul>
-      <li>Managed all ICT operations, including systems setup, technical support and software installation.</li>
-      <li>Designed and maintained the company website, and set up custom staff email accounts through cPanel.</li>
-    </ul>
-  </div>
+      /* Sections */
+      section {
+        margin-top: 11.5pt;
+      }
 
-  <div class="item">
-    <div class="row"><h3>Kenneth Price Nig Ltd</h3><span class="meta">Nov 2019 - Jun 2020 | Abuja, Nigeria</span></div>
-    <p class="role">ICT Manager</p>
-    <ul>
-      <li>Delivered digital design projects for clients from concept to completion, including social media graphics, banners and marketing assets.</li>
-    </ul>
-  </div>
-</section>
+      h2 {
+        font-size: 8.4pt;
+        font-weight: 700;
+        letter-spacing: 1.2pt;
+        text-transform: uppercase;
+        color: var(--ink);
+        padding-bottom: 3.5pt;
+        margin-bottom: 6.5pt;
+        border-bottom: 0.75pt solid var(--border);
+        display: flex;
+        align-items: center;
+        gap: 6pt;
+      }
 
-<div class="two">
-  <section>
-    <h2>Education</h2>
-    <div class="item">
-      <h3>Kogi State University, Anyigba</h3>
-      <p>B.Sc. (Education) in Physics</p>
-      <p class="meta">Graduated August 2018</p>
+      h2::before {
+        content: '';
+        display: inline-block;
+        width: 3pt;
+        height: 8.5pt;
+        background: var(--accent);
+        border: 0.5pt solid var(--ink);
+        border-radius: 1pt;
+      }
+
+      .summary {
+        font-size: 9.4pt;
+        color: var(--ink-secondary);
+        line-height: 1.48;
+      }
+
+      /* Technical Skills Grid */
+      .skills {
+        display: grid;
+        grid-template-columns: 96pt 1fr;
+        gap: 3.5pt 10pt;
+        align-items: baseline;
+      }
+
+      .skills dt {
+        font-weight: 600;
+        font-size: 8.8pt;
+        color: var(--ink);
+      }
+
+      .skills dd {
+        color: var(--ink-secondary);
+        font-size: 8.9pt;
+      }
+
+      /* Items (Projects & Experience) */
+      .item {
+        margin-bottom: 8pt;
+        padding-left: 7.5pt;
+        border-left: 1.2pt solid var(--border);
+        break-inside: avoid;
+      }
+
+      .item:last-child {
+        margin-bottom: 0;
+      }
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 12pt;
+      }
+
+      h3 {
+        font-size: 10.2pt;
+        font-weight: 700;
+        color: var(--ink);
+        letter-spacing: -0.15pt;
+      }
+
+      h3 small {
+        font-size: 9.1pt;
+        font-weight: 400;
+        color: var(--ink-muted);
+        margin-left: 2pt;
+      }
+
+      .meta {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 8pt;
+        color: var(--ink-muted);
+        white-space: nowrap;
+        background: var(--surface-subtle);
+        padding: 1pt 5pt;
+        border-radius: 3pt;
+        border: 0.5pt solid var(--border);
+      }
+
+      .role {
+        font-weight: 600;
+        font-size: 9.1pt;
+        color: var(--ink-secondary);
+        margin-top: 1pt;
+      }
+
+      .stack {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 8pt;
+        color: var(--ink-muted);
+        margin-top: 1.5pt;
+      }
+
+      ul {
+        margin-top: 3pt;
+        padding-left: 11pt;
+      }
+
+      li {
+        margin-bottom: 1.8pt;
+        padding-left: 1.5pt;
+        color: var(--ink-secondary);
+        font-size: 9pt;
+      }
+
+      li::marker {
+        color: #94a3b8;
+      }
+
+      /* Bottom Two Columns */
+      .two {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 22pt;
+      }
+
+      .two .item {
+        border-left: none;
+        padding-left: 0;
+      }
+
+      .two .item p {
+        color: var(--ink-secondary);
+        font-size: 9.1pt;
+        margin-top: 1.5pt;
+      }
+
+      .two .item .meta {
+        display: inline-block;
+        margin-top: 3.5pt;
+      }
+
+      .plain {
+        list-style: none;
+        padding-left: 0;
+        margin-top: 0;
+      }
+
+      .plain li {
+        padding-left: 0;
+        margin-bottom: 2.5pt;
+        font-size: 8.9pt;
+        position: relative;
+        padding-left: 9pt;
+      }
+
+      .plain li::before {
+        content: '•';
+        position: absolute;
+        left: 0;
+        color: var(--ink-muted);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-top">
+        <h1><span>Emmanuel</span> Olorunyomi</h1>
+        <p class="title"><i></i>Full-Stack Web and Mobile Developer</p>
+      </div>
+      <p class="contact">
+        <span><b>Email</b> olorunyomiemmanuelb@gmail.com</span>
+        <span><b>Phone</b> +234 811 100 6160</span>
+        <span><b>Location</b> Abuja, Nigeria</span>
+        <span
+          ><b>Portfolio</b>
+          <a href="https://devbammy.vercel.app">devbammy.vercel.app</a></span
+        >
+        <span
+          ><b>GitHub</b>
+          <a href="https://github.com/devbammy">github.com/devbammy</a></span
+        >
+        <span
+          ><b>LinkedIn</b>
+          <a href="https://www.linkedin.com/in/emmanuel-olorunyomi"
+            >linkedin.com/in/emmanuel-olorunyomi</a
+          ></span
+        >
+      </p>
+    </header>
+
+    <section>
+      <h2>Profile</h2>
+      <p class="summary">
+        Full-stack developer who designs, builds and ships complete products:
+        React and Next.js front ends, React Native mobile apps, and Node.js APIs
+        on MongoDB and PostgreSQL. Recent work includes a client-side encrypted
+        vault, a school management portal with online fee payments, and an
+        operations system for a serviced apartment business. Comfortable owning
+        a product from requirements and data model through testing and
+        deployment.
+      </p>
+    </section>
+
+    <section>
+      <h2>Technical skills</h2>
+      <dl class="skills">
+        <dt>Languages</dt>
+        <dd>JavaScript (ES6+), TypeScript, HTML, CSS/SCSS</dd>
+        <dt>Front end</dt>
+        <dd>
+          React 19, Next.js (App Router), React Router, TanStack Query, Redux
+          Toolkit, Zustand, React Hook Form, Zod, Tailwind CSS, Radix UI, PWA
+        </dd>
+        <dt>Mobile</dt>
+        <dd>React Native, Expo, Expo Router, NativeWind</dd>
+        <dt>Back end</dt>
+        <dd>
+          Node.js, Express 5, REST APIs, JWT and session authentication,
+          passkeys (WebAuthn), background jobs
+        </dd>
+        <dt>Databases</dt>
+        <dd>MongoDB with Mongoose, PostgreSQL with Prisma</dd>
+        <dt>Testing</dt>
+        <dd>Vitest, Jest, Playwright, Supertest, React Testing Library</dd>
+        <dt>Tools and services</dt>
+        <dd>
+          Git and GitHub, Vercel, Render, Cloudinary, Paystack, Flutterwave,
+          Twilio, Figma
+        </dd>
+      </dl>
+    </section>
+
+    <section>
+      <h2>Selected projects</h2>
+
+      <div class="item">
+        <div class="row">
+          <h3>
+            Anivad
+            <small>encrypted vault for .env files and personal documents</small>
+          </h3>
+          <span class="meta">2026</span>
+        </div>
+        <p class="stack">
+          React 19, TypeScript, Vite PWA, Express 5, MongoDB, Web Crypto,
+          Playwright
+        </p>
+        <ul>
+          <li>
+            Built an installable web vault that encrypts every file in the
+            browser with AES-256-GCM before upload, so the server and object
+            storage only ever hold ciphertext.
+          </li>
+          <li>
+            Separated sign-in from unlock: passkey or password plus
+            authenticator sign-in, then a passphrase-derived key (Argon2id in a
+            Web Worker) the server never sees, with an offline recovery key.
+          </li>
+          <li>
+            Wrote a lossless .env editor that preserves comments, order and
+            quoting, and covered the production bundle with Playwright tests on
+            Chromium, Firefox and WebKit.
+          </li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <h3>
+            SchoolFlo
+            <small
+              >school management portal for Nigerian secondary schools</small
+            >
+          </h3>
+          <span class="meta">2026</span>
+        </div>
+        <p class="stack">
+          React, Vite, Zustand, SCSS, Node.js, Express, MongoDB, Paystack,
+          Flutterwave, Cloudinary
+        </p>
+        <ul>
+          <li>
+            Built a portal for four roles (admin, teacher, student, parent)
+            covering results, attendance, fees, assignments, library and
+            timetables.
+          </li>
+          <li>
+            Implemented grading with five score components, weighted GPA, class
+            ranking and cumulative reporting across terms, with printable PDF
+            report output.
+          </li>
+          <li>
+            Integrated online fee payment through Paystack and Flutterwave,
+            email notifications, SMS announcements, and CSV bulk import of
+            student and teacher accounts.
+          </li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <h3>
+            Inventra
+            <small>operations system for a serviced apartment business</small>
+          </h3>
+          <span class="meta">2026</span>
+        </div>
+        <p class="stack">
+          React 19, TypeScript, Tailwind CSS, Express 5, Prisma, PostgreSQL,
+          Vitest, Playwright
+        </p>
+        <ul>
+          <li>
+            Built staff-only software for reservations, availability, guests,
+            check-in and check-out, payments, expenses, reporting and audit.
+          </li>
+          <li>
+            Made double bookings impossible at the database level with a
+            PostgreSQL exclusion constraint, instead of relying on application
+            code.
+          </li>
+          <li>
+            Shared types, permissions and money and date helpers between API and
+            web in a TypeScript monorepo, with integration and end-to-end tests
+            on the business rules.
+          </li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <h3>
+            Linafri
+            <small>service-apartment marketplace for Lagos and Abuja</small>
+          </h3>
+          <span class="meta">2026</span>
+        </div>
+        <p class="stack">
+          Next.js 16 (App Router), TypeScript, Tailwind CSS 4, Prisma,
+          PostgreSQL, Better Auth, Leaflet
+        </p>
+        <ul>
+          <li>
+            Building a marketplace with guest, host and admin roles,
+            email-verified accounts and a host application review flow.
+          </li>
+          <li>
+            Set up strict TypeScript, Zod validation, map-based listings with
+            Leaflet, and unit and integration tests with Vitest.
+          </li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <h3>
+            StarTech Staff
+            <small>staff management app for StarTech One</small>
+          </h3>
+          <span class="meta">2026</span>
+        </div>
+        <p class="stack">
+          React 19, TanStack Query, Tailwind CSS, Radix UI, Express 5, MongoDB,
+          JWT
+        </p>
+        <ul>
+          <li>
+            Built the company's internal staff portal: role-based access for
+            admins and staff, departments, clock-in and clock-out, task
+            assignment, and profile and salary records.
+          </li>
+          <li>
+            Added scheduled jobs, Excel exports and Cloudinary uploads; the
+            portal is being extended into a full HR system.
+          </li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <h3>Momenta <small>one-photo-a-day mobile app</small></h3>
+          <span class="meta">2026</span>
+        </div>
+        <p class="stack">
+          React Native, Expo, Expo Router, NativeWind, AsyncStorage
+        </p>
+        <ul>
+          <li>
+            Built a local-first mobile app with no account or back end: one
+            photo a day, grouped into weekly, monthly and yearly moments, with
+            daily reminders and Jest unit tests.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Work experience</h2>
+
+      <div class="item">
+        <div class="row">
+          <h3>StarTechOne Nigeria Limited</h3>
+          <span class="meta">Nov 2022 - Dec 2025 | Lokoja, Nigeria</span>
+        </div>
+        <p class="role">
+          Product Manager, Frontend Developer and Frontend Tutor
+        </p>
+        <ul>
+          <li>
+            Implemented pixel-accurate, responsive interfaces from Figma
+            designs.
+          </li>
+          <li>
+            Refactored data fetching with React Query, removing redundant API
+            calls and improving client-side caching.
+          </li>
+          <li>
+            Reduced the initial bundle size with code splitting and dynamic
+            imports, improving site speed.
+          </li>
+          <li>
+            Ran tutoring sessions on frontend technologies and mentored junior
+            developers and students.
+          </li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <h3>Jaed Global Resources Limited</h3>
+          <span class="meta">Jul 2020 - Oct 2022 | Lokoja, Nigeria</span>
+        </div>
+        <p class="role">ICT Manager</p>
+        <ul>
+          <li>
+            Managed all ICT operations, including systems setup, technical
+            support and software installation.
+          </li>
+          <li>
+            Designed and maintained the company website, and set up custom staff
+            email accounts through cPanel.
+          </li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <h3>Kenneth Price Nig Ltd</h3>
+          <span class="meta">Nov 2019 - Jun 2020 | Abuja, Nigeria</span>
+        </div>
+        <p class="role">ICT Manager</p>
+        <ul>
+          <li>
+            Delivered digital design projects for clients from concept to
+            completion, including social media graphics, banners and marketing
+            assets.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="two">
+      <section>
+        <h2>Education</h2>
+        <div class="item">
+          <h3>Kogi State University, Anyigba</h3>
+          <p>B.Sc. (Education) in Physics</p>
+          <p class="meta">Graduated August 2018</p>
+        </div>
+      </section>
+      <section>
+        <h2>Certifications</h2>
+        <ul class="plain">
+          <li>Modern JavaScript from the Beginning - Udemy</li>
+          <li>Modern JavaScript for React JS (ES6) - Udemy</li>
+          <li>CSS and JavaScript - Udemy</li>
+          <li>UI/UX Design with Figma - Udemy</li>
+        </ul>
+      </section>
     </div>
-  </section>
-  <section>
-    <h2>Certifications</h2>
-    <ul class="plain">
-      <li>Modern JavaScript from the Beginning - Udemy</li>
-      <li>Modern JavaScript for React JS (ES6) - Udemy</li>
-      <li>CSS and JavaScript - Udemy</li>
-      <li>UI/UX Design with Figma - Udemy</li>
-    </ul>
-  </section>
-</div>
-
-</body>
+  </body>
 </html>
-
