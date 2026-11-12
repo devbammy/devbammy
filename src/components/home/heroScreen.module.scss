@@ -1,0 +1,204 @@
+@use '../../styles/mixins' as *;
+
+.hero {
+  position: relative;
+  height: 100svh;
+  min-height: 600px;
+  overflow: hidden;
+  background: var(--paper);
+}
+
+/* ---------- Corners ---------- */
+.topLeft {
+  position: absolute;
+  top: 44px;
+  left: var(--gut);
+  z-index: 3;
+  max-width: min(46vw, 620px);
+
+  /* Phones: the card hangs at the top, so the headline moves below it. */
+  @include md {
+    top: auto;
+    bottom: calc(15vw + 88px + 108px);
+    max-width: calc(100% - var(--gut) * 2);
+  }
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: var(--t-label);
+  font-weight: 500;
+  color: var(--muted);
+
+  i {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--signal);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--ink) 35%, transparent);
+  }
+}
+
+.title {
+  margin-top: 16px;
+  font-size: clamp(1.875rem, 1.1rem + 2.6vw, 3.25rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+
+.mask {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
+
+  > span {
+    display: block;
+  }
+}
+
+.soft {
+  color: color-mix(in srgb, var(--ink) 38%, transparent);
+}
+
+.topRight {
+  position: absolute;
+  top: 52px;
+  right: calc(var(--gut) + 8px);
+  z-index: 3;
+  max-width: 34ch;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+
+  @include md {
+    top: auto;
+    right: var(--gut);
+    left: var(--gut);
+    bottom: calc(15vw + 88px);
+    max-width: 44ch;
+    font-size: 0.875rem;
+    color: var(--muted);
+  }
+}
+
+/* ---------- Lanyard stage ---------- */
+.stage {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  transform-origin: 50% 0;
+}
+
+/* ---------- Availability + oversized name ---------- */
+.available {
+  position: absolute;
+  right: var(--gut);
+  bottom: calc(13.6vw + 76px);
+  z-index: 3;
+  font-size: var(--t-label);
+  font-weight: 500;
+  color: var(--muted);
+
+  > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  @include md {
+    display: none;
+  }
+}
+
+.mark {
+  position: absolute;
+  left: var(--gut);
+  right: var(--gut);
+  bottom: 64px;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-display);
+  font-weight: 600;
+  /* 17 characters across the column: tuned so the name spans edge to edge. */
+  font-size: calc((100vw - var(--gut) * 2) * 0.128);
+  line-height: 0.82;
+  letter-spacing: -0.06em;
+  font-variation-settings: 'opsz' 96;
+  white-space: nowrap;
+  user-select: none;
+  color: var(--ink);
+  transform-origin: 50% 100%;
+
+  @include md {
+    bottom: 76px;
+  }
+}
+
+.letterMask {
+  display: inline-block;
+  overflow: hidden;
+  padding-bottom: 0.14em;
+  margin-bottom: -0.14em;
+
+  > span {
+    display: inline-block;
+  }
+}
+
+.peek {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  z-index: 3;
+  width: 44px;
+  height: 44px;
+  margin-left: -22px;
+  display: grid;
+  place-items: center;
+  animation: nudge 2.2s var(--ease) infinite;
+
+  svg {
+    grid-area: 1 / 1;
+    width: 20px;
+    height: 20px;
+
+    &:last-child {
+      translate: 0 7px;
+      opacity: 0.45;
+    }
+  }
+
+  @include md {
+    display: none;
+  }
+}
+
+@keyframes nudge {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
+
+/* Darkens the pinned hero as the next screen covers it. */
+.shade {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  background: #000;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .peek {
+    animation: none;
+  }
+}

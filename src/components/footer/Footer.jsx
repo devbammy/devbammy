@@ -24,7 +24,7 @@ const Footer = () => {
               </p>
             </div>
             <div className={styles.closeActions}>
-              <Link to="/contact" className="btn btn--primary">
+              <Link to="/#contact" className="btn btn--primary">
                 Book a call <HiArrowRight aria-hidden="true" />
               </Link>
               <CopyEmail />

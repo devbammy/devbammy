@@ -372,14 +372,3 @@ p {
   color: var(--on-signal);
   font-weight: 500;
 }
-
-/* Home page: screens settle into place on larger displays with a mouse or trackpad. */
-@media (min-width: 1025px) and (min-height: 700px) and (prefers-reduced-motion: no-preference) {
-  html.snap-screens {
-    scroll-snap-type: y proximity;
-  }
-
-  html.snap-screens [data-screen] {
-    scroll-snap-align: start;
-  }
-}

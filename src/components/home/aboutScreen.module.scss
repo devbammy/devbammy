@@ -1,0 +1,160 @@
+@use '../../styles/mixins' as *;
+
+/* Slides up over the pinned hero like a sheet. */
+.about {
+  position: relative;
+  z-index: 5;
+  padding-top: 120px;
+  padding-bottom: 72px;
+  background: var(--paper);
+  border-radius: 36px 36px 0 0;
+  box-shadow: 0 -30px 60px -30px rgba(0, 0, 0, 0.35);
+
+  @include sm {
+    padding-top: 72px;
+    border-radius: 24px 24px 0 0;
+  }
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: var(--t-label);
+  font-weight: 500;
+  color: var(--muted);
+
+  i {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--signal);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--ink) 35%, transparent);
+  }
+}
+
+.statement {
+  margin-top: 28px;
+  max-width: 22ch;
+  font-size: clamp(2rem, 1.1rem + 3.6vw, 4.5rem);
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  text-wrap: pretty;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 64px;
+  margin-top: 120px;
+  align-items: start;
+
+  @include lg {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    margin-top: 72px;
+  }
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 28px;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  width: 100%;
+
+  dd {
+    font-family: var(--font-display);
+    font-size: clamp(3.5rem, 2rem + 5vw, 6.5rem);
+    font-weight: 500;
+    letter-spacing: -0.06em;
+    line-height: 0.9;
+    font-variant-numeric: tabular-nums;
+  }
+
+  dt {
+    margin-top: 12px;
+    font-size: var(--t-small);
+    color: var(--muted);
+  }
+
+  > div {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.note {
+  max-width: 44ch;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.jobs li {
+  position: relative;
+
+  &:last-child {
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+.rule {
+  display: block;
+  height: 1px;
+  background: var(--line);
+}
+
+.job {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 8px 32px;
+  padding: 28px 0;
+
+  h3 {
+    font-size: var(--t-h3);
+  }
+
+  @include sm {
+    grid-template-columns: 1fr;
+    padding: 22px 0;
+  }
+}
+
+.period {
+  padding-top: 6px;
+  font-size: var(--t-small);
+  font-weight: 500;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.role {
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+.summary {
+  margin-top: 8px;
+  max-width: 58ch;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.tools {
+  margin-top: 96px;
+
+  ul {
+    flex-wrap: nowrap;
+  }
+
+  @include sm {
+    margin-top: 64px;
+  }
+}

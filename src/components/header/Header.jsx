@@ -7,10 +7,9 @@ import ThemeToggle from '../utils/theme-toggler/ThemeToggle';
 import styles from './header.module.scss';
 
 const links = [
-  { to: '/projects', label: 'Work' },
-  { to: '/about', label: 'About' },
-  { to: '/resume', label: 'Resume' },
-  { to: '/contact', label: 'Contact' },
+  { to: '/#work', label: 'Work' },
+  { to: '/#about', label: 'About' },
+  { to: '/#contact', label: 'Contact' },
 ];
 
 const Header = () => {
@@ -50,7 +49,7 @@ const Header = () => {
 
         <div className={styles.actions}>
           <ThemeToggle />
-          <Link to="/contact" className={`btn btn--primary btn--sm ${styles.cta}`}>
+          <Link to="/#contact" className={`btn btn--primary btn--sm ${styles.cta}`}>
             Book a call
           </Link>
           <button
@@ -81,7 +80,7 @@ const Header = () => {
                   {l.label}
                 </NavLink>
               ))}
-              <Link to="/contact" className={`btn btn--primary ${styles.sheetCta}`}>
+              <Link to="/#contact" className={`btn btn--primary ${styles.sheetCta}`}>
                 Book a call
               </Link>
             </nav>

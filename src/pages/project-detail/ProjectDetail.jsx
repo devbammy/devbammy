@@ -22,7 +22,7 @@ const ProjectDetail = () => {
   return (
     <article>
       <header className={`wrap ${styles.head}`}>
-        <Link to="/projects" className={`link ${styles.back}`}>
+        <Link to="/#work" className={`link ${styles.back}`}>
           <HiArrowLeft aria-hidden="true" /> All projects
         </Link>
 

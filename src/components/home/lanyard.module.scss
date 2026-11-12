@@ -4,15 +4,10 @@ $card-w: 288px;
 $card-h: 432px;
 
 .stage {
-  position: relative;
-  width: 100%;
-  height: calc(var(--strap) + #{$card-h} + 80px);
-  touch-action: pan-y;
-
-  @include md {
-    --card-scale: 0.86;
-    height: calc(var(--strap) + #{$card-h} * 0.86 + 56px);
-  }
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
 }
 
 /* ---------- Strap ---------- */
@@ -21,7 +16,7 @@ $card-h: 432px;
   top: 0;
   left: calc(50% - 60px);
   width: 120px;
-  height: calc(var(--strap) + 400px);
+  height: 100%;
   overflow: visible;
   pointer-events: none;
 }
@@ -54,10 +49,8 @@ $card-h: 432px;
   cursor: grab;
   touch-action: none;
   user-select: none;
-
-  @include md {
-    scale: var(--card-scale);
-  }
+  pointer-events: auto;
+  scale: var(--card-scale, 1);
 }
 
 .clip {
@@ -316,17 +309,3 @@ $card-h: 432px;
   }
 }
 
-.hint {
-  position: absolute;
-  left: 50%;
-  bottom: 8px;
-  translate: -50% 0;
-  font-size: var(--t-label);
-  font-weight: 500;
-  color: var(--muted);
-  pointer-events: none;
-
-  @media (hover: none) {
-    display: none;
-  }
-}

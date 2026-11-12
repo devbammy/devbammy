@@ -1,17 +1,14 @@
 @use '../../styles/mixins' as *;
 
 .screen {
+  position: relative;
+  z-index: 5;
   min-height: 100svh;
-  padding-top: calc(var(--nav) + 56px);
-  padding-bottom: 56px;
+  padding-block: 56px;
   display: flex;
   align-items: center;
   background: var(--card);
   border-block: 1px solid var(--line);
-
-  @include md {
-    padding-top: calc(var(--nav) + 40px);
-  }
 }
 
 .grid {
@@ -128,6 +125,17 @@
   }
 }
 
+.infoActions {
+  display: flex;
+  align-items: center;
+  gap: 12px 24px;
+  flex: none;
+
+  @include sm {
+    flex-wrap: wrap;
+  }
+}
+
 .infoName {
   font-family: var(--font-display);
   font-size: 1.5rem;
@@ -151,8 +159,9 @@
   justify-content: space-between;
   align-items: baseline;
   gap: 16px;
-  flex-wrap: wrap;
   margin-bottom: 24px;
+  overflow: hidden;
+  padding-bottom: 0.1em;
 
   h2 {
     font-size: var(--t-h2);
@@ -163,11 +172,32 @@
   }
 }
 
-.list {
+.count {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Desktop: a fixed window of rows; the list slides so the active row stays visible. */
+.listWindow {
   grid-area: list;
   align-self: start;
   min-width: 0;
   border-top: 1px solid var(--line);
+
+  @media (min-width: 1025px) {
+    height: calc(var(--visible) * var(--row));
+    overflow: hidden;
+  }
+}
+
+.list {
+  @media (min-width: 1025px) {
+    transform: translateY(calc(var(--offset) * var(--row) * -1));
+    transition: transform 0.6s var(--ease);
+  }
 }
 
 .item {
@@ -175,8 +205,14 @@
   display: flex;
   flex-direction: column;
   gap: 2px;
-  padding: 11px 0 11px 0;
+  justify-content: center;
+  padding: 12px 0;
   border-bottom: 1px solid var(--line);
+
+  @media (min-width: 1025px) {
+    height: var(--row);
+    padding: 0;
+  }
   transition: padding-left 0.3s var(--ease);
 
   &::before {
