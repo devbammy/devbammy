@@ -9,7 +9,8 @@ import styles from './footer.module.scss';
 const Footer = () => {
   const { pathname } = useLocation();
   const year = new Date().getFullYear();
-  const onContact = pathname === '/contact';
+  // The home page ends with its own contact screen, so both skip the closing block.
+  const onContact = pathname === '/contact' || pathname === '/';
 
   return (
     <footer className={`${styles.footer} ${onContact ? styles.compact : ''}`}>
