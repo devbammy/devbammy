@@ -1,6 +1,11 @@
 import { Link } from 'react-router-dom';
+import { useSeo } from '../../lib/useSeo';
 
-const NotFound = () => (
+const NotFound = () => {
+  // Keep missing pages out of search results.
+  useSeo({ title: 'Page not found', noindex: true });
+
+  return (
   <header className="page-head wrap" style={{ minHeight: '70svh' }}>
     <h1>This page doesn’t exist</h1>
     <p>The link may be old, or the project may have moved. Try the project list instead.</p>
@@ -13,6 +18,7 @@ const NotFound = () => (
       </Link>
     </div>
   </header>
-);
+  );
+};
 
 export default NotFound;

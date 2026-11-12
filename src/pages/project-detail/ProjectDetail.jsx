@@ -4,11 +4,23 @@ import { HiArrowLeft, HiArrowRight, HiArrowUpRight } from 'react-icons/hi2';
 import { getNextProject, getProjectBySlug } from '../../assets/data/projects';
 import NotFound from '../not-found/NotFound';
 import Reveal from '../../components/utils/reveal/Reveal';
+import { useSeo } from '../../lib/useSeo';
 import styles from './projectDetail.module.scss';
 
 const ProjectDetail = () => {
   const { slug } = useParams();
   const project = getProjectBySlug(slug);
+  // Each project gets its own title, description and preview image for search and sharing.
+  useSeo(
+    project
+      ? {
+          title: project.name,
+          description: project.summary,
+          path: `/project/${project.slug}`,
+          image: project.cover,
+        }
+      : {},
+  );
   if (!project) return <NotFound />;
 
   const next = getNextProject(slug);

@@ -372,3 +372,9 @@ p {
   color: var(--on-signal);
   font-weight: 500;
 }
+
+/* Images can't be dragged out of the page onto the desktop. */
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+}

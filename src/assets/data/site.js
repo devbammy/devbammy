@@ -3,6 +3,9 @@ export const site = {
   name: 'Emmanuel Bamidele',
   shortName: 'Bamidele',
   brand: 'devBammy',
+  // The live address, without a trailing slash. Used for canonical links, previews and the sitemap.
+  // If you move to a custom domain, change it here and in index.html.
+  url: 'https://devbammy.vercel.app',
   role: 'Full-stack web and mobile developer',
   location: 'Abuja, Nigeria',
   since: 2019,
