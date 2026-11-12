@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.devbammy.site/sitemap.xml
+Sitemap: https://www.devbammy.site//sitemap.xml
