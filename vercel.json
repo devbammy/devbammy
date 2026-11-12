@@ -1,4 +1,15 @@
 {
+  "headers": [
+    {
+      "source": "/EmmanuelO_CV.pdf",
+      "headers": [
+        {
+          "key": "Content-Disposition",
+          "value": "inline; filename=\"Emmanuel-Olorunyomi-Resume.pdf\""
+        }
+      ]
+    }
+  ],
   "rewrites": [
     {
       "source": "/project/:slug",

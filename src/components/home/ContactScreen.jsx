@@ -296,8 +296,8 @@ const ContactScreen = () => {
           <span>
             © {year} {site.name}, full-stack web and mobile developer
           </span>
-          <a className="link" href={site.cv} download>
-            Download resume
+          <a className="link" href={site.cv} target="_blank" rel="noopener noreferrer">
+            View resume
           </a>
         </footer>
       </div>
