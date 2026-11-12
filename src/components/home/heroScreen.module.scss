@@ -13,7 +13,7 @@
   position: absolute;
   top: 44px;
   left: var(--gut);
-  z-index: 3;
+  z-index: 2;
   max-width: min(46vw, 620px);
 
   /* Phones: the card hangs at the top, so the headline moves below it. */
@@ -67,7 +67,7 @@
   position: absolute;
   top: 52px;
   right: calc(var(--gut) + 8px);
-  z-index: 3;
+  z-index: 2;
   max-width: 34ch;
   font-size: 0.9375rem;
   line-height: 1.6;
@@ -84,10 +84,11 @@
 }
 
 /* ---------- Lanyard stage ---------- */
+/* Above the corner text so the card passes over it when dragged. */
 .stage {
   position: absolute;
   inset: 0;
-  z-index: 2;
+  z-index: 3;
   pointer-events: none;
   transform-origin: 50% 0;
 }
@@ -97,7 +98,7 @@
   position: absolute;
   right: var(--gut);
   bottom: calc(13.6vw + 76px);
-  z-index: 3;
+  z-index: 2;
   font-size: var(--t-label);
   font-weight: 500;
   color: var(--muted);
